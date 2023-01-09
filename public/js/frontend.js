@@ -3497,7 +3497,62 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
-    staticClass: "col-lg-9 col-md-12 top-left-section lead-top m-order-0"
+    staticClass: "col-lg-3 col-md-6"
+  }, [_c("div", {
+    staticClass: "top-right m-pt-3"
+  }, [_c("div", {
+    staticClass: "opinion-contents",
+    staticStyle: {
+      border: "1px solid black"
+    }
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
+    staticClass: "regular-list scaled ai-custom",
+    staticStyle: {
+      height: "425px",
+      overflow: "auto"
+    }
+  }, _vm._l(_vm.posts.latestPost, function (LPost, Pindex) {
+    return _c("router-link", {
+      key: "Lpost" + Pindex,
+      staticClass: "news-item news-item-regular py-2 d-flex",
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: LPost.id,
+            slug: LPost.slug
+          }
+        }
+      }
+    }, [LPost.fiture ? _c("img", {
+      staticClass: "lazyload img-loader",
+      staticStyle: {
+        "border-radius": "50%",
+        width: "90px",
+        height: "90px",
+        "margin-right": "8px"
+      },
+      attrs: {
+        src: _vm.$asseturl + LPost.fiture,
+        alt: LPost.title
+      }
+    }) : _c("img", {
+      staticClass: "lazyload img-loader",
+      staticStyle: {
+        "border-radius": "50%",
+        width: "90px",
+        height: "90px",
+        "margin-right": "8px"
+      },
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: LPost.title
+      }
+    }), _vm._v(" "), _c("div", {
+      staticClass: "d-flex flex-column"
+    }, [_vm._v("\n                                            " + _vm._s(LPost.title) + "\n                                        ")])]);
+  }), 1)]), _vm._v(" "), _vm._m(1)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-6 col-md-12 top-left-section lead-top m-order-0"
   }, [_c("carousel", {
     staticStyle: {
       position: "relative"
@@ -3561,59 +3616,51 @@ var render = function render() {
     staticClass: "next"
   }, [_c("i", {
     staticClass: "fa-solid fa-chevron-right"
-  })])])], 2)], 1), _vm._v(" "), _c("div", {
-    staticClass: "col-lg-3 col-md-6"
-  }, [_c("div", {
-    staticClass: "top-right m-pt-3"
-  }, [_c("div", {
-    staticClass: "opinion-contents"
-  }, [_vm._m(0), _vm._v(" "), _c("div", {
-    staticClass: "regular-list scaled ai-custom",
+  })])])], 2), _vm._v(" "), _c("div", {
+    staticClass: "dots",
     staticStyle: {
-      height: "374px",
-      overflow: "auto"
+      display: "flex",
+      width: "544px",
+      overflow: "hidden"
     }
-  }, _vm._l(_vm.posts.latestPost, function (LPost, Pindex) {
-    return _c("router-link", {
-      key: "Lpost" + Pindex,
-      staticClass: "news-item news-item-regular py-2 d-flex",
-      attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: LPost.id,
-            slug: LPost.slug
-          }
-        }
-      }
-    }, [LPost.fiture ? _c("img", {
-      staticClass: "lazyload img-loader",
+  }, _vm._l(_vm.getlatestpost, function (featured_post, index) {
+    return _c("div", {
+      key: "slide" + index,
+      staticClass: "navDotsImage"
+    }, [featured_post.fiture ? _c("img", {
       staticStyle: {
-        "border-radius": "50%",
-        width: "90px",
-        height: "90px",
-        "margin-right": "8px"
+        height: "100px",
+        width: "100px"
       },
       attrs: {
-        src: _vm.$asseturl + LPost.fiture,
-        alt: LPost.title
+        src: _vm.$asseturl + featured_post.fiture
       }
     }) : _c("img", {
-      staticClass: "lazyload img-loader",
+      staticClass: "img-responsive cover_image",
       staticStyle: {
-        "border-radius": "50%",
-        width: "90px",
-        height: "90px",
-        "margin-right": "8px"
+        height: "100px",
+        width: "100px"
       },
       attrs: {
         src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
-        alt: LPost.title
+        alt: featured_post.title
       }
-    }), _vm._v(" "), _c("div", {
-      staticClass: "d-flex flex-column"
-    }, [_vm._v("\n                                            " + _vm._s(LPost.title) + "\n                                        ")])]);
-  }), 1)]), _vm._v(" "), _vm._m(1)])])])]), _vm._v(" "), _c("div", {
+    })]);
+  }), 0)], 1), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-3 col-md-6 top-list-1 m-order-1",
+    staticStyle: {
+      order: "1"
+    }
+  }, [_c("img", {
+    staticStyle: {
+      height: "469px"
+    },
+    attrs: {
+      src: _vm.$asseturl + "WhatsApp Image 2023-01-10 at 1.09.03 AM.jpeg",
+      width: "100%",
+      alt: ""
+    }
+  })])])]), _vm._v(" "), _c("div", {
     staticClass: "section-two py-3 bg-section-two m-pt-0 mt-3 m-mt-2"
   }, [_c("div", {
     staticClass: "container"
@@ -4116,12 +4163,16 @@ var staticRenderFns = [function () {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "category-header opinion-header text-center"
+    staticClass: "category-header opinion-header text-center",
+    staticStyle: {
+      background: "#6c6c6c"
+    }
   }, [_c("div", {
     staticClass: "heading opinion-heading text-center"
   }, [_c("p", {
     staticClass: "title"
   }, [_c("a", {
+    staticClass: "text-white",
     attrs: {
       href: "javascript:void(0)"
     }
@@ -4185,7 +4236,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" সহজেই\n                                        তৈরি করুন কাঁঠালের বার্গার")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        সহজেই\n                                        তৈরি করুন কাঁঠালের বার্গার")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4201,7 +4252,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" ‘কুল’\n                                        বিশ্বাস করে সকল ছেলেই কুল")])])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        ‘কুল’\n                                        বিশ্বাস করে সকল ছেলেই কুল")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12"
   }, [_c("div", {
     staticClass: "padding"
@@ -4233,7 +4284,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" আইএসও\n                                        সনদ পেলো এডিসন ইন্ডাস্ট্রিজ লিমিটেড")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        আইএসও\n                                        সনদ পেলো এডিসন ইন্ডাস্ট্রিজ লিমিটেড")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4241,7 +4292,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" ফাস্ট\n                                        চার্জিং ওয়্যারলেস পাওয়ার ব্যাংক আনলো ওয়ালটন")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        ফাস্ট\n                                        চার্জিং ওয়্যারলেস পাওয়ার ব্যাংক আনলো ওয়ালটন")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4281,7 +4332,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" পিআইবিতে কুবিসাস সদস্যদের\n                                        নিয়ে দুই দিনব্যাপী কর্মশালা সমাপনী")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        পিআইবিতে কুবিসাস সদস্যদের\n                                        নিয়ে দুই দিনব্যাপী কর্মশালা সমাপনী")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4289,7 +4340,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" ঢাবির\n                                        জিন প্রকৌশল ও জীব প্রযুক্তি বিভাগের নবীন বরণ অনুষ্ঠিত")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        ঢাবির\n                                        জিন প্রকৌশল ও জীব প্রযুক্তি বিভাগের নবীন বরণ অনুষ্ঠিত")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4297,7 +4348,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" শীতের\n                                        সকালে নতুন রূপে সরকারি তিতুমীর কলেজ")])])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        শীতের\n                                        সকালে নতুন রূপে সরকারি তিতুমীর কলেজ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12"
   }, [_c("div", {
     staticClass: "padding"
@@ -4329,7 +4380,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" বিড়াল\n                                        ও মানুষের খুনসুটিতে জনপ্রিয় ‘পুচি ফ্যামিলি’")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        বিড়াল\n                                        ও মানুষের খুনসুটিতে জনপ্রিয় ‘পুচি ফ্যামিলি’")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4337,7 +4388,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" বুর্জ\n                                        খলিফায় একটি ফ্ল্যাটের দাম প্রায় ২০০ কোটি, কী আছে সেখানে")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        বুর্জ\n                                        খলিফায় একটি ফ্ল্যাটের দাম প্রায় ২০০ কোটি, কী আছে সেখানে")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4345,7 +4396,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" তিন-চার দিনের জন্য বাড়ি\n                                        ভাড়া করে ব্যবসা, গরিব দেশের মেয়েদের এনে চলে অপকর্ম")])])])])])])]);
+  }), _vm._v("\n                                        তিন-চার দিনের জন্য বাড়ি\n                                        ভাড়া করে ব্যবসা, গরিব দেশের মেয়েদের এনে চলে অপকর্ম")])])])])])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -4389,7 +4440,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" সহজেই\n                                        তৈরি করুন কাঁঠালের বার্গার")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        সহজেই\n                                        তৈরি করুন কাঁঠালের বার্গার")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4405,7 +4456,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" ‘কুল’\n                                        বিশ্বাস করে সকল ছেলেই কুল")])])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        ‘কুল’\n                                        বিশ্বাস করে সকল ছেলেই কুল")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12"
   }, [_c("div", {
     staticClass: "padding"
@@ -4437,7 +4488,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" আইএসও\n                                        সনদ পেলো এডিসন ইন্ডাস্ট্রিজ লিমিটেড")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        আইএসও\n                                        সনদ পেলো এডিসন ইন্ডাস্ট্রিজ লিমিটেড")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4445,7 +4496,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" ফাস্ট\n                                        চার্জিং ওয়্যারলেস পাওয়ার ব্যাংক আনলো ওয়ালটন")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        ফাস্ট\n                                        চার্জিং ওয়্যারলেস পাওয়ার ব্যাংক আনলো ওয়ালটন")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4485,7 +4536,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" পিআইবিতে কুবিসাস সদস্যদের\n                                        নিয়ে দুই দিনব্যাপী কর্মশালা সমাপনী")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        পিআইবিতে কুবিসাস সদস্যদের\n                                        নিয়ে দুই দিনব্যাপী কর্মশালা সমাপনী")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4493,7 +4544,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" ঢাবির\n                                        জিন প্রকৌশল ও জীব প্রযুক্তি বিভাগের নবীন বরণ অনুষ্ঠিত")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        ঢাবির\n                                        জিন প্রকৌশল ও জীব প্রযুক্তি বিভাগের নবীন বরণ অনুষ্ঠিত")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4501,7 +4552,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" শীতের\n                                        সকালে নতুন রূপে সরকারি তিতুমীর কলেজ")])])])])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        শীতের\n                                        সকালে নতুন রূপে সরকারি তিতুমীর কলেজ")])])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12"
   }, [_c("div", {
     staticClass: "padding"
@@ -4533,7 +4584,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" বিড়াল\n                                        ও মানুষের খুনসুটিতে জনপ্রিয় ‘পুচি ফ্যামিলি’")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        বিড়াল\n                                        ও মানুষের খুনসুটিতে জনপ্রিয় ‘পুচি ফ্যামিলি’")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4541,7 +4592,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" বুর্জ\n                                        খলিফায় একটি ফ্ল্যাটের দাম প্রায় ২০০ কোটি, কী আছে সেখানে")])]), _vm._v(" "), _c("div", {
+  }), _vm._v("\n                                        বুর্জ\n                                        খলিফায় একটি ফ্ল্যাটের দাম প্রায় ২০০ কোটি, কী আছে সেখানে")])]), _vm._v(" "), _c("div", {
     staticClass: "other width100"
   }, [_c("a", {
     attrs: {
@@ -4549,7 +4600,7 @@ var staticRenderFns = [function () {
     }
   }, [_c("i", {
     staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" তিন-চার দিনের জন্য বাড়ি\n                                        ভাড়া করে ব্যবসা, গরিব দেশের মেয়েদের এনে চলে অপকর্ম")])])])])])])]);
+  }), _vm._v("\n                                        তিন-চার দিনের জন্য বাড়ি\n                                        ভাড়া করে ব্যবসা, গরিব দেশের মেয়েদের এনে চলে অপকর্ম")])])])])])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -19548,7 +19599,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nspan.next {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    right: 0;\n    z-index: 9999;\n}\nspan.prev {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    left: 0;\n    z-index: 9999;\n}\n.overlay {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    background: #3d566e;\n    overflow: hidden;\n    opacity: 0;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay {\n    opacity: 0.8;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay-info {\n    opacity: 1;\n}\n.cat {\n    position: absolute;\n    text-transform: capitalize;\n    left: 15px;\n    top: 0;\n    padding: 0;\n    margin: 0;\n    z-index: 10;\n    width: auto;\n    height: 36px;\n    line-height: 36px;\n    color: #fff;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .cat {\n    top: 15px;\n    opacity: 1;\n}\n.cat-data span {\n    width: 36px;\n    height: 36px;\n    text-align: center;\n    color: #fff;\n    line-height: 36px;\n    font-weight: 700;\n    font-size: 22px;\n    background: #e74c3c;\n    display: inline-block;\n    margin-right: 5px;\n    float: left;\n}\n.box:hover .cat {\n    top: 15px;\n    opacity: 1;\n}\n.info {\n    display: block;\n    position: absolute;\n    left: 15px;\n    bottom: 0;\n    z-index: 100;\n    text-align: center;\n    color: #fff;\n    height: 36px;\n    line-height: 36px;\n    font-weight: normal;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.info span {\n    font-size: 12px;\n    display: inline-block;\n    padding: 0 5px 0 10px;\n}\n.info span:first-child {\n    padding-left: 0;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.box {\n    position: relative;\n    overflow: hidden;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.carousel-caption {\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n}\n.banner-outer-thumb .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n    opacity: 0;\n}\n.banner-outer-thumb a p,\n.banner-oute-thumbr a:hover p {\n    color: #fff;\n}\n.banner-outer-thumb .box:hover .carousel-caption {\n    opacity: 1;\n}\n.banner-outer-thumb .item {\n    margin: 0 5px;\n    padding: 4px;\n    ;\n    background-color: #f8f8f8;\n    border: 1px solid #ededed;\n}\n.banner-outer .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 24px;\n}\n.banner-outer a p,\n.banner-outer a:hover p {\n    color: #fff;\n}\n.right-img-top {\n    margin-bottom: 10px;\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-top .box {\n    height: 212px;\n}\n.right-img-btm {\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-btm .box {\n    height: 212px;\n}\n\n/*8-4 OWL CAROUSEL SYNC*/\n#sync2 .item {\n    margin: 0 5px;\n    cursor: pointer;\n}\n#sync2 .owl-wrapper-outer {}\n#sync2 .synced .item {\n    border: 2px solid #e74c3c;\n}\n.box img {\n    transition: all 0.3s ease;\n    image-rendering: optimizequality;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\na:hover img {\n    border: 1px solid #ffcfca;\n    opacity: 0.6;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.left,\n.middle {\n    float: left;\n}\n.news {\n    margin-bottom: 15px;\n    float: left;\n}\n.news .title {\n    border-bottom: 2px solid #f01010;\n    font-size: 23px;\n    line-height: 30px;\n    margin-bottom: 10px;\n    margin-top: 0;\n}\n.news-3 .other {\n\n    margin-bottom: 5px;\n}\n.width25 {\n    width: 25%;\n    float: left;\n}\n.width100 {\n    width: 100%;\n    float: left;\n}\n.first.width100 a h3 {\n    font-size: 22px;\n    margin-bottom: 18px;\n    margin-top: 11px;\n}\n\n\n/* video gallery */\n.LeadTitlebar3 {\n    position: relative;\n}\n.LeadTitlebar3 h2 {\n    /* background: url(../../media/common/dot.png); */\n    width: 100%;\n    position: relative;\n    border-bottom: 2px solid #939297;\n    line-height: 100%;\n    margin: 0 0 15px;\n    font-size: 20px;\n    font-weight: bold;\n    letter-spacing: .3px;\n}\n.LeadTitlebar3 h2 span {\n    background: #A91717;\n    padding: 7px 18px;\n    color: #fff;\n    height: 30px;\n    line-height: 39px;\n    position: relative;\n    border-bottom: 2px solid#939297;\n}\n.LeadTitlebar3 h2 span::after {\n    border-color: #939297 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)rgba(0, 0, 0, 0);\n    position: absolute;\n    content: \" \";\n    width: auto;\n    height: auto;\n    bottom: -20px;\n    margin-left: -10px;\n    left: 50%;\n    border-width: 10px;\n    border-style: solid;\n}\n.VideoGalleryList {\n    margin-bottom: 15px;\n}\n.VideoGalleryList .thumbnail {\n    border: 0 none;\n    box-shadow: none;\n    margin: 0 0 0 0;\n    padding: 0;\n}.Imgresize {\n    position: relative;\n}.VideoGalleryList .thumbnail .caption {\n    padding: 7px;\n}.VideoGalleryList .caption h3 {\n    color: #fff;\n    font-size: 1.1em;\n    font-weight: 400;\n}.VideoGalleryList .caption {\n    width: 100%;\n    bottom: 0;\n    position: absolute;\n    background: rgba(0, 0, 0, 0.5) linear-gradient(to bottom, rgba(0, 0, 0, 0.14) 0%, rgb(0, 0, 0) 100%) repeat scroll 0 0;\n    z-index: 10;\n    border-bottom: 1px solid #2d2d2d;\n}\n.VideoGalleryList .VideoIcon::after {\n    position: absolute;\n    top: 18%;\n    left: 10%;\n    transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    content: \"\\f144\";\n    font-family: FontAwesome;\n    font-size: 40px;\n    color: #fff;\n    text-shadow: 0px 0px 30px rgb(0 0 0 / 50%);\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nspan.next {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    right: 0;\n    z-index: 9999;\n}\nspan.prev {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    left: 0;\n    z-index: 9999;\n}\n.overlay {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    background: #3d566e;\n    overflow: hidden;\n    opacity: 0;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay {\n    opacity: 0.8;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay-info {\n    opacity: 1;\n}\n.cat {\n    position: absolute;\n    text-transform: capitalize;\n    left: 15px;\n    top: 0;\n    padding: 0;\n    margin: 0;\n    z-index: 10;\n    width: auto;\n    height: 36px;\n    line-height: 36px;\n    color: #fff;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .cat {\n    top: 15px;\n    opacity: 1;\n}\n.cat-data span {\n    width: 36px;\n    height: 36px;\n    text-align: center;\n    color: #fff;\n    line-height: 36px;\n    font-weight: 700;\n    font-size: 22px;\n    background: #e74c3c;\n    display: inline-block;\n    margin-right: 5px;\n    float: left;\n}\n.box:hover .cat {\n    top: 15px;\n    opacity: 1;\n}\n.info {\n    display: block;\n    position: absolute;\n    left: 15px;\n    bottom: 0;\n    z-index: 100;\n    text-align: center;\n    color: #fff;\n    height: 36px;\n    line-height: 36px;\n    font-weight: normal;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.info span {\n    font-size: 12px;\n    display: inline-block;\n    padding: 0 5px 0 10px;\n}\n.info span:first-child {\n    padding-left: 0;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.box {\n    position: relative;\n    overflow: hidden;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.carousel-caption {\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n    background: #637684d9;\n    padding: 24px 16px;\n}\n.banner-outer-thumb .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n    opacity: 0;\n}\n.banner-outer-thumb a p,\n.banner-oute-thumbr a:hover p {\n    color: #fff;\n}\n.banner-outer-thumb .box:hover .carousel-caption {\n    opacity: 1;\n}\n.banner-outer-thumb .item {\n    margin: 0 5px;\n    padding: 4px;\n    ;\n    background-color: #f8f8f8;\n    border: 1px solid #ededed;\n}\n.banner-outer .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 24px;\n}\n.banner-outer a p,\n.banner-outer a:hover p {\n    color: #fff;\n}\n.right-img-top {\n    margin-bottom: 10px;\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-top .box {\n    height: 212px;\n}\n.right-img-btm {\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-btm .box {\n    height: 212px;\n}\n\n/*8-4 OWL CAROUSEL SYNC*/\n#sync2 .item {\n    margin: 0 5px;\n    cursor: pointer;\n}\n#sync2 .owl-wrapper-outer {}\n#sync2 .synced .item {\n    border: 2px solid #e74c3c;\n}\n.box img {\n    transition: all 0.3s ease;\n    image-rendering: optimizequality;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\na:hover img {\n    border: 1px solid #ffcfca;\n    opacity: 0.6;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.left,\n.middle {\n    float: left;\n}\n.news {\n    margin-bottom: 15px;\n    float: left;\n}\n.news .title {\n    border-bottom: 2px solid #f01010;\n    font-size: 23px;\n    line-height: 30px;\n    margin-bottom: 10px;\n    margin-top: 0;\n}\n.news-3 .other {\n\n    margin-bottom: 5px;\n}\n.width25 {\n    width: 25%;\n    float: left;\n}\n.width100 {\n    width: 100%;\n    float: left;\n}\n.first.width100 a h3 {\n    font-size: 22px;\n    margin-bottom: 18px;\n    margin-top: 11px;\n}\n\n\n/* video gallery */\n.LeadTitlebar3 {\n    position: relative;\n}\n.LeadTitlebar3 h2 {\n    /* background: url(../../media/common/dot.png); */\n    width: 100%;\n    position: relative;\n    border-bottom: 2px solid #939297;\n    line-height: 100%;\n    margin: 0 0 15px;\n    font-size: 20px;\n    font-weight: bold;\n    letter-spacing: .3px;\n}\n.LeadTitlebar3 h2 span {\n    background: #A91717;\n    padding: 7px 18px;\n    color: #fff;\n    height: 30px;\n    line-height: 39px;\n    position: relative;\n    border-bottom: 2px solid#939297;\n}\n.LeadTitlebar3 h2 span::after {\n    border-color: #939297 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)rgba(0, 0, 0, 0);\n    position: absolute;\n    content: \" \";\n    width: auto;\n    height: auto;\n    bottom: -20px;\n    margin-left: -10px;\n    left: 50%;\n    border-width: 10px;\n    border-style: solid;\n}\n.VideoGalleryList {\n    margin-bottom: 15px;\n}\n.VideoGalleryList .thumbnail {\n    border: 0 none;\n    box-shadow: none;\n    margin: 0 0 0 0;\n    padding: 0;\n}\n.Imgresize {\n    position: relative;\n}\n.VideoGalleryList .thumbnail .caption {\n    padding: 7px;\n}\n.VideoGalleryList .caption h3 {\n    color: #fff;\n    font-size: 1.1em;\n    font-weight: 400;\n}\n.VideoGalleryList .caption {\n    width: 100%;\n    bottom: 0;\n    position: absolute;\n    background: rgba(0, 0, 0, 0.5) linear-gradient(to bottom, rgba(0, 0, 0, 0.14) 0%, rgb(0, 0, 0) 100%) repeat scroll 0 0;\n    z-index: 10;\n    border-bottom: 1px solid #2d2d2d;\n}\n.VideoGalleryList .VideoIcon::after {\n    position: absolute;\n    top: 18%;\n    left: 10%;\n    transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    content: \"\\f144\";\n    font-family: FontAwesome;\n    font-size: 40px;\n    color: #fff;\n    text-shadow: 0px 0px 30px rgb(0 0 0 / 50%);\n}\n.navDotsImage {\n    border: 2px solid #bbbbbb;\n    margin: 1px;\n}\n.category-header {\n    background: #b1aeae;\n}\nh3.title.width100 {\n    background: #a3ffaa;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
