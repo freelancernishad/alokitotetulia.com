@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $maincategory =  Category::where(['type'=>'main','status'=>'active'])->get();
+        $maincategory =  Category::where(['type'=>'main','status'=>'active'])->orderBy('created_at','asc')->get();
         $maincategoris = [];
         foreach ($maincategory as  $mainCat) {
             // print_r($mainCat);
