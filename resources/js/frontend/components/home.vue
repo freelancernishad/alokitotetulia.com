@@ -42,7 +42,7 @@
 
 
                         <div class="col-lg-6 col-md-12 top-left-section lead-top m-order-0">
-                            <carousel :autoplay="false" :nav="false" :dots="false" :items="1" style="position:relative">
+                            <carousel :autoplay="true" :nav="false" :dots="false" :items="1" style="position:relative">
                                 <template slot="prev"><span class="prev"><i
                                             class="fa-solid fa-chevron-left"></i></span></template>
                                 <div class="box item" :id="'owlItem'+index" v-for="(featured_post, index) in getlatestpost"
