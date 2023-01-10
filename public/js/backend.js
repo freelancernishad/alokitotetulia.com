@@ -4524,13 +4524,13 @@ var render = function render() {
 
   return _c("div", [_c("div", {
     staticClass: "breadcrumbs-area"
-  }, [_c("h3", [_vm._v("Category List")]), _vm._v(" "), _c("ul", [_c("li", [_c("router-link", {
+  }, [_c("h3", [_vm._v("ক্যাটাগরি")]), _vm._v(" "), _c("ul", [_c("li", [_c("router-link", {
     attrs: {
       to: {
         name: "Dashboard"
       }
     }
-  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", [_vm._v("Category List")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", [_vm._v("ক্যাটাগরি")])])]), _vm._v(" "), _c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -4541,7 +4541,7 @@ var render = function render() {
         name: "categoryform"
       }
     }
-  }, [_vm._v("Add New Post")])], 1), _vm._v(" "), _c("div", {
+  }, [_vm._v("নতুন ক্যাটাগরি")])], 1), _vm._v(" "), _c("div", {
     staticClass: "card-body"
   }, [_c("table", {
     staticClass: "table"
@@ -4575,7 +4575,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("Sl")]), _vm._v(" "), _c("th", [_vm._v("Title")]), _vm._v(" "), _c("th", [_vm._v("Slug")]), _vm._v(" "), _c("th", [_vm._v("Type")]), _vm._v(" "), _c("th", [_vm._v("Action")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ক্রমিক")]), _vm._v(" "), _c("th", [_vm._v("নাম")]), _vm._v(" "), _c("th", [_vm._v("স্লাগ")]), _vm._v(" "), _c("th", [_vm._v("ধরন")]), _vm._v(" "), _c("th", [_vm._v("Action")])])]);
 }];
 render._withStripped = true;
 
@@ -4855,13 +4855,13 @@ var render = function render() {
 
   return _c("div", [_c("div", {
     staticClass: "breadcrumbs-area"
-  }, [_c("h3", [_vm._v("Blog List")]), _vm._v(" "), _c("ul", [_c("li", [_c("router-link", {
+  }, [_c("h3", [_vm._v("পোস্ট")]), _vm._v(" "), _c("ul", [_c("li", [_c("router-link", {
     attrs: {
       to: {
         name: "Dashboard"
       }
     }
-  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", [_vm._v("Blog List")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Home")])], 1), _vm._v(" "), _c("li", [_vm._v("পোস্ট")])])]), _vm._v(" "), _c("div", {
     staticClass: "card"
   }, [_c("div", {
     staticClass: "card-header"
@@ -4872,7 +4872,7 @@ var render = function render() {
         name: "blogform"
       }
     }
-  }, [_vm._v("Add New Category")])], 1), _vm._v(" "), _c("div", {
+  }, [_vm._v("নতুন পোস্ট")])], 1), _vm._v(" "), _c("div", {
     staticClass: "card-body"
   }, [_c("table", {
     staticClass: "table"
@@ -4906,7 +4906,7 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("thead", [_c("tr", [_c("th", [_vm._v("Sl")]), _vm._v(" "), _c("th", [_vm._v("Title")]), _vm._v(" "), _c("th", [_vm._v("Slug")]), _vm._v(" "), _c("th", [_vm._v("Short Description")]), _vm._v(" "), _c("th", [_vm._v("Action")])])]);
+  return _c("thead", [_c("tr", [_c("th", [_vm._v("ক্রমিক")]), _vm._v(" "), _c("th", [_vm._v("শিরোনাম")]), _vm._v(" "), _c("th", [_vm._v("স্লাগ")]), _vm._v(" "), _c("th", [_vm._v("ছোট বিবরণ")]), _vm._v(" "), _c("th", [_vm._v("Action")])])]);
 }];
 render._withStripped = true;
 
@@ -5138,28 +5138,12 @@ var render = function render() {
     staticClass: "nav-link",
     attrs: {
       to: {
-        name: "Dashboard"
-      }
-    }
-  }, [_c("i", {
-    staticClass: "flaticon-dashboard"
-  }), _c("span", [_vm._v("Dashboard")])])], 1), _vm._v(" "), _c("li", {
-    staticClass: "nav-item",
-    on: {
-      click: function click($event) {
-        return _vm.submenu(0);
-      }
-    }
-  }, [_c("router-link", {
-    staticClass: "nav-link",
-    attrs: {
-      to: {
         name: "category"
       }
     }
   }, [_c("i", {
     staticClass: "flaticon-dashboard"
-  }), _c("span", [_vm._v("Category")])])], 1), _vm._v(" "), _c("li", {
+  }), _c("span", [_vm._v("ক্যাটাগরি")])])], 1), _vm._v(" "), _c("li", {
     staticClass: "nav-item",
     on: {
       click: function click($event) {
@@ -5175,7 +5159,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "flaticon-dashboard"
-  }), _c("span", [_vm._v("Blogs")])])], 1)])])]), _vm._v(" "), _c("div", {
+  }), _c("span", [_vm._v("পোস্ট")])])], 1)])])]), _vm._v(" "), _c("div", {
     staticClass: "dashboard-content-one"
   }, [_vm._t("default"), _vm._v(" "), _vm._m(9)], 2)])]);
 };

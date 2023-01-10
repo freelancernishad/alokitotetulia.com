@@ -4,12 +4,12 @@
 
 
 <div class="breadcrumbs-area">
-    <h3>Category List</h3>
+    <h3>ক্যাটাগরি</h3>
     <ul>
         <li>
             <router-link :to="{name:'Dashboard'}">Home</router-link>
         </li>
-        <li>Category List</li>
+        <li>ক্যাটাগরি</li>
     </ul>
 </div>
 
@@ -18,7 +18,7 @@
 
         <div class="card">
             <div class="card-header">
-                <router-link :to="{name:'categoryform'}" class="btn btn-info">Add New Post</router-link>
+                <router-link :to="{name:'categoryform'}" class="btn btn-info">নতুন ক্যাটাগরি</router-link>
 
             </div>
         <div class="card-body">
@@ -27,10 +27,10 @@
 
     <thead>
         <tr>
-            <th>Sl</th>
-            <th>Title</th>
-            <th>Slug</th>
-            <th>Type</th>
+            <th>ক্রমিক</th>
+            <th>নাম</th>
+            <th>স্লাগ</th>
+            <th>ধরন</th>
             <th>Action</th>
         </tr>
     </thead>

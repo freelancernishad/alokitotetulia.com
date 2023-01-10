@@ -85,7 +85,7 @@
         <div class="body-items" style="background: #f9f9f9">
             <div class="container d-none d-print">
                 <img class="print-logo" style="max-width: 250px;"
-                    src="https://cdn.dhakapost.com/media/common/dhaka-post-logo.svg" alt="dhakapost.com" />
+                :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="alokitotetulia.com" />
             </div>
 
             <div class="container d-none d-lg-flex py-3 navbar-root" id="section-down"
@@ -121,7 +121,7 @@
                     </button>
                     <div class="navbar-brand align-items-center d-flex d-lg-none mr-0">
                         <a title="Dhaka Post" href="/">
-                            <img src="https://cdn.dhakapost.com/media/common/dhaka-post-logo.svg" alt="Dhaka Post"
+                            <img :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="Dhaka Post"
                                 width="1345" height="192" />
                         </a>
                     </div>
@@ -152,10 +152,8 @@
                                     <router-link title="" :to="{ name: 'categoryPost', params: { cat: menu.slug } }"
                                         class="nav-link">{{ menu.name }}</router-link>
 
-                                    <div class="dropdown-menu single-dropdown s-dr-menu m-0"
-                                        v-for="(Submenu, index2) in menu.subCategoies" :key="index2"
-                                        aria-labelledby="navbarDropdown">
-                                        <router-link class="dropdown-item"
+                                    <div class="dropdown-menu single-dropdown s-dr-menu m-0" aria-labelledby="navbarDropdown">
+                                        <router-link class="dropdown-item" v-for="(Submenu, index2) in menu.subCategoies" :key="index2"
                                             :to="{ name: 'categoryPost2', params: { cat: menu.slug, cat2: Submenu.slug } }"
                                             style="padding: 5px 0;">{{ Submenu.name }}</router-link>
                                     </div>

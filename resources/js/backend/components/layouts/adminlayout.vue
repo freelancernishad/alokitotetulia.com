@@ -214,9 +214,9 @@
 
 
 
-                        <li  @click="submenu(0)"  class="nav-item">
+                        <!-- <li  @click="submenu(0)"  class="nav-item">
                             <router-link :to="{name:'Dashboard'}" class="nav-link"><i class="flaticon-dashboard"></i><span>Dashboard</span></router-link>
-                        </li>
+                        </li> -->
 
 
 
@@ -246,13 +246,13 @@
 
 
                         <li  @click="submenu(0)"  class="nav-item">
-                            <router-link :to="{name:'category'}" class="nav-link"><i class="flaticon-dashboard"></i><span>Category</span></router-link>
+                            <router-link :to="{name:'category'}" class="nav-link"><i class="flaticon-dashboard"></i><span>ক্যাটাগরি</span></router-link>
                         </li>
 
 
 
                         <li  @click="submenu(0)"  class="nav-item">
-                            <router-link :to="{name:'blogs'}" class="nav-link"><i class="flaticon-dashboard"></i><span>Blogs</span></router-link>
+                            <router-link :to="{name:'blogs'}" class="nav-link"><i class="flaticon-dashboard"></i><span>পোস্ট</span></router-link>
                         </li>
 
 

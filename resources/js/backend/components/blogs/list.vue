@@ -3,12 +3,12 @@
 
 
 <div class="breadcrumbs-area">
-    <h3>Blog List</h3>
+    <h3>পোস্ট</h3>
     <ul>
         <li>
             <router-link :to="{name:'Dashboard'}">Home</router-link>
         </li>
-        <li>Blog List</li>
+        <li>পোস্ট</li>
     </ul>
 </div>
 
@@ -18,7 +18,7 @@
 
 <div class="card">
     <div class="card-header">
-                <router-link :to="{name:'blogform'}" class="btn btn-info">Add New Category</router-link>
+                <router-link :to="{name:'blogform'}" class="btn btn-info">নতুন পোস্ট</router-link>
 
             </div>
         <div class="card-body">
@@ -27,10 +27,10 @@
 
     <thead>
         <tr>
-            <th>Sl</th>
-            <th>Title</th>
-            <th>Slug</th>
-            <th>Short Description</th>
+            <th>ক্রমিক</th>
+            <th>শিরোনাম</th>
+            <th>স্লাগ</th>
+            <th>ছোট বিবরণ</th>
             <th>Action</th>
         </tr>
     </thead>

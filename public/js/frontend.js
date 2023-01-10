@@ -4907,7 +4907,18 @@ var render = function render() {
     staticStyle: {
       background: "#f9f9f9"
     }
-  }, [_vm._m(1), _vm._v(" "), _c("div", {
+  }, [_c("div", {
+    staticClass: "container d-none d-print"
+  }, [_c("img", {
+    staticClass: "print-logo",
+    staticStyle: {
+      "max-width": "250px"
+    },
+    attrs: {
+      src: _vm.$asseturl + "cropped-cropped-Alokitotetulia.png.png",
+      alt: "alokitotetulia.com"
+    }
+  })]), _vm._v(" "), _c("div", {
     staticClass: "container d-none d-lg-flex py-3 navbar-root",
     staticStyle: {
       "padding-top": "5px !important"
@@ -4935,7 +4946,21 @@ var render = function render() {
     staticClass: "navbar navbar-expand-lg sticky-top shadow-sm navigator-extra"
   }, [_c("div", {
     staticClass: "container"
-  }, [_vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _vm._m(4), _vm._v(" "), _c("div", {
+  }, [_vm._m(1), _vm._v(" "), _c("div", {
+    staticClass: "navbar-brand align-items-center d-flex d-lg-none mr-0"
+  }, [_c("a", {
+    attrs: {
+      title: "Dhaka Post",
+      href: "/"
+    }
+  }, [_c("img", {
+    attrs: {
+      src: _vm.$asseturl + "cropped-cropped-Alokitotetulia.png.png",
+      alt: "Dhaka Post",
+      width: "1345",
+      height: "192"
+    }
+  })])]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c("div", {
     staticClass: "navbar-collapse collapse",
     attrs: {
       id: "main-nav-1"
@@ -4975,14 +5000,14 @@ var render = function render() {
           }
         }
       }
-    }, [_vm._v(_vm._s(menu.name))]), _vm._v(" "), _vm._l(menu.subCategoies, function (Submenu, index2) {
-      return _c("div", {
+    }, [_vm._v(_vm._s(menu.name))]), _vm._v(" "), _c("div", {
+      staticClass: "dropdown-menu single-dropdown s-dr-menu m-0",
+      attrs: {
+        "aria-labelledby": "navbarDropdown"
+      }
+    }, _vm._l(menu.subCategoies, function (Submenu, index2) {
+      return _c("router-link", {
         key: index2,
-        staticClass: "dropdown-menu single-dropdown s-dr-menu m-0",
-        attrs: {
-          "aria-labelledby": "navbarDropdown"
-        }
-      }, [_c("router-link", {
         staticClass: "dropdown-item",
         staticStyle: {
           padding: "5px 0"
@@ -4996,9 +5021,9 @@ var render = function render() {
             }
           }
         }
-      }, [_vm._v(_vm._s(Submenu.name))])], 1);
-    })], 2);
-  })], 2)]), _vm._v(" "), _vm._m(5)])]), _vm._v(" "), _vm._m(6)]), _vm._v(" "), _vm._t("default")], 2), _vm._v(" "), _c("footer", {
+      }, [_vm._v(_vm._s(Submenu.name))]);
+    }), 1)], 1);
+  })], 2)]), _vm._v(" "), _vm._m(3)])]), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _vm._t("default")], 2), _vm._v(" "), _c("footer", {
     staticStyle: {
       display: "block",
       background: "#62626263",
@@ -5027,7 +5052,7 @@ var render = function render() {
       width: "50%",
       src: _vm.$asseturl + "cropped-cropped-Alokitotetulia.png.png"
     }
-  })])], 1), _vm._v(" "), _vm._m(7)])]), _vm._v(" "), _vm._m(8)])])])]), _vm._v(" "), _vm._m(9)]);
+  })])], 1), _vm._v(" "), _vm._m(5)])]), _vm._v(" "), _vm._m(6)])])])]), _vm._v(" "), _vm._m(7)]);
 };
 
 var staticRenderFns = [function () {
@@ -5153,22 +5178,6 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "container d-none d-print"
-  }, [_c("img", {
-    staticClass: "print-logo",
-    staticStyle: {
-      "max-width": "250px"
-    },
-    attrs: {
-      src: "https://cdn.dhakapost.com/media/common/dhaka-post-logo.svg",
-      alt: "dhakapost.com"
-    }
-  })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("button", {
     staticClass: "navbar-toggler collapsed m-margin-reducer-left-14",
     attrs: {
@@ -5188,25 +5197,6 @@ var staticRenderFns = [function () {
   }), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
   }, [_vm._v("DP")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "navbar-brand align-items-center d-flex d-lg-none mr-0"
-  }, [_c("a", {
-    attrs: {
-      title: "Dhaka Post",
-      href: "/"
-    }
-  }, [_c("img", {
-    attrs: {
-      src: "https://cdn.dhakapost.com/media/common/dhaka-post-logo.svg",
-      alt: "Dhaka Post",
-      width: "1345",
-      height: "192"
-    }
-  })])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
