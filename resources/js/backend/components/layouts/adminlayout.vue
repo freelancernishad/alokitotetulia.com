@@ -245,9 +245,9 @@
                         </li>
 
 
-                        <li  @click="submenu(0)"  class="nav-item">
+                        <!-- <li  @click="submenu(0)"  class="nav-item">
                             <router-link :to="{name:'featured_post'}" class="nav-link"><i class="flaticon-dashboard"></i><span>Featured Post</span></router-link>
-                        </li>
+                        </li> -->
 
 
 

@@ -5191,23 +5191,7 @@ var render = function render() {
     }
   }, [_c("i", {
     staticClass: "fas fa-angle-right"
-  }), _vm._v(" Blogs ")])], 1)]) : _vm._e()])], 1), _vm._v(" "), _c("li", {
-    staticClass: "nav-item",
-    on: {
-      click: function click($event) {
-        return _vm.submenu(0);
-      }
-    }
-  }, [_c("router-link", {
-    staticClass: "nav-link",
-    attrs: {
-      to: {
-        name: "featured_post"
-      }
-    }
-  }, [_c("i", {
-    staticClass: "flaticon-dashboard"
-  }), _c("span", [_vm._v("Featured Post")])])], 1)])])]), _vm._v(" "), _c("div", {
+  }), _vm._v(" Blogs ")])], 1)]) : _vm._e()])], 1)])])]), _vm._v(" "), _c("div", {
     staticClass: "dashboard-content-one"
   }, [_vm._t("default"), _vm._v(" "), _vm._m(9)], 2)])]);
 };
