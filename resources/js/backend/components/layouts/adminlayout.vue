@@ -308,7 +308,7 @@
 </template>
 <script>
 export default {
-     props: ['user','permission','roles'],
+     props: ['user'],
     created() {
 
 

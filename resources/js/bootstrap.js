@@ -5,12 +5,8 @@ import Vue from 'vue'
 
 if(window.location.port=='8000'){
     Vue.prototype.$asseturl = '/'
-    Vue.prototype.$withWWW = 2
-    Vue.prototype.$withOutWWW = 1
     }else{
     Vue.prototype.$asseturl = '/public/'
-    Vue.prototype.$withWWW = 4
-    Vue.prototype.$withOutWWW = 3
     }
 
 

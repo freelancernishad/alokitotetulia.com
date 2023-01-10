@@ -5845,12 +5845,8 @@ __webpack_require__.r(__webpack_exports__);
 
 if (window.location.port == '8000') {
   vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$asseturl = '/';
-  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withWWW = 2;
-  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withOutWWW = 1;
 } else {
   vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$asseturl = '/public/';
-  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withWWW = 4;
-  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withOutWWW = 3;
 }
 
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$localStorage = localStorage;
