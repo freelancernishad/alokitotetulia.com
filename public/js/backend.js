@@ -6733,8 +6733,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue2_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue2-editor */ "./node_modules/vue2-editor/dist/vue2-editor.esm.js");
 /* harmony import */ var _paginate_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./paginate.vue */ "./resources/js/paginate.vue");
  // Vue.prototype.$asseturl = '/public/'
+// Vue.prototype.$asseturl = '/'
 
-vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$asseturl = '/';
+if (window.location.port == '8000') {
+  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$asseturl = '/';
+  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withWWW = 2;
+  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withOutWWW = 1;
+} else {
+  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$asseturl = '/public/';
+  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withWWW = 4;
+  vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$withOutWWW = 3;
+}
+
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$localStorage = localStorage;
 window.ASSETURL = vue__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.$asseturl; // Vue.prototype.$appName = process.env.MIX_FILE_PATH
 // console.log(process.env.MIX_FILE_PATH)

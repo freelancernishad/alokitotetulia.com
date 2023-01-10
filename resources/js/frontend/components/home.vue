@@ -45,7 +45,7 @@
                             <carousel :autoplay="false" :nav="false" :dots="false" :items="1" style="position:relative">
                                 <template slot="prev"><span class="prev"><i
                                             class="fa-solid fa-chevron-left"></i></span></template>
-                                <div class="box item" v-for="(featured_post, index) in getlatestpost"
+                                <div class="box item" :id="'owlItem'+index" v-for="(featured_post, index) in getlatestpost"
                                     :key="'Fpost' + index">
                                     <router-link
                                         :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.slug } }">
@@ -65,10 +65,12 @@
                                 <template slot="next"><span class="next"><i
                                             class="fa-solid fa-chevron-right"></i></span></template>
 
+                                <template slot="owl-dot"><button role='button' class='owl-dot'></button></template>
+
                             </carousel>
 
-                            <div class="dots" style="display: flex;width: 544px;overflow: hidden;">
-                                <div class="navDotsImage" v-for="(featured_post, index) in getlatestpost"  :key="'slide'+index">
+                            <div class="dots" style="display: flex;width: 98%;;overflow: auto;">
+                                <div class="navDotsImage" @click="slidernavChange(getlatestpost.length,index)" v-for="(featured_post, index) in getlatestpost"  :key="'slide'+index">
                                     <img style="height:100px;width:100px" :src="$asseturl + featured_post.fiture" v-if="featured_post.fiture"/>
                                     <img style="height:100px;width:100px" v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg":alt="featured_post.title" class="img-responsive cover_image"/>
                                 </div>
@@ -747,6 +749,21 @@ export default {
         async getPosts() {
             var res = await this.callApi('get', `/api/get/all/latest/news`, []);
             this.posts = res.data
+        },
+
+        slidernavChange(allPost,index){
+            for (let i = 0; i < allPost; i++) {
+
+                var child = document.getElementById('owlItem'+i).parentElement;
+                child.classList.remove('active');
+                console.log(child)
+
+            }
+
+            var child2 = document.getElementById('owlItem'+index).parentElement;
+                child2.classList.add('active');
+                console.log(child2)
+
         }
     },
 };
@@ -1207,4 +1224,28 @@ a:hover img {
 h3.title.width100 {
     background: #a3ffaa;
 }
+
+
+    /* width */
+    .dots::-webkit-scrollbar {
+        width: 10px;
+        height: 5px;
+        display:none;
+    }
+    .dots:hover::-webkit-scrollbar {
+
+        display:block;
+    }
+
+    /* Track */
+    .dots::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    }
+
+    /* Handle */
+    .dots::-webkit-scrollbar-thumb {
+    background: #0d5404;
+    border-radius: 10px;
+    }
 </style>
