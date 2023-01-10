@@ -5144,33 +5144,12 @@ var render = function render() {
   }, [_c("i", {
     staticClass: "flaticon-dashboard"
   }), _c("span", [_vm._v("Dashboard")])])], 1), _vm._v(" "), _c("li", {
-    staticClass: "nav-item sidebar-nav-item",
-    "class": {
-      active: _vm.selected == 101
-    }
-  }, [_c("a", {
-    staticClass: "nav-link",
-    attrs: {
-      href: "javascript:void(0)"
-    },
+    staticClass: "nav-item",
     on: {
       click: function click($event) {
-        return _vm.submenu(101);
+        return _vm.submenu(0);
       }
     }
-  }, [_c("i", {
-    staticClass: "flaticon-technological"
-  }), _c("span", [_vm._v("Blogs")])]), _vm._v(" "), _c("transition", {
-    attrs: {
-      name: "slide"
-    }
-  }, [_vm.selected == 101 ? _c("ul", {
-    staticClass: "nav sub-group-menu menu-open child",
-    staticStyle: {
-      display: "block"
-    }
-  }, [_c("li", {
-    staticClass: "nav-item"
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
@@ -5179,9 +5158,14 @@ var render = function render() {
       }
     }
   }, [_c("i", {
-    staticClass: "fas fa-angle-right"
-  }), _vm._v(" Category ")])], 1), _vm._v(" "), _c("li", {
-    staticClass: "nav-item"
+    staticClass: "flaticon-dashboard"
+  }), _c("span", [_vm._v("Category")])])], 1), _vm._v(" "), _c("li", {
+    staticClass: "nav-item",
+    on: {
+      click: function click($event) {
+        return _vm.submenu(0);
+      }
+    }
   }, [_c("router-link", {
     staticClass: "nav-link",
     attrs: {
@@ -5190,8 +5174,8 @@ var render = function render() {
       }
     }
   }, [_c("i", {
-    staticClass: "fas fa-angle-right"
-  }), _vm._v(" Blogs ")])], 1)]) : _vm._e()])], 1)])])]), _vm._v(" "), _c("div", {
+    staticClass: "flaticon-dashboard"
+  }), _c("span", [_vm._v("Blogs")])])], 1)])])]), _vm._v(" "), _c("div", {
     staticClass: "dashboard-content-one"
   }, [_vm._t("default"), _vm._v(" "), _vm._m(9)], 2)])]);
 };
