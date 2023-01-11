@@ -111,7 +111,7 @@
 
      
             <nav class="container navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
-                <div class="container">
+                <!-- <div class="container"> -->
                     <button class="navbar-toggler collapsed m-margin-reducer-left-14" type="button"
                         data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -160,25 +160,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
-                <form class="search-wrapper needs-validation" style="display: none;" data-target="slide-content"
-                    action="https://www.dhakapost.com/search" method="get">
-                    <div class="container m-pl-0 m-pr-0">
-                        <div class="d-flex align-items-center justify-content-between w-100">
-                            <div class="input-group">
-                                <input type="text" name="q" class="form-control" autocomplete="off"
-                                    placeholder="অনুসন্ধান করুন" required />
-                                <div class="input-group-append search-action">
-                                    <button type="submit" class="btn btn-dark"><i style="color: white !important;"
-                                            class="fa fa-search"></i></button>
-                                    <button type="button" class="btn btn-light m-margin-reducer-right-14"
-                                        data-target="slide-up">
-                                        <i class="fa fa-times"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <!-- </div> -->
             </nav>
 
 
@@ -311,8 +293,8 @@
                                 <strong>সম্পাদক: এস.কে. দোয়েল</strong><br>
                                 <strong>বার্তা সম্পাদক: মোবারক হোসাইন</strong><br>
                                 <strong>মফস্বল সম্পাদক: এম আরই রতন</strong><br>
-                                তেঁতুলিয়া,পঞ্চগড়<br>
-                                <h4>যোগাযোগঃ</h4>
+                          
+                             
                                 <hr style="margin: 6px 0;"/>
                                 <strong>ই-মেইলঃ</strong> skdoyel2020@gmail.com<br>
                                 <strong>ফোনঃ</strong> ০১৭৫০-১৪০৯১৯</p>
@@ -323,7 +305,7 @@
                                 <strong>নিউজ রুমঃ</strong> ০১৭৫৫৪৯০৮৯৪<br>
                                 <strong>বার্তা সম্পাদকঃ</strong> ০১৩০৩১৫০০৭০<br>
                                 <strong>মফস্বল সম্পাদকঃ</strong>০১৭৯৪-৯৯৩৯৯৪<br>
-                                <strong>ইমেইলঃ</strong> news.alokitotetulia@gmail.combr>
+                                <strong>ইমেইলঃ</strong> news.alokitotetulia@gmail.com<br>
                                 <strong>ইমেইলঃ</strong> alokitotetulia@gmail.com</p>
                             <p></p>
                         </div>
@@ -397,7 +379,15 @@
          </div>
       </footer> -->
 
-
+      <transition name="fade">
+    <div id="pagetop" class="fixed right-0 bottom-0" v-show="scY > 300" @click="toTop">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+           stroke="#4a5568"
+           stroke-width="1" stroke-linecap="square" stroke-linejoin="arcs">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </div>
+  </transition>
 
 
 
@@ -418,6 +408,8 @@ export default {
     data() {
         return {
             menus: {},
+            scTimer: 0,
+            scY: 0,
         }
     },
     methods: {
@@ -425,9 +417,25 @@ export default {
             var res = await this.callApi('get', `/api/get/all/category`, []);
             this.menus = res.data
         },
+
+        handleScroll: function () {
+        if (this.scTimer) return;
+        this.scTimer = setTimeout(() => {
+          this.scY = window.scrollY;
+          clearTimeout(this.scTimer);
+          this.scTimer = 0;
+        }, 100);
+      },
+      toTop: function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      },
+
     },
     mounted() {
-
+        window.addEventListener('scroll', this.handleScroll);
     }
 }
 </script>
@@ -617,4 +625,16 @@ textarea {
 .dropdown-menu.single-dropdown.s-dr-menu.m-0 a:hover {
     background: #cbcbcb;
 }
+
+nav.container.navbar.navbar-expand-lg.sticky-top.shadow-sm.navigator-extra {
+    max-width: 1260px;
+}
+div#pagetop {
+    position: fixed;
+    bottom: 13px;
+    right: 11px;
+    background: #b1b1b1;
+    color: white;
+}
+
 </style>

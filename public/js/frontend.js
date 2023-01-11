@@ -2511,7 +2511,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   data: function data() {
     return {
-      menus: {}
+      menus: {},
+      scTimer: 0,
+      scY: 0
     };
   },
   methods: {
@@ -2538,9 +2540,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee2);
       }))();
+    },
+    handleScroll: function handleScroll() {
+      var _this3 = this;
+
+      if (this.scTimer) return;
+      this.scTimer = setTimeout(function () {
+        _this3.scY = window.scrollY;
+        clearTimeout(_this3.scTimer);
+        _this3.scTimer = 0;
+      }, 100);
+    },
+    toTop: function toTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
 });
 
 /***/ }),
@@ -3563,10 +3583,10 @@ var render = function render() {
     }, [LPost.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
       staticStyle: {
-        "border-radius": "50%",
-        width: "90px",
-        height: "90px",
-        "margin-right": "8px"
+        width: "83px",
+        height: "70px",
+        "margin-right": "8px",
+        "padding-left": "7px"
       },
       attrs: {
         src: _vm.$asseturl + LPost.fiture,
@@ -3575,10 +3595,10 @@ var render = function render() {
     }) : _c("img", {
       staticClass: "lazyload img-loader",
       staticStyle: {
-        "border-radius": "50%",
-        width: "90px",
-        height: "90px",
-        "margin-right": "8px"
+        width: "83px",
+        height: "70px",
+        "margin-right": "8px",
+        "padding-left": "7px"
       },
       attrs: {
         src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
@@ -3712,7 +3732,7 @@ var render = function render() {
       alt: ""
     }
   })])])]), _vm._v(" "), _c("div", {
-    staticClass: "section-two py-3 bg-section-two m-pt-0 mt-3 m-mt-2"
+    staticClass: "section-two py-3 bg-section-two mt-3 m-mt-2"
   }, [_c("div", {
     staticClass: "container"
   }, [_c("div", {
@@ -3757,7 +3777,7 @@ var render = function render() {
       staticClass: "title"
     }, [_vm._v("\n                                                " + _vm._s(LPost.title) + "\n                                            ")])])])], 1);
   }), 0)])])])]), _vm._v(" "), _c("div", {
-    staticClass: "container pt-3 m-pt-2"
+    staticClass: "container pt-3"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
@@ -5046,8 +5066,6 @@ var render = function render() {
     }
   })])])], 1)]), _vm._v(" "), _c("nav", {
     staticClass: "container navbar navbar-expand-lg sticky-top shadow-sm navigator-extra"
-  }, [_c("div", {
-    staticClass: "container"
   }, [_vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "navbar-brand align-items-center d-flex d-lg-none mr-0"
   }, [_c("a", {
@@ -5125,13 +5143,13 @@ var render = function render() {
         }
       }, [_vm._v(_vm._s(Submenu.name))]);
     }), 1)], 1);
-  })], 2)]), _vm._v(" "), _vm._m(3)])]), _vm._v(" "), _vm._m(4)]), _vm._v(" "), _vm._t("default")], 2), _vm._v(" "), _c("div", {
+  })], 2)]), _vm._v(" "), _vm._m(3)])]), _vm._v(" "), _vm._t("default")], 2), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("nav", {
     staticClass: "navbar navbar-expand-lg sticky-top shadow-sm navigator-extra"
   }, [_c("div", {
     staticClass: "container"
-  }, [_vm._m(5), _vm._v(" "), _c("div", {
+  }, [_vm._m(4), _vm._v(" "), _c("div", {
     staticClass: "navbar-brand align-items-center d-flex d-lg-none mr-0"
   }, [_c("a", {
     attrs: {
@@ -5145,7 +5163,7 @@ var render = function render() {
       width: "1345",
       height: "192"
     }
-  })])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _c("div", {
+  })])]), _vm._v(" "), _vm._m(5), _vm._v(" "), _c("div", {
     staticClass: "navbar-collapse collapse",
     attrs: {
       id: "main-nav-1"
@@ -5208,7 +5226,7 @@ var render = function render() {
         }
       }, [_vm._v(_vm._s(Submenu.name))]);
     }), 1)], 1);
-  })], 2)]), _vm._v(" "), _vm._m(7)])]), _vm._v(" "), _vm._m(8)]), _vm._v(" "), _c("footer", {
+  })], 2)]), _vm._v(" "), _vm._m(6)])]), _vm._v(" "), _vm._m(7)]), _vm._v(" "), _c("footer", {
     staticStyle: {
       display: "block",
       background: "#62626263",
@@ -5237,7 +5255,41 @@ var render = function render() {
       width: "50%",
       src: _vm.$asseturl + "cropped-cropped-Alokitotetulia.png.png"
     }
-  })])], 1), _vm._v(" "), _vm._m(9)])]), _vm._v(" "), _vm._m(10)])])])]), _vm._v(" "), _vm._m(11)])]);
+  })])], 1), _vm._v(" "), _vm._m(8)])]), _vm._v(" "), _vm._m(9)])])])]), _vm._v(" "), _vm._m(10)]), _vm._v(" "), _c("transition", {
+    attrs: {
+      name: "fade"
+    }
+  }, [_c("div", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.scY > 300,
+      expression: "scY > 300"
+    }],
+    staticClass: "fixed right-0 bottom-0",
+    attrs: {
+      id: "pagetop"
+    },
+    on: {
+      click: _vm.toTop
+    }
+  }, [_c("svg", {
+    attrs: {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "48",
+      height: "48",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#4a5568",
+      "stroke-width": "1",
+      "stroke-linecap": "square",
+      "stroke-linejoin": "arcs"
+    }
+  }, [_c("path", {
+    attrs: {
+      d: "M18 15l-6-6-6 6"
+    }
+  })])])])], 1);
 };
 
 var staticRenderFns = [function () {
@@ -5440,56 +5492,6 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("form", {
-    staticClass: "search-wrapper needs-validation",
-    staticStyle: {
-      display: "none"
-    },
-    attrs: {
-      "data-target": "slide-content",
-      action: "https://www.dhakapost.com/search",
-      method: "get"
-    }
-  }, [_c("div", {
-    staticClass: "container m-pl-0 m-pr-0"
-  }, [_c("div", {
-    staticClass: "d-flex align-items-center justify-content-between w-100"
-  }, [_c("div", {
-    staticClass: "input-group"
-  }, [_c("input", {
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      name: "q",
-      autocomplete: "off",
-      placeholder: "অনুসন্ধান করুন",
-      required: ""
-    }
-  }), _vm._v(" "), _c("div", {
-    staticClass: "input-group-append search-action"
-  }, [_c("button", {
-    staticClass: "btn btn-dark",
-    attrs: {
-      type: "submit"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-search",
-    staticStyle: {
-      color: "white !important"
-    }
-  })]), _vm._v(" "), _c("button", {
-    staticClass: "btn btn-light m-margin-reducer-right-14",
-    attrs: {
-      type: "button",
-      "data-target": "slide-up"
-    }
-  }, [_c("i", {
-    staticClass: "fa fa-times"
-  })])])])])])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
   return _c("button", {
     staticClass: "navbar-toggler collapsed m-margin-reducer-left-14",
     attrs: {
@@ -5637,7 +5639,7 @@ var staticRenderFns = [function () {
     staticStyle: {
       width: "100%"
     }
-  }, [_c("div", [_c("p", [_c("strong", [_vm._v("সম্পাদক: এস.কে. দোয়েল")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("বার্তা সম্পাদক: মোবারক হোসাইন")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("মফস্বল সম্পাদক: এম আরই রতন")]), _c("br"), _vm._v("\n                                তেঁতুলিয়া,পঞ্চগড়"), _c("br")]), _c("h4", [_vm._v("যোগাযোগঃ")]), _vm._v(" "), _c("hr", {
+  }, [_c("div", [_c("p", [_c("strong", [_vm._v("সম্পাদক: এস.কে. দোয়েল")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("বার্তা সম্পাদক: মোবারক হোসাইন")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("মফস্বল সম্পাদক: এম আরই রতন")]), _c("br")]), _c("hr", {
     staticStyle: {
       margin: "6px 0"
     }
@@ -5645,7 +5647,7 @@ var staticRenderFns = [function () {
     attrs: {
       "data-x": ""
     }
-  }, [_c("strong", [_vm._v("নিউজ রুমঃ")]), _vm._v(" ০১৭৫৫৪৯০৮৯৪"), _c("br"), _vm._v(" "), _c("strong", [_vm._v("বার্তা সম্পাদকঃ")]), _vm._v(" ০১৩০৩১৫০০৭০"), _c("br"), _vm._v(" "), _c("strong", [_vm._v("মফস্বল সম্পাদকঃ")]), _vm._v("০১৭৯৪-৯৯৩৯৯৪"), _c("br"), _vm._v(" "), _c("strong", [_vm._v("ইমেইলঃ")]), _vm._v(" news.alokitotetulia@gmail.combr>\n                                "), _c("strong", [_vm._v("ইমেইলঃ")]), _vm._v(" alokitotetulia@gmail.com")]), _vm._v(" "), _c("p")])])]);
+  }, [_c("strong", [_vm._v("নিউজ রুমঃ")]), _vm._v(" ০১৭৫৫৪৯০৮৯৪"), _c("br"), _vm._v(" "), _c("strong", [_vm._v("বার্তা সম্পাদকঃ")]), _vm._v(" ০১৩০৩১৫০০৭০"), _c("br"), _vm._v(" "), _c("strong", [_vm._v("মফস্বল সম্পাদকঃ")]), _vm._v("০১৭৯৪-৯৯৩৯৯৪"), _c("br"), _vm._v(" "), _c("strong", [_vm._v("ইমেইলঃ")]), _vm._v(" news.alokitotetulia@gmail.com"), _c("br"), _vm._v(" "), _c("strong", [_vm._v("ইমেইলঃ")]), _vm._v(" alokitotetulia@gmail.com")]), _vm._v(" "), _c("p")])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -20097,7 +20099,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar {\n\n    z-index: 11 !important;\n}\nspan.Headtitle {\n    position: absolute;\n    background: #001080;\n    color: white;\n    z-index: 99;\n    padding: 2px 13px 2px 26px;\n}\na.nav-link.router-link-exact-active.router-link-active {\n    background: var(--brand-hover-color);\n    border-bottom: 2px solid var(--brand-object-color);\n}\n.scroll-parent {\n    position: relative;\n}\n.scroll .title {\n    color: #fff;\n    background: #b50301;\n    float: left;\n    font-size: 17px;\n    height: 36px;\n    line-height: 34px;\n    margin: 0;\n    padding-left: 8px;\n    padding-right: 8px;\n    position: absolute;\n    z-index: 99;\n    border-right: 10px solid #152437;\n}\n.scroll a {\n    color: #fff;\n    font-size: 17px;\n    text-decoration: none;\n    margin: 5px 0 5px 7px;\n    display: inline-block;\n}\n.scroll a:hover {\n    color: #F00;\n}\n.header_top_section {\n    padding: 5px 0px;\n    background: #FFF;\n    box-shadow: 0px 5px 5px -5px #000;\n}\n.searchform input[type=\"text\"] {\n    border-radius: 4px 0px 0px 4px;\n    height: 28px;\n    background: #FFF;\n    color: #363131;\n    border-radius: 0;\n    border: none;\n}\nbutton,\ninput,\nselect,\ntextarea {\n    font-family: inherit;\n    font-size: inherit;\n    line-height: inherit;\n}\n.search_submit_button {\n    background-color: #000;\n    color: #FFF;\n    border-radius: 0px 4px 5px 0px;\n    border: none;\n    height: 26px;\n    padding: 0px;\n    background-color: #9c9c9c;\n    margin-top: 1px;\n}\n.header_top_section .social-media {\n    margin-bottom: 0px;\n    text-align: right;\n}\n.social-media li {\n    display: inline-block;\n}\n.social-media li a,\n.social-media li button {\n    color: #000;\n    border: none;\n    background: none;\n    padding: 0;\n}\n.header_top_section .social-media li a i,\n.header_top_section .social-media li button i {\n    width: 20px;\n    height: 20px;\n    border-radius: 0;\n    line-height: 20px;\n    font-size: 12px;\n}\n.social-media li a i,\n.social-media li button i {\n    width: 34px;\n    height: 34px;\n    border-radius: 100%;\n    text-align: center;\n    line-height: 34px;\n    color: #fff;\n}\n.copyright .copy {\n    font-size: 12px;\n}.copyright .padding {\n    padding: 10px;\n    float: left;\n}\n.copyright .right .padding div:first-child {\n    width: 50%;\n    float: left;\n    line-height: 1.7em;\n    padding-left: 18px;\n    border-left: 1px solid red;\n}\n.copyright .right .padding div:first-child {\n    width: 50%;\n    float: left;\n    line-height: 1.7em;\n}\n.copyright .right .padding div:nth-child(2) {\n    width: 40%;\n    float: right;\n    padding-left: 5%;\n    border-left: 1px solid red;\n    font-size: 17px;\n    line-height: 1.8em;\n}\n.copyright .right .padding div:nth-child(2) {\n    width: 40%;\n    float: right;\n    padding-left: 5%;\n    border-left: 1px solid black;\n    font-size: 17px;\n    line-height: 1.8em;\n}.width33 {\n    width: 33%;\n    float: left;\n}\n.width66 {\n    width: 66%;\n    float: left;\n}\n.jFooterBottom {\n    width: 100%;\n    background: #2f343f;\n}\n.jFooterBottom ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}.jFooterBottom ul li {\n    display: inline-block;\n}.jFooterBottom ul li a {\n    color: #fff;\n    margin: 10px 5px;\n    display: block;\n}\n.dropdown-menu.single-dropdown.s-dr-menu.m-0 a {\n    border-bottom: 1px solid #a3a3a3;\n}\n.dropdown-menu.single-dropdown.s-dr-menu.m-0 a:hover {\n    background: #cbcbcb;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.navbar {\n\n    z-index: 11 !important;\n}\nspan.Headtitle {\n    position: absolute;\n    background: #001080;\n    color: white;\n    z-index: 99;\n    padding: 2px 13px 2px 26px;\n}\na.nav-link.router-link-exact-active.router-link-active {\n    background: var(--brand-hover-color);\n    border-bottom: 2px solid var(--brand-object-color);\n}\n.scroll-parent {\n    position: relative;\n}\n.scroll .title {\n    color: #fff;\n    background: #b50301;\n    float: left;\n    font-size: 17px;\n    height: 36px;\n    line-height: 34px;\n    margin: 0;\n    padding-left: 8px;\n    padding-right: 8px;\n    position: absolute;\n    z-index: 99;\n    border-right: 10px solid #152437;\n}\n.scroll a {\n    color: #fff;\n    font-size: 17px;\n    text-decoration: none;\n    margin: 5px 0 5px 7px;\n    display: inline-block;\n}\n.scroll a:hover {\n    color: #F00;\n}\n.header_top_section {\n    padding: 5px 0px;\n    background: #FFF;\n    box-shadow: 0px 5px 5px -5px #000;\n}\n.searchform input[type=\"text\"] {\n    border-radius: 4px 0px 0px 4px;\n    height: 28px;\n    background: #FFF;\n    color: #363131;\n    border-radius: 0;\n    border: none;\n}\nbutton,\ninput,\nselect,\ntextarea {\n    font-family: inherit;\n    font-size: inherit;\n    line-height: inherit;\n}\n.search_submit_button {\n    background-color: #000;\n    color: #FFF;\n    border-radius: 0px 4px 5px 0px;\n    border: none;\n    height: 26px;\n    padding: 0px;\n    background-color: #9c9c9c;\n    margin-top: 1px;\n}\n.header_top_section .social-media {\n    margin-bottom: 0px;\n    text-align: right;\n}\n.social-media li {\n    display: inline-block;\n}\n.social-media li a,\n.social-media li button {\n    color: #000;\n    border: none;\n    background: none;\n    padding: 0;\n}\n.header_top_section .social-media li a i,\n.header_top_section .social-media li button i {\n    width: 20px;\n    height: 20px;\n    border-radius: 0;\n    line-height: 20px;\n    font-size: 12px;\n}\n.social-media li a i,\n.social-media li button i {\n    width: 34px;\n    height: 34px;\n    border-radius: 100%;\n    text-align: center;\n    line-height: 34px;\n    color: #fff;\n}\n.copyright .copy {\n    font-size: 12px;\n}.copyright .padding {\n    padding: 10px;\n    float: left;\n}\n.copyright .right .padding div:first-child {\n    width: 50%;\n    float: left;\n    line-height: 1.7em;\n    padding-left: 18px;\n    border-left: 1px solid red;\n}\n.copyright .right .padding div:first-child {\n    width: 50%;\n    float: left;\n    line-height: 1.7em;\n}\n.copyright .right .padding div:nth-child(2) {\n    width: 40%;\n    float: right;\n    padding-left: 5%;\n    border-left: 1px solid red;\n    font-size: 17px;\n    line-height: 1.8em;\n}\n.copyright .right .padding div:nth-child(2) {\n    width: 40%;\n    float: right;\n    padding-left: 5%;\n    border-left: 1px solid black;\n    font-size: 17px;\n    line-height: 1.8em;\n}.width33 {\n    width: 33%;\n    float: left;\n}\n.width66 {\n    width: 66%;\n    float: left;\n}\n.jFooterBottom {\n    width: 100%;\n    background: #2f343f;\n}\n.jFooterBottom ul {\n    list-style: none;\n    margin: 0;\n    padding: 0;\n}.jFooterBottom ul li {\n    display: inline-block;\n}.jFooterBottom ul li a {\n    color: #fff;\n    margin: 10px 5px;\n    display: block;\n}\n.dropdown-menu.single-dropdown.s-dr-menu.m-0 a {\n    border-bottom: 1px solid #a3a3a3;\n}\n.dropdown-menu.single-dropdown.s-dr-menu.m-0 a:hover {\n    background: #cbcbcb;\n}\nnav.container.navbar.navbar-expand-lg.sticky-top.shadow-sm.navigator-extra {\n    max-width: 1260px;\n}\ndiv#pagetop {\n    position: fixed;\n    bottom: 13px;\n    right: 11px;\n    background: #b1b1b1;\n    color: white;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

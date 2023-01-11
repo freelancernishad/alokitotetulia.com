@@ -21,10 +21,10 @@
                                             :to="{ name: 'readPost', params: { id: LPost.id, slug: LPost.title } }"
                                             v-for="(LPost, Pindex) in posts.latestPost" :key="'Lpost' + Pindex"
                                             class="news-item news-item-regular py-2 d-flex">
-                                            <img style="border-radius: 50%;width: 90px;height: 90px;margin-right: 8px"
+                                            <img style="width: 83px;height: 70px;margin-right: 8px;padding-left: 7px;"
                                                 :src="$asseturl + LPost.fiture" v-if="LPost.fiture" :alt="LPost.title"
                                                 class="lazyload img-loader">
-                                            <img style="border-radius: 50%;width: 90px;height: 90px;margin-right: 8px"
+                                            <img style="width: 83px;height: 70px;margin-right: 8px;padding-left: 7px;"
                                                 v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"
                                                 :alt="LPost.title" class="lazyload img-loader">
                                             <div class="d-flex flex-column" style="">
@@ -129,7 +129,7 @@
 
                     </div>
                 </div>
-                <div class="section-two py-3 bg-section-two m-pt-0 mt-3 m-mt-2">
+                <div class="section-two py-3 bg-section-two mt-3 m-mt-2">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-12 col-sm-12 special-top">
@@ -158,7 +158,7 @@
                     </div>
                 </div>
 
-                <div class="container pt-3 m-pt-2">
+                <div class="container pt-3 ">
                     <div class="row">
                         <div class="col-lg-9 col-md-8">
                             <div
