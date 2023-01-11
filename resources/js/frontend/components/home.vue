@@ -1,5 +1,6 @@
 <template>
     <div>
+        <loader v-if="preloader"  object="#ff0000" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
         <!-- Welcome home page <router-link to="/login">Login</router-link>-->
         <main role="main">
             <div data-nosnippet>
@@ -12,7 +13,7 @@
                                 <div class="opinion-contents" style="    border: 1px solid black;">
                                     <div class="category-header opinion-header text-center" style="    background: #6c6c6c;">
                                         <div class="heading opinion-heading text-center">
-                                            <p class="title"><a href="javascript:void(0)" class="text-white">সর্বশেষ</a></p>
+                                            <p class="title"><a href="javascript:void(0)" class="text-white">সর্বশেষ সংবাদ</a></p>
                                         </div>
                                     </div>
                                     <div class="regular-list scaled ai-custom" style="height: 425px;overflow: auto;">
@@ -738,14 +739,17 @@ export default {
     data() {
         return {
             posts: {},
+            preloader:true,
         };
     },
     mounted() {
     },
     methods: {
         async getPosts() {
+            this.preloader = true
             var res = await this.callApi('get', `/api/get/all/latest/news`, []);
             this.posts = res.data
+            this.preloader = false
         },
 
         slidernavChange(allPost,index){
@@ -774,7 +778,7 @@ span.next {
     position: absolute;
     top: 47%;
     right: 0;
-    z-index: 9999;
+    z-index: 1;
 }
 
 span.prev {
@@ -785,7 +789,7 @@ span.prev {
     position: absolute;
     top: 47%;
     left: 0;
-    z-index: 9999;
+    z-index: 1;
 }
 
 

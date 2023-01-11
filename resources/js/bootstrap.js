@@ -9,7 +9,10 @@ if(window.location.port=='8000'){
     Vue.prototype.$asseturl = '/public/'
     }
 
+    import loader from "vue-ui-preloader";
 
+    Vue.use(loader);
+    
 Vue.prototype.$localStorage = localStorage
 window.ASSETURL = Vue.prototype.$asseturl
 // Vue.prototype.$appName = process.env.MIX_FILE_PATH

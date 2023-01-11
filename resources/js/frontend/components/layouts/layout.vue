@@ -58,11 +58,11 @@
             </div>
         </section>
 
-
-        <div class="scroll width100">
+        <div class="container">
+        <div class="scroll width100" style="    margin: 10px 0px;">
             <div class="padding">
                 <div class="scroll-parent">
-                    <span class="title">শিরোনাম</span>
+                    <span class="title">সংবাদ শিরোনাম</span>
                     <div class="scroll-cont">
                         <marquee style="width: 100%;background: #152437;" align="top" onmouseout="this.start();"
                             onmouseover="this.stop();" scrollamount="1" scrolldelay="10" behavior="scroll"
@@ -79,10 +79,11 @@
                 </div>
             </div>
         </div>
-
+        </div>
 
 
         <div class="body-items" style="background: #f9f9f9">
+    
             <div class="container d-none d-print">
                 <img class="print-logo" style="max-width: 250px;"
                 :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="alokitotetulia.com" />
@@ -106,7 +107,10 @@
                </div> 
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
+
+
+     
+            <nav class="container navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
                 <div class="container">
                     <button class="navbar-toggler collapsed m-margin-reducer-left-14" type="button"
                         data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
@@ -131,40 +135,17 @@
                                 <li class="nav-item">
                                     <router-link title="" to="/" class="nav-link">প্রচ্ছদ</router-link>
                                 </li>
-
-
-
-                                <!-- <li v-for="(menu,index) in menus" :key="index" class="nav-item header_li">
-                            <a class="nav-link d-block position-relative" :href="'/category/'+menu.slug">{{ menu.name }}</a>
-                            <ul class="header_child_list header_hover_bottom_menu" style="display: none;" v-if="menu.subCategoies">
-                            <li :class="[index2==0 ? 'first_sub_cat' : '']"  v-for="(Submenu,index2) in menu.subCategoies" :key="index2" >
-                                <a :href="'/category/'+menu.slug+'/'+Submenu.slug">{{ Submenu.name }}</a></li>
-                            </ul>
-                        </li> -->
-
-
                                 <li v-for="(menu, index) in menus" :key="index" class="nav-item"
                                     :class="[menu.subCategoies.length ? ' dropdown dropdown-toggle' : '']"
                                     style="display: flex; color: #FFF; align-items: center;">
                                     <router-link title="" :to="{ name: 'categoryPost', params: { cat: menu.slug } }"
                                         class="nav-link">{{ menu.name }}</router-link>
-
                                     <div class="dropdown-menu single-dropdown s-dr-menu m-0" aria-labelledby="navbarDropdown">
                                         <router-link class="dropdown-item" v-for="(Submenu, index2) in menu.subCategoies" :key="index2"
                                             :to="{ name: 'categoryPost2', params: { cat: menu.slug, cat2: Submenu.slug } }"
                                             style="padding: 5px 0;">{{ Submenu.name }}</router-link>
                                     </div>
-
                                 </li>
-
-
-
-
-                                <!-- <li class="nav-item position-static d-flex">
-                                    <button type="button" class="btn btn-link" data-target="slide-down"
-                                        aria-label="Search"><i class="fa fa-search"></i>
-                                    </button>
-                                </li> -->
                             </ul>
                         </div>
                         <div class="d-flex d-lg-none"
@@ -199,6 +180,11 @@
                     </div>
                 </form>
             </nav>
+
+
+
+
+
             <!-- <div style="position:relative">
 
             <span class="Headtitle">সর্বশেষঃ</span>
@@ -216,6 +202,90 @@
             <slot></slot>
 
         </div>
+
+
+
+        <div class="container">
+
+
+
+ 
+            <nav class="navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
+                <div class="container">
+                    <button class="navbar-toggler collapsed m-margin-reducer-left-14" type="button"
+                        data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                        <span class="sr-only">DP</span>
+                    </button>
+                    <div class="navbar-brand align-items-center d-flex d-lg-none mr-0">
+                        <a title="Dhaka Post" href="/">
+                            <img :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="Dhaka Post"
+                                width="1345" height="192" />
+                        </a>
+                    </div>
+                    <button type="button" class="btn btn-link d-flex d-lg-none" data-target="slide-down-m"
+                        aria-label="Search" style="margin-right: -14px;">
+                        <i class="fa fa-search" style="font-size: 20px;"></i></button>
+                    <div class="navbar-collapse collapse" id="main-nav-1">
+                        <div style="width: 99%">
+                            <ul class="navbar-nav m-auto d-none d-lg-flex d-menu-items justify-content-center">
+                                <li class="nav-item">
+                                    <router-link title="" to="/" class="nav-link">প্রচ্ছদ</router-link>
+                                </li>
+                                <li v-for="(menu, index) in menus" :key="index" class="nav-item"
+                                    :class="[menu.subCategoies.length ? ' dropdown dropdown-toggle' : '']"
+                                    style="display: flex; color: #FFF; align-items: center;">
+                                    <router-link title="" :to="{ name: 'categoryPost', params: { cat: menu.slug } }"
+                                        class="nav-link">{{ menu.name }}</router-link>
+                                    <div class="dropdown-menu single-dropdown s-dr-menu m-0" aria-labelledby="navbarDropdown">
+                                        <router-link class="dropdown-item" v-for="(Submenu, index2) in menu.subCategoies" :key="index2"
+                                            :to="{ name: 'categoryPost2', params: { cat: menu.slug, cat2: Submenu.slug } }"
+                                            style="padding: 5px 0;">{{ Submenu.name }}</router-link>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="d-flex d-lg-none"
+                            style="position: fixed; padding: 1rem; background: #f5f5f5; width: 100%; color: #FFF; justify-content:space-between">
+                            <button class="navbar-toggler m-margin-reducer-left-14 text-white" type="button"
+                                data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
+                                aria-expanded="true" aria-label="Toggle navigation" style=" ">
+                                <span class="icon-bar top-bar"></span>
+                                <span class="icon-bar middle-bar"></span>
+                                <span class="icon-bar bottom-bar"></span>
+                                <span class="sr-only">DP</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <form class="search-wrapper needs-validation" style="display: none;" data-target="slide-content"
+                    action="https://www.dhakapost.com/search" method="get">
+                    <div class="container m-pl-0 m-pr-0">
+                        <div class="d-flex align-items-center justify-content-between w-100">
+                            <div class="input-group">
+                                <input type="text" name="q" class="form-control" autocomplete="off"
+                                    placeholder="অনুসন্ধান করুন" required />
+                                <div class="input-group-append search-action">
+                                    <button type="submit" class="btn btn-dark"><i style="color: white !important;"
+                                            class="fa fa-search"></i></button>
+                                    <button type="button" class="btn btn-light m-margin-reducer-right-14"
+                                        data-target="slide-up">
+                                        <i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </nav>
+     
+
+
+
+
+
 
 <footer style="    display: block;
     background: #62626263;
@@ -292,6 +362,7 @@
             </div>
         </div>
     </div>
+</div>
         <!--
         <footer data-nosnippet class="d-print-none" style="background: #006328; padding-bottom: 90px;">
          <div class="footer-top py-3 bg-section-two" style="border-top: 3px solid">
@@ -361,6 +432,12 @@ export default {
 }
 </script>
 <style>
+
+.navbar {
+
+    z-index: 11 !important;
+}
+
 span.Headtitle {
     position: absolute;
     background: #001080;
@@ -533,5 +610,11 @@ textarea {
     display: block;
 }
 
+.dropdown-menu.single-dropdown.s-dr-menu.m-0 a {
+    border-bottom: 1px solid #a3a3a3;
+}
 
+.dropdown-menu.single-dropdown.s-dr-menu.m-0 a:hover {
+    background: #cbcbcb;
+}
 </style>
