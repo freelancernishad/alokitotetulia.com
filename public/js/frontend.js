@@ -4994,6 +4994,10 @@ var render = function render() {
     staticClass: "d-flex justify-content-between align-items-center w-100"
   }, [_c("router-link", {
     staticClass: "brand-logo-top",
+    staticStyle: {
+      border: "2px solid #006328",
+      padding: "7px"
+    },
     attrs: {
       title: "Dhaka Post",
       to: "/"
@@ -5006,7 +5010,20 @@ var render = function render() {
       src: _vm.$asseturl + "cropped-cropped-Alokitotetulia.png.png",
       alt: "Dhaka Post"
     }
-  })])], 1)]), _vm._v(" "), _c("nav", {
+  })]), _vm._v(" "), _c("div", {
+    staticClass: "d-flex align-items-center social-media-icons"
+  }, [_c("p", {
+    staticClass: "d-flex align-items-center",
+    staticStyle: {
+      "margin-left": "70px",
+      "margin-top": "7px"
+    }
+  }, [_c("img", {
+    attrs: {
+      src: _vm.$asseturl + "softwebad.jpeg",
+      width: "100%"
+    }
+  })])])], 1)]), _vm._v(" "), _c("nav", {
     staticClass: "navbar navbar-expand-lg sticky-top shadow-sm navigator-extra"
   }, [_c("div", {
     staticClass: "container"
@@ -5135,7 +5152,7 @@ var staticRenderFns = [function () {
     staticClass: "date"
   }, [_c("i", {
     staticClass: "fa fa-map-marker"
-  }), _vm._v(" তেতুলিয়া,পঞ্চগড়   "), _c("i", {
+  }), _vm._v(" তেঁতুলিয়া,পঞ্চগড়   "), _c("i", {
     staticClass: "fa fa-calendar"
   }), _vm._v("\n                            ১০ই জানুয়ারি, ২০২৩ খ্রিস্টাব্দ | ২৬শে পৌষ, ১৪২৯ বঙ্গাব্দ | ১৬ই জমাদিউস সানি, ১৪৪৪ হিজরি\n                        ")])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-3"
@@ -5389,7 +5406,7 @@ var staticRenderFns = [function () {
     staticStyle: {
       width: "100%"
     }
-  }, [_c("div", [_c("p", [_c("strong", [_vm._v("সম্পাদক: এস.কে. দোয়েল")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("বার্তা সম্পাদক: মোবারক হোসাইন")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("মফস্বল সম্পাদক: এম আরই রতন")]), _c("br"), _vm._v("\n                                তেতুলিয়া,পঞ্চগড়"), _c("br")]), _c("h4", [_vm._v("যোগাযোগঃ")]), _vm._v(" "), _c("hr", {
+  }, [_c("div", [_c("p", [_c("strong", [_vm._v("সম্পাদক: এস.কে. দোয়েল")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("বার্তা সম্পাদক: মোবারক হোসাইন")]), _c("br"), _vm._v(" "), _c("strong", [_vm._v("মফস্বল সম্পাদক: এম আরই রতন")]), _c("br"), _vm._v("\n                                তেঁতুলিয়া,পঞ্চগড়"), _c("br")]), _c("h4", [_vm._v("যোগাযোগঃ")]), _vm._v(" "), _c("hr", {
     staticStyle: {
       margin: "6px 0"
     }
@@ -5424,7 +5441,7 @@ var staticRenderFns = [function () {
     attrs: {
       href: "https://alokitotetulia.com"
     }
-  }, [_vm._v("আলোকিত তেতুলিয়া")])])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("আলোকিত তেঁতুলিয়া")])])]), _vm._v(" "), _c("div", {
     staticClass: "col-sm-6 text-right"
   }, [_c("ul", [_c("li", [_c("a", {
     attrs: {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>আলোকিত তেতুলিয়া</title>
+    <title>আলোকিত তেঁতুলিয়া</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -44,7 +44,7 @@
 
 
 
-<script src="{{ asset('js/backend.js?ver=1.0.3') }}"></script>
+<script src="{{ asset('js/backend.js?ver=1.0.4') }}"></script>
 
 
 

@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-sm-7">
                         <small class="date">
-                            <i class="fa fa-map-marker"></i> তেতুলিয়া,পঞ্চগড় &nbsp;&nbsp;<i class="fa fa-calendar"> </i>
+                            <i class="fa fa-map-marker"></i> তেঁতুলিয়া,পঞ্চগড় &nbsp;&nbsp;<i class="fa fa-calendar"> </i>
                             ১০ই জানুয়ারি, ২০২৩ খ্রিস্টাব্দ | ২৬শে পৌষ, ১৪২৯ বঙ্গাব্দ | ১৬ই জমাদিউস সানি, ১৪৪৪ হিজরি
                         </small>
                     </div>
@@ -91,22 +91,19 @@
             <div class="container d-none d-lg-flex py-3 navbar-root" id="section-down"
                 style="padding-top: 5px !important;">
                 <div class="d-flex justify-content-between align-items-center w-100">
-                    <router-link class="brand-logo-top" title="Dhaka Post" to="/">
+                    <router-link class="brand-logo-top" title="Dhaka Post" to="/" style="border: 2px solid #006328;padding: 7px;">
                         <img style="max-width: 300px;" :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'"
                             alt="Dhaka Post" />
                     </router-link>
 
-                    <!-- <div class="d-flex align-items-center social-media-icons">
-                <p class="d-flex align-items-center">
-                  <span class="d-flex align-items-center">
-                     <svg class="mr-2" fill="black" xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z" />
-                     </svg>
-                     <span> সোমবার, ০৯ জানুয়ারি ২০২৩</span>
-                  </span>
+                   
+                    <div class="d-flex align-items-center social-media-icons">
+                <p class="d-flex align-items-center" style="    margin-left: 70px;margin-top: 7px;">
+          
+                     <img :src="$asseturl+'softwebad.jpeg'" width="100%" />
+                 
                </p>
-               </div> -->
+               </div> 
                 </div>
             </div>
             <nav class="navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
@@ -244,7 +241,7 @@
                                 <strong>সম্পাদক: এস.কে. দোয়েল</strong><br>
                                 <strong>বার্তা সম্পাদক: মোবারক হোসাইন</strong><br>
                                 <strong>মফস্বল সম্পাদক: এম আরই রতন</strong><br>
-                                তেতুলিয়া,পঞ্চগড়<br>
+                                তেঁতুলিয়া,পঞ্চগড়<br>
                                 <h4>যোগাযোগঃ</h4>
                                 <hr style="margin: 6px 0;"/>
                                 <strong>ই-মেইলঃ</strong> skdoyel2020@gmail.com<br>
@@ -281,7 +278,7 @@
     align-items: center;
     color: white;
     font-size: 13px;">
-                        <i class="fa fa-copyright"></i> &nbsp; ২০২৩ সর্বস্বত্ব সংরক্ষিত  &nbsp; <a href="https://alokitotetulia.com" class="text-white">আলোকিত তেতুলিয়া</a>
+                        <i class="fa fa-copyright"></i> &nbsp; ২০২৩ সর্বস্বত্ব সংরক্ষিত  &nbsp; <a href="https://alokitotetulia.com" class="text-white">আলোকিত তেঁতুলিয়া</a>
                     </p>
                 </div>
                 <div class="col-sm-6 text-right">
