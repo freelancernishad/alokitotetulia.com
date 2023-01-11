@@ -26,15 +26,7 @@ class BlogController extends Controller
              $subcatCount = Category::where('cat_id',$cat_id)->count();
              if($subcatCount>0){
                 $subcat = Category::where('cat_id',$cat_id)->get();
-                // $filter = [
-                //     'cat_id1'=>1,
-                //     'cat_id2'=>2,
-                //     'cat_id3'=>3,
-                //     ];
-            // return $filter;
-                // $filter = [];
-
-                $blogs = Blog::orderBy('id','desc');
+                $blogs = Blog::orderBy('id','desc')->where(['cat_id'=>$cat_id]);
                 foreach ($subcat as $value) {
                     $blogs->orwhere('cat_id',$value->id);
                     // array_push($filter,['cat_id'=>$value->id]);
@@ -87,7 +79,31 @@ class BlogController extends Controller
         foreach ($categories as $value) {
             $catCount = Category::where(['slug'=>$value->name])->count();
             if($catCount>0){
-                $data[BanglaToEnglish($value->name)] = Blog::where(['cat_id'=>$value->id])->orderBy('id','desc')->latest()->limit(6)->get();
+
+                 $subcatCount = Category::where(['cat_id'=>$value->id,'type'=>'sub'])->count();
+                //  print_r($subcatCount);
+                if($subcatCount>0){
+                    $subcat = Category::where(['cat_id'=>$value->id,'type'=>'sub'])->get();
+                   $blogs = Blog::orderBy('id','desc')->where(['cat_id'=>$value->id]);
+                   foreach ($subcat as $value2) {
+                       $blogs->orwhere('cat_id',$value2->id);
+                    //    print_r($value2->id);
+
+                    }
+                    //  return $value->name;
+
+                    $data[BanglaToEnglish($value->name)]  = $blogs->latest()->limit(6)->get();
+                    // return $data;
+                }else{
+                    $data[BanglaToEnglish($value->name)] = Blog::where(['cat_id'=>$value->id])->orderBy('id','desc')->latest()->limit(6)->get();
+
+                }
+
+
+
+
+
+
             }else{
                 $data[BanglaToEnglish($value->name)] = [];
 

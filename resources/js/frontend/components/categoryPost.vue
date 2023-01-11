@@ -1,5 +1,6 @@
 <template>
     <div>
+        <loader v-if="preloader"  object="#ff0000" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
         <main role="main">
             <div class="py-3 category">
                 <div class="container">
@@ -200,9 +201,10 @@ export default {
                 latestPost: {},
                 latestPost2: {},
             },
-            postsShow: 5,
+            postsShow: 10,
             last_page: 0,
             catname:'',
+            preloader:true,
         };
     },
     watch: {
@@ -215,13 +217,14 @@ export default {
     },
     methods: {
         loadMore(){
-            this.postsShow +=5
+            this.postsShow +=10
             this.getposts(this.postsShow);
 
         },
 
 
        async getposts(postsShow = 10) {
+        this.preloader = true;
         var name = '';
         if(this.$route.params.cat && this.$route.params.cat2){
             name = this.$route.params.cat2;
@@ -235,6 +238,7 @@ export default {
             axios.get(`/api/get/blog/list?allpost=${postsShow}&category=${name}`).then((res) => {
                 this.rows = res.data;
                 this.last_page = res.data.last_page
+                this.preloader = false;
             });
         },
     },

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <loader v-if="preloader"  object="#ff0000" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
         <main role="main">
             <div class="pt-2 pb-2 details">
                 <div class="container">
@@ -178,6 +179,7 @@ export default {
                 'latestPost':{},
                 'latestPost2':{},
              },
+             preloader:true,
         }
     },
     watch: {
@@ -203,9 +205,11 @@ export default {
         },
 
        getposts(id=''){
+        this.preloader = true;
                 axios.get(`/api/update/blog/${id}`)
                 .then((res)=>{
                     this.row = res.data
+                    this.preloader = false;
                 })
 
         },

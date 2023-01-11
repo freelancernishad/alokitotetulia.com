@@ -2302,9 +2302,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         latestPost: {},
         latestPost2: {}
       },
-      postsShow: 5,
+      postsShow: 10,
       last_page: 0,
-      catname: ''
+      catname: '',
+      preloader: true
     };
   },
   watch: {
@@ -2317,7 +2318,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     loadMore: function loadMore() {
-      this.postsShow += 5;
+      this.postsShow += 10;
       this.getposts(this.postsShow);
     },
     getposts: function getposts() {
@@ -2331,6 +2332,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 postsShow = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 10;
+                _this.preloader = true;
                 name = '';
 
                 if (_this.$route.params.cat && _this.$route.params.cat2) {
@@ -2343,9 +2345,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 axios.get("/api/get/blog/list?allpost=".concat(postsShow, "&category=").concat(name)).then(function (res) {
                   _this.rows = res.data;
                   _this.last_page = res.data.last_page;
+                  _this.preloader = false;
                 });
 
-              case 5:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -2592,7 +2595,8 @@ __webpack_require__.r(__webpack_exports__);
         'relatedPosts': {},
         'latestPost': {},
         'latestPost2': {}
-      }
+      },
+      preloader: true
     };
   },
   watch: {
@@ -2617,8 +2621,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      this.preloader = true;
       axios.get("/api/update/blog/".concat(id)).then(function (res) {
         _this2.row = res.data;
+        _this2.preloader = false;
       });
     }
   },
@@ -3217,7 +3223,20 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("main", {
+  return _c("div", [_vm.preloader ? _c("loader", {
+    attrs: {
+      object: "#ff0000",
+      color1: "#ffffff",
+      color2: "#17fd3d",
+      size: "8",
+      speed: "2",
+      bg: "#343a40",
+      objectbg: "#999793",
+      opacity: "80",
+      disableScrolling: "false",
+      name: "dots"
+    }
+  }) : _vm._e(), _vm._v(" "), _c("main", {
     attrs: {
       role: "main"
     }
@@ -3366,7 +3385,7 @@ var render = function render() {
     on: {
       click: _vm.loadMore
     }
-  }, [_vm._v("\n                                    আরও দেখুন\n                                ")]) : _vm._e()])]), _vm._v(" "), _vm._m(0)])])])])])]);
+  }, [_vm._v("\n                                    আরও দেখুন\n                                ")]) : _vm._e()])]), _vm._v(" "), _vm._m(0)])])])])])], 1);
 };
 
 var staticRenderFns = [function () {
@@ -3740,49 +3759,6 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "col-xl-12 col-sm-12 special-top"
   }, [_c("div", {
-    staticClass: "row"
-  }, _vm._l(_vm.posts.latestPost, function (LPost, Pindex) {
-    return _c("div", {
-      key: "Lpost" + Pindex,
-      staticClass: "col-sm-3 box-news"
-    }, [_c("router-link", {
-      staticClass: "news-item news-item-box m-py-2",
-      attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: LPost.id,
-            slug: LPost.title
-          }
-        }
-      }
-    }, [_c("div", {
-      staticClass: "image-container"
-    }, [LPost.fiture ? _c("img", {
-      staticClass: "lazyload img-loader",
-      staticStyle: {
-        height: "167px !important"
-      },
-      attrs: {
-        src: _vm.$asseturl + LPost.fiture,
-        alt: LPost.title
-      }
-    }) : _c("img", {
-      staticClass: "lazyload img-loader",
-      attrs: {
-        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
-        alt: LPost.title
-      }
-    })]), _vm._v(" "), _c("div", [_c("h2", {
-      staticClass: "title"
-    }, [_vm._v("\n                                                " + _vm._s(LPost.title) + "\n                                            ")])])])], 1);
-  }), 0)])])])]), _vm._v(" "), _c("div", {
-    staticClass: "container pt-3"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-lg-9 col-md-8"
-  }, [_c("div", {
     staticClass: "category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2"
   }, [_c("div", {
     staticClass: "heading opinion-heading"
@@ -3818,116 +3794,44 @@ var render = function render() {
       "aria-hidden": "true"
     }
   })])])])], 1), _vm._v(" "), _c("div", {
-    staticClass: "row border-right country-articles"
-  }, _vm._l(_vm.posts.national, function (national, naindex) {
+    staticClass: "row"
+  }, _vm._l(_vm.posts.national, function (National, Pindex) {
     return _c("div", {
-      key: "naindex" + naindex,
-      staticClass: "col-12 col-md-6 col-xl-4"
-    }, [_c("div", {
-      staticClass: "clk-list clk-center"
+      key: "National" + Pindex,
+      staticClass: "col-sm-3 box-news"
     }, [_c("router-link", {
-      staticClass: "clk-item clk-item-regular py-2",
+      staticClass: "news-item news-item-box m-py-2",
       attrs: {
         to: {
           name: "readPost",
           params: {
-            id: national.id,
-            slug: national.title
-          }
-        }
-      }
-    }, [national.fiture ? _c("img", {
-      staticClass: "lazyload img-loader",
-      staticStyle: {
-        height: "75px !important"
-      },
-      attrs: {
-        src: _vm.$asseturl + national.fiture,
-        alt: national.title
-      }
-    }) : _c("img", {
-      staticClass: "lazyload img-loader",
-      attrs: {
-        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
-        alt: national.title
-      }
-    }), _vm._v(" "), _c("h2", {
-      staticClass: "title"
-    }, [_vm._v("\n                                            " + _vm._s(national.title) + "\n                                        ")])])], 1)]);
-  }), 0)]), _vm._v(" "), _c("div", {
-    staticClass: "col-lg-3 col-md-4 politics"
-  }, [_c("div", {
-    staticClass: "category-header politics-ch d-flex justify-content-between align-items-center politics__home mt-2"
-  }, [_c("div", {
-    staticClass: "heading politics-heading"
-  }, [_c("p", {
-    staticClass: "title"
-  }, [_c("router-link", {
-    staticClass: "politics-lc",
-    attrs: {
-      title: "",
-      to: {
-        name: "categoryPost",
-        params: {
-          cat: "রাজনীতি"
-        }
-      }
-    }
-  }, [_vm._v("রাজনীতি")])], 1)]), _vm._v(" "), _c("router-link", {
-    staticClass: "d-none d-sm-flex",
-    attrs: {
-      title: "",
-      to: {
-        name: "categoryPost",
-        params: {
-          cat: "রাজনীতি"
-        }
-      }
-    }
-  }, [_c("div", {
-    staticClass: "read-more d-flex justify-content-end align-items-center"
-  }, [_c("p", [_vm._v("আরও খবর")]), _vm._v(" "), _c("p", [_c("i", {
-    staticClass: "fa fa-arrow-circle-right",
-    attrs: {
-      "aria-hidden": "true"
-    }
-  })])])])], 1), _vm._v(" "), _c("div", {
-    staticClass: "regular-list scaled ai-custom"
-  }, _vm._l(_vm.posts.politics, function (politics, naindex) {
-    return _c("router-link", {
-      key: "naindex" + naindex,
-      staticClass: "news-item news-item-regular py-2",
-      attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: politics.id,
-            slug: politics.title
+            id: National.id,
+            slug: National.title
           }
         }
       }
     }, [_c("div", {
       staticClass: "image-container"
-    }, [politics.fiture ? _c("img", {
+    }, [National.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
       staticStyle: {
-        height: "75px !important"
+        height: "167px !important"
       },
       attrs: {
-        src: _vm.$asseturl + politics.fiture,
-        alt: politics.title
+        src: _vm.$asseturl + National.fiture,
+        alt: National.title
       }
     }) : _c("img", {
       staticClass: "lazyload img-loader",
       attrs: {
         src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
-        alt: politics.title
+        alt: National.title
       }
-    })]), _vm._v(" "), _c("h2", {
+    })]), _vm._v(" "), _c("div", [_c("h2", {
       staticClass: "title"
-    }, [_vm._v("\n                                    " + _vm._s(politics.title) + "\n                                ")])]);
-  }), 1)])])]), _vm._v(" "), _c("div", {
-    staticClass: "container pt-3 m-pt-2"
+    }, [_vm._v("\n                                                " + _vm._s(National.title) + "\n                                            ")])])])], 1);
+  }), 0)])])])]), _vm._v(" "), _c("div", {
+    staticClass: "container pt-3"
   }, [_c("div", {
     staticClass: "row"
   }, [_c("div", {
@@ -4095,6 +3999,156 @@ var render = function render() {
       to: {
         name: "categoryPost",
         params: {
+          cat: "পঞ্চগড়ের খবর"
+        }
+      }
+    }
+  }, [_vm._v("পঞ্চগড়ের খবর")])], 1)]), _vm._v(" "), _c("router-link", {
+    staticClass: "d-none d-sm-flex",
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "পঞ্চগড়ের খবর"
+        }
+      }
+    }
+  }, [_c("div", {
+    staticClass: "read-more d-flex justify-content-end align-items-center"
+  }, [_c("p", [_vm._v("আরও খবর")]), _vm._v(" "), _c("p", [_c("i", {
+    staticClass: "fa fa-arrow-circle-right",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])])], 1), _vm._v(" "), _c("div", {
+    staticClass: "row border-right country-articles"
+  }, _vm._l(_vm.posts.Panchagarh_news, function (Panchagarh_news, naindex) {
+    return _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "col-12 col-md-6 col-xl-4"
+    }, [_c("div", {
+      staticClass: "clk-list clk-center"
+    }, [_c("router-link", {
+      staticClass: "clk-item clk-item-regular py-2",
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: Panchagarh_news.id,
+            slug: Panchagarh_news.title
+          }
+        }
+      }
+    }, [Panchagarh_news.fiture ? _c("img", {
+      staticClass: "lazyload img-loader",
+      staticStyle: {
+        height: "75px !important"
+      },
+      attrs: {
+        src: _vm.$asseturl + Panchagarh_news.fiture,
+        alt: Panchagarh_news.title
+      }
+    }) : _c("img", {
+      staticClass: "lazyload img-loader",
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: Panchagarh_news.title
+      }
+    }), _vm._v(" "), _c("h2", {
+      staticClass: "title"
+    }, [_vm._v("\n                                            " + _vm._s(Panchagarh_news.title) + "\n                                        ")])])], 1)]);
+  }), 0)]), _vm._v(" "), _c("div", {
+    staticClass: "col-lg-3 col-md-4 politics"
+  }, [_c("div", {
+    staticClass: "category-header politics-ch d-flex justify-content-between align-items-center politics__home mt-2"
+  }, [_c("div", {
+    staticClass: "heading politics-heading"
+  }, [_c("p", {
+    staticClass: "title"
+  }, [_c("router-link", {
+    staticClass: "politics-lc",
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "রাজনীতি"
+        }
+      }
+    }
+  }, [_vm._v("রাজনীতি")])], 1)]), _vm._v(" "), _c("router-link", {
+    staticClass: "d-none d-sm-flex",
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "রাজনীতি"
+        }
+      }
+    }
+  }, [_c("div", {
+    staticClass: "read-more d-flex justify-content-end align-items-center"
+  }, [_c("p", [_vm._v("আরও খবর")]), _vm._v(" "), _c("p", [_c("i", {
+    staticClass: "fa fa-arrow-circle-right",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])])], 1), _vm._v(" "), _c("div", {
+    staticClass: "regular-list scaled ai-custom"
+  }, _vm._l(_vm.posts.politics, function (politics, naindex) {
+    return _c("router-link", {
+      key: "naindex" + naindex,
+      staticClass: "news-item news-item-regular py-2",
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: politics.id,
+            slug: politics.title
+          }
+        }
+      }
+    }, [_c("div", {
+      staticClass: "image-container"
+    }, [politics.fiture ? _c("img", {
+      staticClass: "lazyload img-loader",
+      staticStyle: {
+        height: "75px !important"
+      },
+      attrs: {
+        src: _vm.$asseturl + politics.fiture,
+        alt: politics.title
+      }
+    }) : _c("img", {
+      staticClass: "lazyload img-loader",
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: politics.title
+      }
+    })]), _vm._v(" "), _c("h2", {
+      staticClass: "title"
+    }, [_vm._v("\n                                    " + _vm._s(politics.title) + "\n                                ")])]);
+  }), 1)])])]), _vm._v(" "), _c("div", {
+    staticClass: "container pt-3 m-pt-2"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-lg-9 col-md-8"
+  }, [_c("div", {
+    staticClass: "category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2"
+  }, [_c("div", {
+    staticClass: "heading opinion-heading"
+  }, [_c("p", {
+    staticClass: "title"
+  }, [_c("router-link", {
+    staticClass: "country-lc",
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
           cat: "বিনোদন"
         }
       }
@@ -4239,7 +4293,19 @@ var render = function render() {
     staticClass: "padding"
   }, [_c("div", {
     staticClass: "news news-3 width100"
-  }, [_vm._m(2), _vm._v(" "), _vm._l(_vm.posts.Life_style, function (Life_style, naindex) {
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "লাইফ স্টাইল"
+        }
+      }
+    }
+  }, [_vm._v("লাইফ স্টাইল")])], 1), _vm._v(" "), _vm._l(_vm.posts.Life_style, function (Life_style, naindex) {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
@@ -4291,7 +4357,19 @@ var render = function render() {
     staticClass: "padding"
   }, [_c("div", {
     staticClass: "news news-3 width100"
-  }, [_vm._m(3), _vm._v(" "), _vm._l(_vm.posts.Information_technology, function (Information_technology, naindex) {
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "তথ্যপ্রযুক্তি"
+        }
+      }
+    }
+  }, [_vm._v("তথ্যপ্রযুক্তি")])], 1), _vm._v(" "), _vm._l(_vm.posts.Information_technology, function (Information_technology, naindex) {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
@@ -4343,7 +4421,417 @@ var render = function render() {
     staticClass: "padding"
   }, [_c("div", {
     staticClass: "news news-3 width100"
-  }, [_vm._m(4), _vm._v(" "), _vm._l(_vm.posts.campus, function (campus, naindex) {
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "বিশেষ প্রতিবেদন"
+        }
+      }
+    }
+  }, [_vm._v("বিশেষ প্রতিবেদন")])], 1), _vm._v(" "), _vm._l(_vm.posts.Special_report, function (Special_report, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: Special_report.id,
+            slug: Special_report.title
+          }
+        }
+      }
+    }, [Special_report.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + Special_report.fiture,
+        alt: Special_report.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: Special_report.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Special_report.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.Special_report, function (Special_report, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: Special_report.id,
+            slug: Special_report.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(Special_report.title))])], 1) : _vm._e();
+  })], 2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "খেলাধূলা"
+        }
+      }
+    }
+  }, [_vm._v("খেলাধূলা")])], 1), _vm._v(" "), _vm._l(_vm.posts.sports, function (sports, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: sports.id,
+            slug: sports.title
+          }
+        }
+      }
+    }, [sports.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + sports.fiture,
+        alt: sports.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: sports.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(sports.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.sports, function (sports, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: sports.id,
+            slug: sports.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(sports.title))])], 1) : _vm._e();
+  })], 2)])])])]), _vm._v(" "), _c("div", {
+    staticClass: "container pt-3 m-pt-2 mt-5",
+    staticStyle: {
+      overflow: "hidden"
+    }
+  }, [_c("div", {
+    staticClass: "width100 block-2 row"
+  }, [_c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "স্বাস্থ্য"
+        }
+      }
+    }
+  }, [_vm._v("স্বাস্থ্য")])], 1), _vm._v(" "), _vm._l(_vm.posts.health, function (health, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: health.id,
+            slug: health.title
+          }
+        }
+      }
+    }, [health.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + health.fiture,
+        alt: health.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: health.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(health.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.health, function (health, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: health.id,
+            slug: health.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(health.title))])], 1) : _vm._e();
+  })], 2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "ধর্ম ও জীবন"
+        }
+      }
+    }
+  }, [_vm._v("ধর্ম ও জীবন")])], 1), _vm._v(" "), _vm._l(_vm.posts.Religion_and_life, function (Religion_and_life, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: Religion_and_life.id,
+            slug: Religion_and_life.title
+          }
+        }
+      }
+    }, [Religion_and_life.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + Religion_and_life.fiture,
+        alt: Religion_and_life.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: Religion_and_life.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Religion_and_life.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.Religion_and_life, function (Religion_and_life, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: Religion_and_life.id,
+            slug: Religion_and_life.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(Religion_and_life.title))])], 1) : _vm._e();
+  })], 2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "কৃষি"
+        }
+      }
+    }
+  }, [_vm._v("কৃষি")])], 1), _vm._v(" "), _vm._l(_vm.posts.agriculture, function (agriculture, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: agriculture.id,
+            slug: agriculture.title
+          }
+        }
+      }
+    }, [agriculture.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + agriculture.fiture,
+        alt: agriculture.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: agriculture.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(agriculture.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.agriculture, function (agriculture, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: agriculture.id,
+            slug: agriculture.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(agriculture.title))])], 1) : _vm._e();
+  })], 2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "ফিচার"
+        }
+      }
+    }
+  }, [_vm._v("ফিচার")])], 1), _vm._v(" "), _vm._l(_vm.posts.feature, function (feature, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: feature.id,
+            slug: feature.title
+          }
+        }
+      }
+    }, [feature.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + feature.fiture,
+        alt: feature.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: feature.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(feature.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.feature, function (feature, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: feature.id,
+            slug: feature.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(feature.title))])], 1) : _vm._e();
+  })], 2)])])])]), _vm._v(" "), _c("div", {
+    staticClass: "container pt-3 m-pt-2 mt-5",
+    staticStyle: {
+      overflow: "hidden"
+    }
+  }, [_c("div", {
+    staticClass: "width100 block-2 row"
+  }, [_c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "ক্যাম্পাস"
+        }
+      }
+    }
+  }, [_vm._v("ক্যাম্পাস")])], 1), _vm._v(" "), _vm._l(_vm.posts.campus, function (campus, naindex) {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
@@ -4395,7 +4883,19 @@ var render = function render() {
     staticClass: "padding"
   }, [_c("div", {
     staticClass: "news news-3 width100"
-  }, [_vm._m(5), _vm._v(" "), _vm._l(_vm.posts.literature, function (literature, naindex) {
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "ভ্রমণ"
+        }
+      }
+    }
+  }, [_vm._v("ভ্রমণ")])], 1), _vm._v(" "), _vm._l(_vm.posts.traveling, function (traveling, naindex) {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
@@ -4404,27 +4904,27 @@ var render = function render() {
         to: {
           name: "readPost",
           params: {
-            id: literature.id,
-            slug: literature.title
+            id: traveling.id,
+            slug: traveling.title
           }
         }
       }
-    }, [literature.fiture ? _c("img", {
+    }, [traveling.fiture ? _c("img", {
       attrs: {
-        src: _vm.$asseturl + literature.fiture,
-        alt: literature.title,
+        src: _vm.$asseturl + traveling.fiture,
+        alt: traveling.title,
         width: "233",
         height: "148"
       }
     }) : _c("img", {
       attrs: {
         src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
-        alt: literature.title,
+        alt: traveling.title,
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(literature.title))])])], 1) : _vm._e();
-  }), _vm._v(" "), _vm._l(_vm.posts.literature, function (literature, naindex) {
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(traveling.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.traveling, function (traveling, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
@@ -4433,15 +4933,143 @@ var render = function render() {
         to: {
           name: "readPost",
           params: {
-            id: literature.id,
-            slug: literature.title
+            id: traveling.id,
+            slug: traveling.title
           }
         }
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(literature.title))])], 1) : _vm._e();
-  })], 2)])])])]), _vm._v(" "), _vm._m(6), _vm._v(" "), _vm._m(7)])])], 1);
+    }), _vm._v("  " + _vm._s(traveling.title))])], 1) : _vm._e();
+  })], 2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "চাকুরী"
+        }
+      }
+    }
+  }, [_vm._v("চাকুরী")])], 1), _vm._v(" "), _vm._l(_vm.posts.the_job, function (the_job, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: the_job.id,
+            slug: the_job.title
+          }
+        }
+      }
+    }, [the_job.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + the_job.fiture,
+        alt: the_job.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: the_job.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(the_job.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.the_job, function (the_job, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: the_job.id,
+            slug: the_job.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(the_job.title))])], 1) : _vm._e();
+  })], 2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-xl-3 col-md-6 col-sm-12"
+  }, [_c("div", {
+    staticClass: "padding"
+  }, [_c("div", {
+    staticClass: "news news-3 width100"
+  }, [_c("h3", {
+    staticClass: "title width100"
+  }, [_c("router-link", {
+    attrs: {
+      title: "",
+      to: {
+        name: "categoryPost",
+        params: {
+          cat: "অন্যান্য"
+        }
+      }
+    }
+  }, [_vm._v("ভিন্ন সংবাদ")])], 1), _vm._v(" "), _vm._l(_vm.posts.other, function (other, naindex) {
+    return naindex == 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "first width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: other.id,
+            slug: other.title
+          }
+        }
+      }
+    }, [other.fiture ? _c("img", {
+      attrs: {
+        src: _vm.$asseturl + other.fiture,
+        alt: other.title,
+        width: "233",
+        height: "148"
+      }
+    }) : _c("img", {
+      attrs: {
+        src: "//cdn.dhakapost.com/media/common/placeholder.jpg",
+        alt: other.title,
+        width: "233",
+        height: "148"
+      }
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(other.title))])])], 1) : _vm._e();
+  }), _vm._v(" "), _vm._l(_vm.posts.other, function (other, naindex) {
+    return naindex != 0 ? _c("div", {
+      key: "naindex" + naindex,
+      staticClass: "other width100"
+    }, [_c("router-link", {
+      attrs: {
+        to: {
+          name: "readPost",
+          params: {
+            id: other.id,
+            slug: other.title
+          }
+        }
+      }
+    }, [_c("i", {
+      staticClass: "fas fa-long-arrow-right"
+    }), _vm._v("  " + _vm._s(other.title))])], 1) : _vm._e();
+  })], 2)])])])]), _vm._v(" "), _vm._m(2)])])], 1);
 };
 
 var staticRenderFns = [function () {
@@ -4479,254 +5107,6 @@ var staticRenderFns = [function () {
       id: "div-gpt-ad-1620297530803-0"
     }
   })]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("লাইফ স্টাইল")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("তথ্যপ্রযুক্তি")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("ক্যাম্পাস")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("সাহিত্য")])]);
-}, function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", {
-    staticClass: "container pt-3 m-pt-2 mt-5",
-    staticStyle: {
-      overflow: "hidden"
-    }
-  }, [_c("div", {
-    staticClass: "width100 block-2 row"
-  }, [_c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
-  }, [_c("div", {
-    staticClass: "padding"
-  }, [_c("div", {
-    staticClass: "news news-3 width100"
-  }, [_c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "https://www.bd24live.com/bangla/category/life-style-news/"
-    }
-  }, [_vm._v("লাইফ\n                                        স্টাইল")])]), _vm._v(" "), _c("div", {
-    staticClass: "first width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("img", {
-    attrs: {
-      src: "https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2022/12/71-2021-12-07-23-58-40.jpg&w=233&h=148",
-      width: "233",
-      height: "148"
-    }
-  }), _vm._v(" "), _c("h3", [_vm._v("শীতকালে ত্বকের যত্নে করণীয়")])])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        সহজেই\n                                        তৈরি করুন কাঁঠালের বার্গার")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" ‘এলি\n                                        সাব মেইসন’ এখন বাংলাদেশে")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        ‘কুল’\n                                        বিশ্বাস করে সকল ছেলেই কুল")])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
-  }, [_c("div", {
-    staticClass: "padding"
-  }, [_c("div", {
-    staticClass: "news news-3 width100"
-  }, [_c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("বিজ্ঞান\n                                        ও প্রযুক্তি")])]), _vm._v(" "), _c("div", {
-    staticClass: "first width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("img", {
-    attrs: {
-      src: "https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2023/01/Walton-Digi-Tech-new-year-offer-website-launching-Picture.jpg&w=233&h=148",
-      width: "233",
-      height: "148"
-    }
-  }), _vm._v(" "), _c("h3", [_vm._v("ওয়ালটন কম্পিউটার পণ্যে ১০০ শতাংশ পর্যন্ত ক্যাশব্যাক, চালু হলো নতুন\n                                            ওয়েবসাইট")])])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        আইএসও\n                                        সনদ পেলো এডিসন ইন্ডাস্ট্রিজ লিমিটেড")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        ফাস্ট\n                                        চার্জিং ওয়্যারলেস পাওয়ার ব্যাংক আনলো ওয়ালটন")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v(" নতুন\n                                        দুই মডেলের আইপিএস গেমিং মনিটর আনলো ওয়ালটন")])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
-  }, [_c("div", {
-    staticClass: "padding"
-  }, [_c("div", {
-    staticClass: "news news-3 width100"
-  }, [_c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("ক্যাম্পাস")])]), _vm._v(" "), _c("div", {
-    staticClass: "first width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("img", {
-    attrs: {
-      src: "https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2023/01/1673268824001.jpg&w=233&h=148",
-      width: "233",
-      height: "148"
-    }
-  }), _vm._v(" "), _c("h3", [_vm._v("প্রতিষ্ঠাবার্ষিকীতে রক্তদান কর্মসূচি পালন করল ছাত্রলীগ")])])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        পিআইবিতে কুবিসাস সদস্যদের\n                                        নিয়ে দুই দিনব্যাপী কর্মশালা সমাপনী")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        ঢাবির\n                                        জিন প্রকৌশল ও জীব প্রযুক্তি বিভাগের নবীন বরণ অনুষ্ঠিত")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        শীতের\n                                        সকালে নতুন রূপে সরকারি তিতুমীর কলেজ")])])])])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
-  }, [_c("div", {
-    staticClass: "padding"
-  }, [_c("div", {
-    staticClass: "news news-3 width100"
-  }, [_c("h3", {
-    staticClass: "title width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("ভিন্ন\n                                        স্বাদের খবর")])]), _vm._v(" "), _c("div", {
-    staticClass: "first width100"
-  }, [_c("a", {
-    attrs: {
-      href: "https://www.bd24live.com/bangla/569652/"
-    }
-  }, [_c("img", {
-    attrs: {
-      src: "https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2023/01/abbrity.jpg&w=233&h=148",
-      width: "233",
-      height: "148"
-    }
-  }), _vm._v(" "), _c("h3", [_vm._v("আবৃত্তি একাডেমির নেতৃত্বে তাহমিনা-বেলায়েত")])])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        বিড়াল\n                                        ও মানুষের খুনসুটিতে জনপ্রিয় ‘পুচি ফ্যামিলি’")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        বুর্জ\n                                        খলিফায় একটি ফ্ল্যাটের দাম প্রায় ২০০ কোটি, কী আছে সেখানে")])]), _vm._v(" "), _c("div", {
-    staticClass: "other width100"
-  }, [_c("a", {
-    attrs: {
-      href: "#"
-    }
-  }, [_c("i", {
-    staticClass: "fas fa-long-arrow-right"
-  }), _vm._v("\n                                        তিন-চার দিনের জন্য বাড়ি\n                                        ভাড়া করে ব্যবসা, গরিব দেশের মেয়েদের এনে চলে অপকর্ম")])])])])])])]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -5735,7 +6115,20 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("main", {
+  return _c("div", [_vm.preloader ? _c("loader", {
+    attrs: {
+      object: "#ff0000",
+      color1: "#ffffff",
+      color2: "#17fd3d",
+      size: "8",
+      speed: "2",
+      bg: "#343a40",
+      objectbg: "#999793",
+      opacity: "80",
+      disableScrolling: "false",
+      name: "dots"
+    }
+  }) : _vm._e(), _vm._v(" "), _c("main", {
     attrs: {
       role: "main"
     }
@@ -5930,7 +6323,7 @@ var render = function render() {
     })]), _vm._v(" "), _c("h2", {
       staticClass: "title"
     }, [_vm._v("\n                                                    " + _vm._s(latestPost.title) + "\n                                                ")])]);
-  }), 1)])])])])])])])])])]);
+  }), 1)])])])])])])])])])], 1);
 };
 
 var staticRenderFns = [function () {

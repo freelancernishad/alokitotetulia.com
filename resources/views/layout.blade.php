@@ -30,25 +30,16 @@
     {{-- <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.12.1/css/dataTables.semanticui.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.semanticui.min.css"> --}}
-
 </head>
 <body>
-
     <div id="app">
         <component :is="$route.meta.layout || 'div'"   :user="{{Auth::user()}}" >
             <router-view />
-          </component>
-
-</div>
-
+        </component>
+    </div>
 
 
-
-<script src="{{ asset('js/backend.js?ver=1.0.6') }}"></script>
-
-
-
-
+<script src="{{ asset('js/backend.js?ver=1.0.7') }}"></script>
 <!-- Popper js -->
 <script src="{{ asset('dashboard_asset/js/popper.min.js') }}"></script>
 <!-- Bootstrap js -->
