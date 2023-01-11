@@ -197,6 +197,34 @@ function ekpayToken($trnx_id=123456789,$trns_info=[],$cust_info=[],$path='paymen
             $data = 'the_job';
         }elseif($text=='অর্থনীতি'){
             $data = 'the_economy';
+        }elseif($text=='আইন-আদালত'){
+            $data = 'Court_of_law';
+        }elseif($text=='কৃষি'){
+            $data = 'agriculture';
+        }elseif($text=='ক্যাম্পাস'){
+            $data = 'campus';
+        }elseif($text=='গণমাধ্যম'){
+            $data = 'mass_media';
+        }elseif($text=='তথ্যপ্রযুক্তি'){
+            $data = 'Information_technology';
+        }elseif($text=='দেশজুড়ে'){
+            $data = 'across_the_country';
+        }elseif($text=='ধর্ম ও জীবন'){
+            $data = 'Religion_and_life';
+        }elseif($text=='প্রবাস'){
+            $data = 'migration';
+        }elseif($text=='বাংলাদেশ'){
+            $data = 'Bangladesh';
+        }elseif($text=='বিশেষ প্রতিবেদন'){
+            $data = 'Special_report';
+        }elseif($text=='ভ্রমণ'){
+            $data = 'traveling';
+        }elseif($text=='লাইফ স্টাইল'){
+            $data = 'Life_style';
+        }elseif($text=='সাহিত্য'){
+            $data = 'literature';
+        }elseif($text=='স্বাস্থ্য'){
+            $data = 'health';
         }else{
             $data = $text;
         }

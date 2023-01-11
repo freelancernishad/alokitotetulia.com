@@ -17,7 +17,7 @@
                                     </div>
                                     <div class="regular-list scaled ai-custom" style="height: 425px;overflow: auto;">
                                         <router-link
-                                            :to="{ name: 'readPost', params: { id: LPost.id, slug: LPost.slug } }"
+                                            :to="{ name: 'readPost', params: { id: LPost.id, slug: LPost.title } }"
                                             v-for="(LPost, Pindex) in posts.latestPost" :key="'Lpost' + Pindex"
                                             class="news-item news-item-regular py-2 d-flex">
                                             <img style="border-radius: 50%;width: 90px;height: 90px;margin-right: 8px"
@@ -48,7 +48,7 @@
                                 <div class="box item" :id="'owlItem'+index" v-for="(featured_post, index) in getlatestpost"
                                     :key="'Fpost' + index">
                                     <router-link
-                                        :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.slug } }">
+                                        :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.title } }">
                                         <div class="carousel-caption"> {{ featured_post.title }}</div>
                                         <img class="img-responsive cover_image" :src="$asseturl + featured_post.fiture"
                                             v-if="featured_post.fiture" width="600" height="364" alt="">
@@ -81,7 +81,7 @@
                                 <div class="col-12 lead-news" v-for="(featured_post, index) in posts.featured_post"
                                     :key="'Fpost' + index" v-if="index==0">
                                     <router-link
-                                        :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.slug } }"
+                                        :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.title } }"
                                         class="news-item news-item-lead">
                                         <div class="image-container">
                                             <img :src="$asseturl + featured_post.fiture" v-if="featured_post.fiture"
@@ -103,7 +103,7 @@
                         <div class="col-lg-3 col-md-6 top-list-1 m-order-1  " style="order: -1">
                             <div class="second-center scaled" style="background: #Eff5F4">
                                 <router-link
-                                    :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.slug } }"
+                                    :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.title } }"
                                     class="news-item news-item-list py-2 "
                                     v-for="(featured_post, index4) in posts.featured_post" :key="'F1post' + index4"
                                     :style="[index4 == 0 ? { 'display': 'none' } : '']">
@@ -136,7 +136,7 @@
                                     <div class="col-sm-3 box-news " v-for="(LPost, Pindex) in posts.latestPost"
                                         :key="'Lpost' + Pindex">
                                         <router-link
-                                            :to="{ name: 'readPost', params: { id: LPost.id, slug: LPost.slug } }"
+                                            :to="{ name: 'readPost', params: { id: LPost.id, slug: LPost.title } }"
                                             class="news-item news-item-box m-py-2">
                                             <div class="image-container">
                                                 <img style="height:167px !important;" :src="$asseturl + LPost.fiture"
@@ -180,9 +180,9 @@
                                     :key="'naindex' + naindex">
                                     <div class="clk-list clk-center">
                                         <router-link
-                                            :to="{ name: 'readPost', params: { id: national.id, slug: national.slug } }"
+                                            :to="{ name: 'readPost', params: { id: national.id, slug: national.title } }"
                                             class="clk-item clk-item-regular py-2 ">
-                                            <img style="height:167px !important;" :src="$asseturl + national.fiture"
+                                            <img style="height:75px !important;" :src="$asseturl + national.fiture"
                                                 v-if="national.fiture" :alt="national.title"
                                                 class="lazyload img-loader">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"
@@ -213,11 +213,11 @@
                             </div>
                             <div class="regular-list scaled ai-custom">
                                 <router-link
-                                    :to="{ name: 'readPost', params: { id: politics.id, slug: politics.slug } }"
+                                    :to="{ name: 'readPost', params: { id: politics.id, slug: politics.title } }"
                                     class="news-item news-item-regular py-2"
                                     v-for="(politics, naindex) in posts.politics" :key="'naindex' + naindex">
                                     <div class="image-container">
-                                        <img style="height:167px !important;" :src="$asseturl + politics.fiture"
+                                        <img style="height:75px !important;" :src="$asseturl + politics.fiture"
                                             v-if="politics.fiture" :alt="politics.title" class="lazyload img-loader">
                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"
                                             :alt="politics.title" class="lazyload img-loader">
@@ -256,9 +256,9 @@
                                     :key="'naindex' + naindex">
                                     <div class="clk-list clk-center">
                                         <router-link
-                                            :to="{ name: 'readPost', params: { id: the_whole_country.id, slug: the_whole_country.slug } }"
+                                            :to="{ name: 'readPost', params: { id: the_whole_country.id, slug: the_whole_country.title } }"
                                             class="clk-item clk-item-regular py-2 ">
-                                            <img style="height:167px !important;"
+                                            <img style="height:75px !important;"
                                                 :src="$asseturl + the_whole_country.fiture"
                                                 v-if="the_whole_country.fiture" :alt="the_whole_country.title"
                                                 class="lazyload img-loader">
@@ -290,11 +290,11 @@
                             </div>
                             <div class="regular-list scaled ai-custom">
                                 <router-link
-                                    :to="{ name: 'readPost', params: { id: international.id, slug: international.slug } }"
+                                    :to="{ name: 'readPost', params: { id: international.id, slug: international.title } }"
                                     class="news-item news-item-regular py-2"
                                     v-for="(international, naindex) in posts.international" :key="'naindex' + naindex">
                                     <div class="image-container">
-                                        <img style="height:167px !important;" :src="$asseturl + international.fiture"
+                                        <img style="height:75px !important;" :src="$asseturl + international.fiture"
                                             v-if="international.fiture" :alt="international.title"
                                             class="lazyload img-loader">
                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"
@@ -332,9 +332,9 @@
                                     v-for="(entertainment, naindex) in posts.entertainment" :key="'naindex' + naindex">
                                     <div class="clk-list clk-center">
                                         <router-link
-                                            :to="{ name: 'readPost', params: { id: entertainment.id, slug: entertainment.slug } }"
+                                            :to="{ name: 'readPost', params: { id: entertainment.id, slug: entertainment.title } }"
                                             class="clk-item clk-item-regular py-2 ">
-                                            <img style="height:167px !important;"
+                                            <img style="height:75px !important;"
                                                 :src="$asseturl + entertainment.fiture" v-if="entertainment.fiture"
                                                 :alt="entertainment.title" class="lazyload img-loader">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"
@@ -364,12 +364,11 @@
                                 </router-link>
                             </div>
                             <div class="regular-list scaled ai-custom">
-                                <router-link
-                                    :to="{ name: 'readPost', params: { id: education.id, slug: education.slug } }"
+                                <router-link :to="{ name: 'readPost', params: { id: education.id, slug: education.title } }"
                                     class="news-item news-item-regular py-2"
                                     v-for="(education, naindex) in posts.education" :key="'naindex' + naindex">
                                     <div class="image-container">
-                                        <img style="height:167px !important;" :src="$asseturl + education.fiture"
+                                        <img style="height:75px !important;" :src="$asseturl + education.fiture"
                                             v-if="education.fiture" :alt="education.title" class="lazyload img-loader">
                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"
                                             :alt="education.title" class="lazyload img-loader">
@@ -385,93 +384,91 @@
 
                 <div class="container pt-3 m-pt-2 mt-5" style="    overflow: hidden;">
                     <div class="width100 block-2 row">
+
+
                         <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="padding">
                                 <div class="news news-3 width100">
-                                    <h3 class="title width100"><a href="#">লাইফ
-                                            স্টাইল</a></h3>
-                                    <div class="first width100"><a href="#"><img
-                                                src="https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2022/12/71-2021-12-07-23-58-40.jpg&amp;w=233&amp;h=148"
-                                                width="233" height="148">
-                                            <h3>শীতকালে ত্বকের যত্নে করণীয়</h3>
-                                        </a></div>
-                                    <div class="other width100"><a href="#"> <i class="fas fa-long-arrow-right"></i>
-                                            সহজেই
-                                            তৈরি করুন কাঁঠালের বার্গার</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i> ‘এলি
-                                            সাব মেইসন’ এখন বাংলাদেশে</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            ‘কুল’
-                                            বিশ্বাস করে সকল ছেলেই কুল</a></div>
+                                    <h3 class="title width100"><a href="#">লাইফ স্টাইল</a></h3>
+                                    <div class="first width100" v-for="(Life_style, naindex) in posts.Life_style" :key="'naindex' + naindex" v-if="naindex==0">
+                                        <router-link :to="{ name: 'readPost', params: { id: Life_style.id, slug: Life_style.title } }">
+
+                                            <img :src="$asseturl + Life_style.fiture" v-if="Life_style.fiture" :alt="Life_style.title" width="233" height="148">
+                                            <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="Life_style.title"  width="233" height="148">
+                                            <h3> {{ Life_style.title }}</h3>
+                                        </router-link>
+                                    </div>
+                                    <div v-for="(Life_style, naindex) in posts.Life_style" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
+                                        <router-link :to="{ name: 'readPost', params: { id: Life_style.id, slug: Life_style.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ Life_style.title }}</router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                         <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="padding">
                                 <div class="news news-3 width100">
-                                    <h3 class="title width100"><a href="#">বিজ্ঞান
-                                            ও প্রযুক্তি</a></h3>
-                                    <div class="first width100"><a href="#"><img
-                                                src="https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2023/01/Walton-Digi-Tech-new-year-offer-website-launching-Picture.jpg&amp;w=233&amp;h=148"
-                                                width="233" height="148">
-                                            <h3>ওয়ালটন কম্পিউটার পণ্যে ১০০ শতাংশ পর্যন্ত ক্যাশব্যাক, চালু হলো নতুন
-                                                ওয়েবসাইট</h3>
-                                        </a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            আইএসও
-                                            সনদ পেলো এডিসন ইন্ডাস্ট্রিজ লিমিটেড</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            ফাস্ট
-                                            চার্জিং ওয়্যারলেস পাওয়ার ব্যাংক আনলো ওয়ালটন</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i> নতুন
-                                            দুই মডেলের আইপিএস গেমিং মনিটর আনলো ওয়ালটন</a></div>
+                                    <h3 class="title width100"><a href="#">তথ্যপ্রযুক্তি</a></h3>
+                                    <div class="first width100" v-for="(Information_technology, naindex) in posts.Information_technology" :key="'naindex' + naindex" v-if="naindex==0">
+                                        <router-link :to="{ name: 'readPost', params: { id: Information_technology.id, slug: Information_technology.title } }">
+
+                                            <img :src="$asseturl + Information_technology.fiture" v-if="Information_technology.fiture" :alt="Information_technology.title" width="233" height="148">
+                                            <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="Information_technology.title"  width="233" height="148">
+                                            <h3> {{ Information_technology.title }}</h3>
+                                        </router-link>
+                                    </div>
+                                    <div v-for="(Information_technology, naindex) in posts.Information_technology" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
+                                        <router-link :to="{ name: 'readPost', params: { id: Information_technology.id, slug: Information_technology.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ Information_technology.title }}</router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                         <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><a href="#">ক্যাম্পাস</a></h3>
-                                    <div class="first width100"><a href="https://www.bd24live.com/bangla/570584/"><img
-                                                src="https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2023/01/1673268824001.jpg&amp;w=233&amp;h=148"
-                                                width="233" height="148">
-                                            <h3>প্রতিষ্ঠাবার্ষিকীতে রক্তদান কর্মসূচি পালন করল ছাত্রলীগ</h3>
-                                        </a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            পিআইবিতে কুবিসাস সদস্যদের
-                                            নিয়ে দুই দিনব্যাপী কর্মশালা সমাপনী</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            ঢাবির
-                                            জিন প্রকৌশল ও জীব প্রযুক্তি বিভাগের নবীন বরণ অনুষ্ঠিত</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            শীতের
-                                            সকালে নতুন রূপে সরকারি তিতুমীর কলেজ</a></div>
+                                    <div class="first width100" v-for="(campus, naindex) in posts.campus" :key="'naindex' + naindex" v-if="naindex==0">
+                                        <router-link :to="{ name: 'readPost', params: { id: campus.id, slug: campus.title } }">
+
+                                            <img :src="$asseturl + campus.fiture" v-if="campus.fiture" :alt="campus.title" width="233" height="148">
+                                            <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="campus.title"  width="233" height="148">
+                                            <h3> {{ campus.title }}</h3>
+                                        </router-link>
+                                    </div>
+                                    <div v-for="(campus, naindex) in posts.campus" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
+                                        <router-link :to="{ name: 'readPost', params: { id: campus.id, slug: campus.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ campus.title }}</router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
+
                         <div class="col-xl-3 col-md-6 col-sm-12">
                             <div class="padding">
                                 <div class="news news-3 width100">
-                                    <h3 class="title width100"><a
-                                            href="https://www.bd24live.com/bangla/category/different-type-of-news/">ভিন্ন
-                                            স্বাদের খবর</a></h3>
-                                    <div class="first width100"><a href="#"><img
-                                                src="https://www.bd24live.com/bangla/mthumb.php?src=https://www.bd24live.com/bangla/wp-content/uploads/2023/01/abbrity.jpg&amp;w=233&amp;h=148"
-                                                width="233" height="148">
-                                            <h3>আবৃত্তি একাডেমির নেতৃত্বে তাহমিনা-বেলায়েত</h3>
-                                        </a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            বিড়াল
-                                            ও মানুষের খুনসুটিতে জনপ্রিয় ‘পুচি ফ্যামিলি’</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            বুর্জ
-                                            খলিফায় একটি ফ্ল্যাটের দাম প্রায় ২০০ কোটি, কী আছে সেখানে</a></div>
-                                    <div class="other width100"><a href="#"><i class="fas fa-long-arrow-right"></i>
-                                            তিন-চার দিনের জন্য বাড়ি
-                                            ভাড়া করে ব্যবসা, গরিব দেশের মেয়েদের এনে চলে অপকর্ম</a></div>
+                                    <h3 class="title width100"><a href="#">সাহিত্য</a></h3>
+                                    <div class="first width100" v-for="(literature, naindex) in posts.literature" :key="'naindex' + naindex" v-if="naindex==0">
+                                        <router-link :to="{ name: 'readPost', params: { id: literature.id, slug: literature.title } }">
+
+                                            <img :src="$asseturl + literature.fiture" v-if="literature.fiture" :alt="literature.title" width="233" height="148">
+                                            <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="literature.title"  width="233" height="148">
+                                            <h3> {{ literature.title }}</h3>
+                                        </router-link>
+                                    </div>
+                                    <div v-for="(literature, naindex) in posts.literature" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
+                                        <router-link :to="{ name: 'readPost', params: { id: literature.id, slug: literature.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ literature.title }}</router-link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
 

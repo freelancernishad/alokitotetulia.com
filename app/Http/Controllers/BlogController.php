@@ -23,6 +23,25 @@ class BlogController extends Controller
             $page = $allpost;
             $category = $request->category;
             $cat_id = Category::where('slug',$category)->first()->id;
+             $subcatCount = Category::where('cat_id',$cat_id)->count();
+             if($subcatCount>0){
+                $subcat = Category::where('cat_id',$cat_id)->get();
+                // $filter = [
+                //     'cat_id1'=>1,
+                //     'cat_id2'=>2,
+                //     'cat_id3'=>3,
+                //     ];
+            // return $filter;
+                // $filter = [];
+
+                $blogs = Blog::orderBy('id','desc');
+                foreach ($subcat as $value) {
+                    $blogs->orwhere('cat_id',$value->id);
+                    // array_push($filter,['cat_id'=>$value->id]);
+                }
+                return $blogs->paginate($page);
+             }
+
 
             return Blog::where('cat_id',$cat_id)->orderBy('id','desc')->paginate($page);
         }

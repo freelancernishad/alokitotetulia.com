@@ -19,6 +19,12 @@ export default {
                 return e.response
             }
         },
+
+
+        dateformatGlobal(date=''){
+            return  User.dateformat(date);
+         },
+
         checkUserPermission(key){
             if(!this.userPermission) return true
             let isPermitted = false;

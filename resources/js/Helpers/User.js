@@ -2,18 +2,30 @@ import Token from './Token'
 import AppStorage from './AppStorage'
 class User {
     dateformat(date = '') {
+
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+
+
+
+
+
+
+
         var dates = [];
+        var today = '';
         if (date == '') {
-            var today = new Date();
+            var todaydate = new Date();
         } else {
-            var today = new Date(date);
+            var todaydate = new Date(date);
         }
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
-        let hrs = today.getHours()
-        let mins = today.getMinutes()
-        let secs = today.getSeconds()
+        var dd = todaydate.getDate();
+        var mm = todaydate.getMonth() + 1;
+        var yyyy = todaydate.getFullYear();
+        let hrs = todaydate.getHours()
+        let mins = todaydate.getMinutes()
+        let secs = todaydate.getSeconds()
         var ampm = hrs >= 12 ? 'pm' : 'am';
         if (dd < 10) {
             dd = '0' + dd;
@@ -24,6 +36,14 @@ class User {
         if (hrs <= 9) {
             hrs = '0' + hrs
         }
+var hrs12 = '';
+        if(hrs>12){
+            hrs12 = hrs-12;
+        }else{
+            hrs12 = hrs
+        }
+
+
         if (mins < 10) {
             mins = '0' + mins
         }
@@ -46,6 +66,17 @@ class User {
         dates.push(today)
         today = yyyy + '-' + mm + '-' + dd + ' ' + hrs + ':' + mins + ':' + secs;
         dates.push(today)
+
+        if (date == '') {
+            var todaydate2 = new Date();
+        } else {
+            var todaydate2 = new Date(date);
+        }
+
+
+        today = dd+' '+ monthNames[todaydate2.getMonth()] +' '+ yyyy + ' ' + hrs12 + ':' + mins + ' ' + ampm;
+        dates.push(today)
+
         return dates;
     }
     responseAfterLogin(res) {

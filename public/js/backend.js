@@ -6791,6 +6791,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee, null, [[0, 6]]);
       }))();
     },
+    dateformatGlobal: function dateformatGlobal() {
+      var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      return User.dateformat(date);
+    },
     checkUserPermission: function checkUserPermission(key) {
       if (!this.userPermission) return true;
       var isPermitted = false;
@@ -7179,20 +7183,22 @@ var User = /*#__PURE__*/function () {
     key: "dateformat",
     value: function dateformat() {
       var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var dates = [];
+      var today = '';
 
       if (date == '') {
-        var today = new Date();
+        var todaydate = new Date();
       } else {
-        var today = new Date(date);
+        var todaydate = new Date(date);
       }
 
-      var dd = today.getDate();
-      var mm = today.getMonth() + 1;
-      var yyyy = today.getFullYear();
-      var hrs = today.getHours();
-      var mins = today.getMinutes();
-      var secs = today.getSeconds();
+      var dd = todaydate.getDate();
+      var mm = todaydate.getMonth() + 1;
+      var yyyy = todaydate.getFullYear();
+      var hrs = todaydate.getHours();
+      var mins = todaydate.getMinutes();
+      var secs = todaydate.getSeconds();
       var ampm = hrs >= 12 ? 'pm' : 'am';
 
       if (dd < 10) {
@@ -7205,6 +7211,14 @@ var User = /*#__PURE__*/function () {
 
       if (hrs <= 9) {
         hrs = '0' + hrs;
+      }
+
+      var hrs12 = '';
+
+      if (hrs > 12) {
+        hrs12 = hrs - 12;
+      } else {
+        hrs12 = hrs;
       }
 
       if (mins < 10) {
@@ -7230,6 +7244,15 @@ var User = /*#__PURE__*/function () {
       today = yyyy + '-' + mm + '-' + dd + ' ' + hrs + ':' + mins + ' ' + ampm;
       dates.push(today);
       today = yyyy + '-' + mm + '-' + dd + ' ' + hrs + ':' + mins + ':' + secs;
+      dates.push(today);
+
+      if (date == '') {
+        var todaydate2 = new Date();
+      } else {
+        var todaydate2 = new Date(date);
+      }
+
+      today = dd + ' ' + monthNames[todaydate2.getMonth()] + ' ' + yyyy + ' ' + hrs12 + ':' + mins + ' ' + ampm;
       dates.push(today);
       return dates;
     }

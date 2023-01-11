@@ -238,17 +238,26 @@
                     </div>
                 </div>
                 <div class="width66 right">
-                    <div class="padding">
+                    <div class="padding" style="width: 100%;">
                         <div>
-                            <p> <strong>এডিটর ইন চিফ: এস.কে. দোয়েল</strong><br data-x="">তেতুলিয়া,পঞ্চগড়<br data-x=""><strong>ই-মেইলঃ</strong> **********<br
-                                    data-x=""><strong>ফোনঃ</strong> ************</p>
+                            <p>
+                                <strong>সম্পাদক: এস.কে. দোয়েল</strong><br>
+                                <strong>বার্তা সম্পাদক: মোবারক হোসাইন</strong><br>
+                                <strong>মফস্বল সম্পাদক: এম আরই রতন</strong><br>
+                                তেতুলিয়া,পঞ্চগড়<br>
+                                <h4>যোগাযোগঃ</h4>
+                                <hr style="margin: 6px 0;"/>
+                                <strong>ই-মেইলঃ</strong> skdoyel2020@gmail.com<br>
+                                <strong>ফোনঃ</strong> ০১৭৫০-১৪০৯১৯</p>
                         </div>
                         <div>
                             <p></p>
-                            <p data-x=""><strong>নিউজ রুমঃ</strong> ***********<br data-x=""><strong>মফস্বল
-                                    ডেস্কঃ</strong> ***********<br data-x=""><strong>বার্তা প্রধানঃ</strong>
-                                ***********<br data-x=""><strong>মার্কেটিং ও সেলসঃ</strong> ***********<br
-                                    data-x=""><strong>ইমেইলঃ</strong> **************</p>
+                            <p data-x="">
+                                <strong>নিউজ রুমঃ</strong> ০১৭৫৫৪৯০৮৯৪<br>
+                                <strong>বার্তা সম্পাদকঃ</strong> ০১৩০৩১৫০০৭০<br>
+                                <strong>মফস্বল সম্পাদকঃ</strong>০১৭৯৪-৯৯৩৯৯৪<br>
+                                <strong>ইমেইলঃ</strong> news.alokitotetulia@gmail.combr>
+                                <strong>ইমেইলঃ</strong> alokitotetulia@gmail.com</p>
                             <p></p>
                         </div>
                     </div>

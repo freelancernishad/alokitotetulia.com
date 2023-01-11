@@ -20,25 +20,23 @@
                                     <div class="details-writer d-flex align-items-center justify-content-between my-2 py-2"
                                         style="gap: 10px">
                                         <div class="d-flex align-items-center">
-                                            <div style="width: 38px;height: 38px;border-radius: 19px;overflow: hidden;">
-
-                                                <img class="author-image" style="width: 100%"
-                                                    src="https://cdn.dhakapost.com/media/common/icon.png"
-                                                    alt="Dhaka Post Desk" />
-
-
+                                            <div style="width: 38px;height: 38px;overflow: hidden;">
+                                                <i class="fa-regular fa-calendar-days" style="font-size: 28px;padding: 4px 6px;color: #9f4404;"></i>
+                                                <!-- <img class="author-image" style="width: 100%" src="https://cdn.dhakapost.com/media/common/icon.png" alt="Dhaka Post Desk" /> -->
 
                                             </div>
                                             <div class="d-flex justify-content-start flex-column ml-2">
-                                                <div class="d-flex align-items-center author-reporting-area">
+                                                <!-- <div class="d-flex align-items-center author-reporting-area">
                                                     <div class="d-flex align-items-center">
                                                         <p class="author">
                                                             জ্যেষ্ঠ প্রতিবেদক
                                                         </p>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <p class="news-time" style="color: rgba( 0, 0,0,0.7);">
-                                                    ০৩ জানুয়ারি ২০২৩, ১১:২১ এএম
+                                                    <!-- ০৩ জানুয়ারি ২০২৩, ১১:২১ এএম -->
+
+                                                    {{ dateformatGlobal(row.created_at)[8] }}
                                                 </p>
                                             </div>
                                         </div>
@@ -79,7 +77,7 @@
 
 
                                                 <div class="col-sm-4 box-news" v-for="(latestPost,index) in posts.latestPost2" :key="index">
-                                                    <router-link :to="{name:'readPost',params:{id:latestPost.id,slug:latestPost.slug}}"
+                                                    <router-link :to="{name:'readPost',params:{id:latestPost.id,slug:latestPost.title}}"
                                                         class="news-item news-item-box">
                                                         <img style=" width:100% !important;height:165px !important;" :src="$asseturl+latestPost.fiture" v-if="latestPost.fiture"  :alt="latestPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="latestPost.title" class="lazyload img-loader">
@@ -112,7 +110,7 @@
                                             <div class="regular-list scaled m-px-0">
 
 
-                                                <router-link v-for="(relatedPost,index) in posts.relatedPosts" :key="index" :to="{name:'readPost',params:{id:relatedPost.id,slug:relatedPost.slug}}" class="news-item news-item-regular py-2" >
+                                                <router-link v-for="(relatedPost,index) in posts.relatedPosts" :key="index" :to="{name:'readPost',params:{id:relatedPost.id,slug:relatedPost.title}}" class="news-item news-item-regular py-2" >
                                                     <div class="image-container">
                                                         <img style=" width:100% !important;height:75px !important;" :src="$asseturl+relatedPost.fiture" v-if="relatedPost.fiture"  :alt="relatedPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="relatedPost.title" class="lazyload img-loader">
@@ -136,7 +134,7 @@
                                             <div class="regular-list scaled m-px-0">
 
 
-                                                <router-link v-for="(latestPost,index) in posts.latestPost" :key="index" :to="{name:'readPost',params:{id:latestPost.id,slug:latestPost.slug}}" class="news-item news-item-regular py-2" >
+                                                <router-link v-for="(latestPost,index) in posts.latestPost" :key="index" :to="{name:'readPost',params:{id:latestPost.id,slug:latestPost.title}}" class="news-item news-item-regular py-2" >
                                                     <div class="image-container">
                                                         <img style=" width:100% !important;height:75px !important;" :src="$asseturl+latestPost.fiture" v-if="latestPost.fiture"  :alt="latestPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="latestPost.title" class="lazyload img-loader">
@@ -182,6 +180,15 @@ export default {
              },
         }
     },
+    watch: {
+        '$route': {
+            handler(newValue, oldValue) {
+                this.getunionInfo(this.$route.params.id);
+           this.getposts(this.$route.params.id);
+            },
+            deep: true
+        }
+    },
     methods:{
 
 
@@ -190,17 +197,14 @@ export default {
 
                 axios.get(`/api/get/post/by/post/${id}`)
                 .then((res)=>{
-
                     this.posts = res.data
                 })
 
         },
 
        getposts(id=''){
-
                 axios.get(`/api/update/blog/${id}`)
                 .then((res)=>{
-
                     this.row = res.data
                 })
 
