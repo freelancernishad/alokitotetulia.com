@@ -23,7 +23,7 @@ import Notification from './helpers/Notification';
 window.Notification = Notification
 import common from './common'
 Vue.mixin(common)
-
+window.Noty = require('noty');
 try {
     window.$ = window.jQuery = require('jquery');
 } catch (e) {}

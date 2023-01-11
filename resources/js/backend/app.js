@@ -62,7 +62,7 @@ import paginate from './paginate.vue'
 Vue.component('Pagination', paginate);
 
 // window._ = require('lodash');
-window.Noty = require('noty');
+
 
 
 import { BButton, BCol, BContainer, BFormGroup, BFormInput, BInputGroup, BInputGroupAppend, BModal, BPagination, BRow, BTable } from 'bootstrap-vue'
