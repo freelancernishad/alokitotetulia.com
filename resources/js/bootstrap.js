@@ -12,7 +12,7 @@ if(window.location.port=='8000'){
     import loader from "vue-ui-preloader";
 
     Vue.use(loader);
-    
+
 Vue.prototype.$localStorage = localStorage
 window.ASSETURL = Vue.prototype.$asseturl
 // Vue.prototype.$appName = process.env.MIX_FILE_PATH
@@ -24,14 +24,6 @@ window.Notification = Notification
 import common from './common'
 Vue.mixin(common)
 
-import Vue2Editor from "vue2-editor";
-Vue.use(Vue2Editor);
-
-import paginate from './paginate.vue'
-Vue.component('Pagination', paginate);
-
-// window._ = require('lodash');
-window.Noty = require('noty');
 try {
     window.$ = window.jQuery = require('jquery');
 } catch (e) {}
