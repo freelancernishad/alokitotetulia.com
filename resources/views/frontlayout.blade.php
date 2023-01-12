@@ -31,7 +31,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.8') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.9') }}"></script>
 
 <script>
 

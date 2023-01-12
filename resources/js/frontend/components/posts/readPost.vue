@@ -7,14 +7,16 @@
                     <div class="news-items">
                         <div class="row news-item-0">
                             <div class="col-xl-9 col-lg-8 news-root-container-0">
-                                <ol class="d-flex" style="padding: 0; margin: 8px 0 16px">
+
+                                <!-- <ol class="d-flex" style="padding: 0; margin: 8px 0 16px">
                                     <li class="breadcrumb-item">
                                         <a href="https://www.dhakapost.com">প্রচ্ছদ</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
                                         <a href="https://www.dhakapost.com/law-courts">আইন-আদালত</a>
                                     </li>
-                                </ol>
+                                </ol> -->
+
                                 <article class="details-body" lg-uid="lg0">
                                     <h1 class="news-title">{{ row.title }}
                                     </h1>

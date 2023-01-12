@@ -78,32 +78,19 @@ class BlogController extends Controller
         $categories = Category::all();
         foreach ($categories as $value) {
             $catCount = Category::where(['slug'=>$value->name])->count();
+            // print_r(BanglaToEnglish($value->name)); echo "<br>";
             if($catCount>0){
-
                  $subcatCount = Category::where(['cat_id'=>$value->id,'type'=>'sub'])->count();
-                //  print_r($subcatCount);
                 if($subcatCount>0){
                     $subcat = Category::where(['cat_id'=>$value->id,'type'=>'sub'])->get();
                    $blogs = Blog::orderBy('id','desc')->where(['cat_id'=>$value->id]);
                    foreach ($subcat as $value2) {
                        $blogs->orwhere('cat_id',$value2->id);
-                    //    print_r($value2->id);
-
                     }
-                    //  return $value->name;
-
                     $data[BanglaToEnglish($value->name)]  = $blogs->latest()->limit(6)->get();
-                    // return $data;
                 }else{
                     $data[BanglaToEnglish($value->name)] = Blog::where(['cat_id'=>$value->id])->orderBy('id','desc')->latest()->limit(6)->get();
-
                 }
-
-
-
-
-
-
             }else{
                 $data[BanglaToEnglish($value->name)] = [];
 
