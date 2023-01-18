@@ -10,7 +10,7 @@
 
                         <div class="col-lg-3 col-md-6">
                             <div class="top-right m-pt-3">
-                                <div class="opinion-contents" style="    border: 1px solid black;background: #28282821;">
+                                <div class="opinion-contents" style="    border: 1px solid black;">
                                     <div class="category-header opinion-header text-center" style="background: rgb(42 42 42);">
                                         <div class="heading opinion-heading text-center">
                                             <p class="title"><a href="javascript:void(0)" class="text-white">সর্বশেষ সংবাদ</a></p>
@@ -33,11 +33,7 @@
                                         </router-link>
                                     </div>
                                 </div>
-                                <div class="advertisement mt-3">
-                                    <div id='div-gpt-ad-1620297530803-0'
-                                        style='max-width: 100%; width: 300px; height: 250px;'>
-                                    </div>
-                                </div>
+              
                             </div>
                         </div>
 
