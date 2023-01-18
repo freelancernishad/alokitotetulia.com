@@ -44,11 +44,23 @@ class CategoryController extends Controller
 
     public function getCategory(Request $request)
     {
+
+
+        $singleid = $request->singleid;
+        if($singleid){
+            return  Category::find($singleid);
+        }
+
+
+
+
         $type = $request->type;
         if($type=='all'){
             return  Category::orderBy('id','desc')->get();
         }
         return Category::orderBy('id','desc')->paginate(20);
+
+
     }
         public function getSinglecategory(Request $request,$id)
         {

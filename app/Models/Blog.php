@@ -15,6 +15,7 @@ class Blog extends Model
         'cat_name',
         'title',
         'slug',
+        'video',
         'short_description',
         'long_description',
         'fiture',

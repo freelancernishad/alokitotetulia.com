@@ -66,7 +66,17 @@ class BlogController extends Controller
     {
 
 
-        $latestPost = Blog::orderBy('id','desc')->latest()->limit(8)->get();
+        $categoriesCount = Category::where('name','ভিডিও গ্যালারি')->count();
+        if($categoriesCount>0){
+              $categories = Category::where('name','ভিডিও গ্যালারি')->first();
+            $latestPost = Blog::where('cat_id','!=',$categories->id)->orderBy('id','desc')->latest()->limit(8)->get();
+
+        }else{
+            $latestPost = Blog::orderBy('id','desc')->latest()->limit(8)->get();
+        }
+
+
+
         $featured_post = Blog::where('featured_post',1)->orderBy('id','desc')->latest()->limit(4)->get();
 
 
@@ -87,9 +97,25 @@ class BlogController extends Controller
                    foreach ($subcat as $value2) {
                        $blogs->orwhere('cat_id',$value2->id);
                     }
-                    $data[BanglaToEnglish($value->name)]  = $blogs->latest()->limit(6)->get();
+
+
+                    if($value->name=='জাতীয়'){
+                        $data[BanglaToEnglish($value->name)]  = $blogs->latest()->limit(8)->get();
+                    }else{
+                        $data[BanglaToEnglish($value->name)]  = $blogs->latest()->limit(6)->get();
+                    }
+
+
                 }else{
-                    $data[BanglaToEnglish($value->name)] = Blog::where(['cat_id'=>$value->id])->orderBy('id','desc')->latest()->limit(6)->get();
+
+
+                    if($value->name=='জাতীয়'){
+                        // return  $value->name;
+                        $data[BanglaToEnglish($value->name)] = Blog::where(['cat_id'=>$value->id])->orderBy('id','desc')->latest()->limit(8)->get();
+                    }else{
+                        $data[BanglaToEnglish($value->name)] = Blog::where(['cat_id'=>$value->id])->orderBy('id','desc')->latest()->limit(6)->get();
+                    }
+                    // $data[BanglaToEnglish($value->name)] = Blog::where(['cat_id'=>$value->id])->orderBy('id','desc')->latest()->limit(6)->get();
                 }
             }else{
                 $data[BanglaToEnglish($value->name)] = [];

@@ -10,8 +10,8 @@
 
                         <div class="col-lg-3 col-md-6">
                             <div class="top-right m-pt-3">
-                                <div class="opinion-contents" style="    border: 1px solid black;">
-                                    <div class="category-header opinion-header text-center" style="    background: #6c6c6c;">
+                                <div class="opinion-contents" style="    border: 1px solid black;background: #28282821;">
+                                    <div class="category-header opinion-header text-center" style="background: rgb(42 42 42);">
                                         <div class="heading opinion-heading text-center">
                                             <p class="title"><a href="javascript:void(0)" class="text-white">সর্বশেষ সংবাদ</a></p>
                                         </div>
@@ -129,13 +129,25 @@
 
                     </div>
                 </div>
-                <div class="section-two py-3 bg-section-two mt-3 m-mt-2">
+
+
+
+                <div class="container">
+
+                <p class="d-flex align-items-center" style="    margin-left: 0;margin-top: 7px;">
+
+                     <img :src="$asseturl+'softwebad.jpeg'" width="100%" />
+
+               </p>
+            </div>
+
+                <div class="section-two py-3 bg-section-two">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xl-12 col-sm-12 special-top">
-                                <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2">
+                            <div class="col-xl-12 col-sm-12 special-top" style="background: #00519738;">
+                                <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="    background: #005197 !important;">
                                 <div class="heading opinion-heading">
-                                    <p class="title"><router-link title=""
+                                    <p class="title"><router-link title="" style="color:white"
                                             :to="{ name: 'categoryPost', params: { cat: 'জাতীয়' } }"
                                             class="country-lc">জাতীয়</router-link></p>
                                 </div>
@@ -174,8 +186,8 @@
 
                 <div class="container pt-3 ">
                     <div class="row">
-                        <div class="col-lg-9 col-md-8">
-                            <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2">
+                        <div class="col-lg-9 col-md-8" style="    background: #87c90730;">
+                            <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="background: #87c907;">
                                 <div class="heading opinion-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'সারাদেশ' } }"
@@ -211,9 +223,9 @@
                         </div>
 
 
-                        <div class="col-lg-3 col-md-4 politics">
+                        <div class="col-lg-3 col-md-4 politics" style="background: #ff99001f;">
                             <div
-                                class="category-header politics-ch d-flex justify-content-between align-items-center politics__home mt-2">
+                                class="category-header politics-ch d-flex justify-content-between align-items-center politics__home mt-2" style="    background: #ff9900;">
                                 <div class="heading politics-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'আন্তর্জাতিক' } }"
@@ -255,9 +267,9 @@
 
                 <div class="container pt-3 m-pt-2">
                     <div class="row">
-                        <div class="col-lg-9 col-md-8">
+                        <div class="col-lg-9 col-md-8" style="background: #aeb5cb63 !important;">
                             <div
-                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2">
+                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="background: #74d2e7 !important;">
                                 <div class="heading opinion-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'পঞ্চগড়ের খবর' } }"
@@ -294,7 +306,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-4 politics">
+                        <div class="col-lg-3 col-md-4 politics" style="">
                             <div
                                 class="category-header politics-ch d-flex justify-content-between align-items-center politics__home mt-2">
                                 <div class="heading politics-heading">
@@ -335,9 +347,9 @@
 
                 <div class="container pt-3 m-pt-2">
                     <div class="row">
-                        <div class="col-lg-9 col-md-8">
+                        <div class="col-lg-9 col-md-8" style="background: #a24bf145;">
                             <div
-                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2">
+                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="    background: #a24bf1;">
                                 <div class="heading opinion-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'বিনোদন' } }"
@@ -678,143 +690,50 @@
 
 
 
-                <div class="container">
+                <div class="container mb-3">
                     <div class="LeadTitlebar3">
                         <a href="https://www.risingbd.com/videogallery/archives">
                             <h2><span>ভিডিও গ্যালারি</span></h2>
                         </a>
                     </div>
                     <div class="row">
-                        <div class="col-lg-5 col-sm-12 rowresize" style="flex: 0 0 40%;max-width: 40%;">
+                        <div class="col-lg-5 col-sm-12 rowresize mb-3">
                             <div class="VideoGalleryTop">
-                                <div class="col-sm-12 thumbnail">
-                                    <a href="#">
+                                <div class="thumbnail" v-for="(videoGallery, naindex) in posts.videoGallery" :key="'naindex' + naindex" v-if="naindex==0">
+                                    <router-link :to="{ name: 'readPost', params: { id: videoGallery.id, slug: videoGallery.title } }">
                                         <div class="Imgresize">
                                             <picture class="Ratio Ratio16x9 VideoIcon">
-                                                <img src="https://img.youtube.com/vi/MTj0t0_STkM/0.jpg" alt="" title=""
-                                                    class="img-fluid img100 Ratio Ratio16x9">
+                                                <img :src="$asseturl + videoGallery.fiture" v-if="videoGallery.fiture" :alt="videoGallery.title"
+                                                    class="img-fluid img100 Ratio Ratio16x9" width="100%">
                                             </picture>
                                         </div>
                                         <div class="caption">
                                             <h3></h3>
                                         </div>
-                                    </a>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-7 col-sm-12 rowresize" style="flex: 0 0 60%;max-width: 60%;">
+                        <div class="col-lg-7 col-sm-12 rowresize">
                             <div class="DVideoArea">
                                 <div class="row">
-                                    <div class="col-lg-4 col-sm-6">
+                                    <div class="col-lg-4 col-sm-6 mb-3" v-for="(videoGallery, naindex) in posts.videoGallery" :key="'naindex' + naindex" v-if="naindex!=0">
                                         <div class="VideoGalleryList">
                                             <div class="col-sm-12 thumbnail">
-                                                <a
-                                                    href="https://www.risingbd.com/videogallery/index.php?videoinfo=1165">
+                                                <router-link :to="{ name: 'readPost', params: { id: videoGallery.id, slug: videoGallery.title } }">
                                                     <div class="Imgresize">
                                                         <picture class="Ratio Ratio16x9 VideoIcon">
-                                                            <img src="https://img.youtube.com/vi/_gib8atjfPA/0.jpg"
-                                                                alt="" title="" class="img-fluid img100">
+                                                            <img :src="$asseturl + videoGallery.fiture" v-if="videoGallery.fiture" :alt="videoGallery.title" class="img-fluid img100">
                                                         </picture>
                                                     </div>
                                                     <div class="caption">
-                                                        <h3></h3>
+                                                        <h3>{{ videoGallery.title }}</h3>
                                                     </div>
-                                                </a>
+                                                </router-link>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="VideoGalleryList">
-                                            <div class="col-sm-12 thumbnail">
-                                                <a
-                                                    href="https://www.risingbd.com/videogallery/index.php?videoinfo=1164">
-                                                    <div class="Imgresize">
-                                                        <picture class="Ratio Ratio16x9 VideoIcon">
-                                                            <img src="https://img.youtube.com/vi/NjbZYKyWrzA/0.jpg"
-                                                                alt="জার্সি, পতাকা বিক্রির ধুম | World Cup | RisingBD"
-                                                                title="জার্সি, পতাকা বিক্রির ধুম | World Cup | RisingBD"
-                                                                class="img-fluid img100">
-                                                        </picture>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <h3>জার্সি, পতাকা বিক্রির ধুম | World Cup | RisingBD</h3>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="VideoGalleryList">
-                                            <div class="col-sm-12 thumbnail">
-                                                <a
-                                                    href="https://www.risingbd.com/videogallery/index.php?videoinfo=1163">
-                                                    <div class="Imgresize">
-                                                        <picture class="Ratio Ratio16x9 VideoIcon">
-                                                            <img src="https://img.youtube.com/vi/ThjAyNEER8g/0.jpg"
-                                                                alt="" title="" class="img-fluid img100">
-                                                        </picture>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <h3></h3>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="VideoGalleryList">
-                                            <div class="col-sm-12 thumbnail">
-                                                <a
-                                                    href="https://www.risingbd.com/videogallery/index.php?videoinfo=1161">
-                                                    <div class="Imgresize">
-                                                        <picture class="Ratio Ratio16x9 VideoIcon">
-                                                            <img src="https://img.youtube.com/vi/_dbbqpipi6Y/0.jpg"
-                                                                alt="" title="" class="img-fluid img100">
-                                                        </picture>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <h3></h3>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="VideoGalleryList">
-                                            <div class="col-sm-12 thumbnail">
-                                                <a
-                                                    href="https://www.risingbd.com/videogallery/index.php?videoinfo=1160">
-                                                    <div class="Imgresize">
-                                                        <picture class="Ratio Ratio16x9 VideoIcon">
-                                                            <img src="https://img.youtube.com/vi/OAYM3wwn64s/0.jpg"
-                                                                alt="" title="" class="img-fluid img100">
-                                                        </picture>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <h3></h3>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="VideoGalleryList">
-                                            <div class="col-sm-12 thumbnail">
-                                                <a
-                                                    href="https://www.risingbd.com/videogallery/index.php?videoinfo=1159">
-                                                    <div class="Imgresize">
-                                                        <picture class="Ratio Ratio16x9 VideoIcon">
-                                                            <img src="https://img.youtube.com/vi/G-NWoPgVkJw/0.jpg"
-                                                                alt="" title="" class="img-fluid img100">
-                                                        </picture>
-                                                    </div>
-                                                    <div class="caption">
-                                                        <h3></h3>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -1361,4 +1280,34 @@ h3.title.width100 {
     background: #0d5404;
     border-radius: 10px;
     }
+
+
+
+
+
+
+
+    img.img-fluid.img100.Ratio.Ratio16x9 {
+    width: 100%;
+    height: 358px;
+}
+
+
+img.img-fluid.img100 {
+    width: 100%;
+    height: 173px;
+}
+
+@media screen and (max-width:768px) {
+    img.img-fluid.img100.Ratio.Ratio16x9 {
+    width: 100%;
+    height: 100%;
+}
+}
+
+
+
+
+
+
 </style>

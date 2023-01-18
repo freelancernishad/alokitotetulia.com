@@ -44,7 +44,7 @@
 
 
 
-                                        <select v-model="form.cat_id" id="category" class="form-control" >
+                                        <select v-model="form.cat_id" id="category" class="form-control" @change="checkCat" >
 
                                             <option value="">Select</option>
 
@@ -60,6 +60,15 @@
                                     </div>
 
                                 </div>
+
+
+                                <div class="col-md-12" v-if="getcatdata.name=='ভিডিও গ্যালারি'">
+                                    <div class="form-group">
+                                        <label>Video</label>
+                                        <input type="text" class="form-control" v-model="form.video" id="short_description" value="">
+                                    </div>
+                                </div>
+
 
 
                                 <div class="col-md-12">
@@ -138,6 +147,7 @@ export default {
                 Images:null,
              },
              categorys:{},
+             getcatdata:{},
         }
     },
     methods:{
@@ -168,6 +178,14 @@ export default {
 
         var res = await this.callApi('get',`/api/get/category/list?type=all`,[]);
         this.categorys = res.data
+
+
+        },
+
+      async checkCat(){
+
+        var res = await this.callApi('get',`/api/get/category/list?singleid=${this.form.cat_id}`,[]);
+        this.getcatdata = res.data
 
 
         },

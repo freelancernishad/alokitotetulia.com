@@ -14,7 +14,7 @@
 
                     <div class="col-sm-3">
 
-                        <form role="search" method="get" id="searchform" class="searchform d-flex"
+                        <!-- <form role="search" method="get" id="searchform" class="searchform d-flex"
                             action="https://shamolynews24.com">
                             <div class="col-xs-10 col-sm-11" style="padding:0 !important">
                                 <input class="form-control" value="" name="s" id="s" placeholder="কী খুঁজতে চান ?"
@@ -28,14 +28,14 @@
                                     <i class="fa fa-search srch_btn"></i>
                                 </button>
                             </div>
-                        </form>
+                        </form> -->
 
                     </div>
 
                     <div class="col-sm-2">
                         <ul class="social-media">
 
-                            <li><a href="" target="_blank" title="iPhone/Mac"><i style="background: #cd171e;"
+                            <!-- <li><a href="" target="_blank" title="iPhone/Mac"><i style="background: #cd171e;"
                                         class="fa fa-camera"></i></a></li>
 
                             <li><a href="#" target="_blank" title="Youtube" style=""><i style="background: #cd171e;"
@@ -45,7 +45,7 @@
                             <li><a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#" target="_blank" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                            </li>
+                            </li> -->
 
 
                             <!--<li><a href="" target="_blank" title="Android"><i class="fa fa-android"></i></a></li>
@@ -83,7 +83,7 @@
 
 
         <div class="body-items" style="background: #f9f9f9">
-    
+
             <div class="container d-none d-print">
                 <img class="print-logo" style="max-width: 250px;"
                 :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="alokitotetulia.com" />
@@ -97,38 +97,69 @@
                             alt="Dhaka Post" />
                     </router-link>
 
-                   
+
                     <div class="d-flex align-items-center social-media-icons">
                 <p class="d-flex align-items-center" style="    margin-left: 70px;margin-top: 7px;">
-          
+
                      <img :src="$asseturl+'softwebad.jpeg'" width="100%" />
-                 
+
                </p>
-               </div> 
+               </div>
                 </div>
             </div>
 
 
-     
+
             <nav class="container navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
                 <!-- <div class="container"> -->
-                    <button class="navbar-toggler collapsed m-margin-reducer-left-14" type="button"
+
+                    <button class="navbar-toggler collapsed m-margin-reducer-left-14" type="button" @click="openMenu"
                         data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar top-bar"></span>
                         <span class="icon-bar middle-bar"></span>
                         <span class="icon-bar bottom-bar"></span>
-                        <span class="sr-only">DP</span>
+                        <span class="sr-only">AL</span>
                     </button>
+
+
+
                     <div class="navbar-brand align-items-center d-flex d-lg-none mr-0">
                         <a title="Dhaka Post" href="/">
                             <img :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="Dhaka Post"
                                 width="1345" height="192" />
                         </a>
                     </div>
-                    <button type="button" class="btn btn-link d-flex d-lg-none" data-target="slide-down-m"
+                    <span></span>
+
+                    <!-- <button type="button" class="btn btn-link d-flex d-lg-none" data-target="slide-down-m"
                         aria-label="Search" style="margin-right: -14px;">
-                        <i class="fa fa-search" style="font-size: 20px;"></i></button>
+                        <i class="fa fa-search" style="font-size: 20px;"></i></button> -->
+<!--
+                        <div class="mobileMenu">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                                <div class="col-md-4 col-sm-6 col-6">menu 1</div>
+                            </div>
+                        </div> -->
+
+
+
+
+
+
+
+
+
+
+
                     <div class="navbar-collapse collapse" id="main-nav-1">
                         <div style="width: 99%">
                             <ul class="navbar-nav m-auto d-none d-lg-flex d-menu-items justify-content-center">
@@ -156,28 +187,14 @@
                                 <span class="icon-bar top-bar"></span>
                                 <span class="icon-bar middle-bar"></span>
                                 <span class="icon-bar bottom-bar"></span>
-                                <span class="sr-only">DP</span>
+                                <span class="sr-only">AL</span>
                             </button>
                         </div>
                     </div>
-                <!-- </div> -->
+
             </nav>
 
 
-
-
-
-            <!-- <div style="position:relative">
-
-            <span class="Headtitle">সর্বশেষঃ</span>
-            <marquee style="
-                    background: #FF0000;
-                    color: white;
-                    padding: 3px 0;
-                    font-size: 15px;
-                    ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos rem illo provident magni dolores possimus, modi doloribus optio distinctio quod tempore perferendis, accusantium adipisci ducimus facere. Nostrum placeat quod in.</marquee>
-
-</div> -->
 
 
 
@@ -190,8 +207,8 @@
         <div class="container">
 
 
+<!--
 
- 
             <nav class="navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
                 <div class="container">
                     <button class="navbar-toggler collapsed m-margin-reducer-left-14" type="button"
@@ -262,8 +279,8 @@
                     </div>
                 </form>
             </nav>
-     
 
+ -->
 
 
 
@@ -275,26 +292,71 @@
     overflow: hidden;
     color: #161616 !important;">
         <div class="container">
-        <div class="copyright width100">
-            <div class="padding">
-                <div class="width33 copy left">
+        <div class="copyright width100" style="padding-top: 30px;">
+            <div class="padding row">
+
+<!--
+                <div class="col-xl-4 col-md-6 col-sm-12  mb-3">
                     <div class="padding">
                         <div class="width100"><router-link to="/">
                             <img width="50%" :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" ></router-link></div>
-                        <div class="width100"> alokitotetulia.com © ২০২৩ | নিবন্ধন নং- .... | <br> - Developed by | <a
-                                href="https://www.softwebsys.com" target="_blank" rel="noopener">Softweb System solution</a> <br>
+                        <div class="width100"> alokitotetulia.com © ২০২৩ | নিবন্ধন নং- .... | <br> - Developed by | <a href="https://www.softwebsys.com" target="_blank" rel="noopener">Softweb System solution</a> <br>
+                        </div>
+                    </div>
+                </div> -->
+
+
+                <div class="col-xl-4 col-md-4 col-sm-12 footerOption mb-3">
+                            <p>
+                                <strong>সম্পাদক: এস.কে. দোয়েল</strong><br>
+                                <strong>বার্তা সম্পাদক: মোবারক হোসাইন</strong><br>
+                                <strong>মফস্বল সম্পাদক: এম আরই রতন</strong><br>
+
+
+                                <hr style="margin: 6px 0;"/>
+                                <strong>ই-মেইলঃ</strong> skdoyel2020@gmail.com<br>
+                                <strong>ফোনঃ</strong> ০১৭৫০-১৪০৯১৯</p>
+                        </div>
+
+
+                        <div class="col-xl-4 col-md-6 col-sm-12 footerOption mb-3">
+                            <p></p>
+                            <p data-x="">
+                                <strong>নিউজ রুমঃ</strong> ০১৭৫৫৪৯০৮৯৪<br>
+                                <strong>বার্তা সম্পাদকঃ</strong> ০১৩০৩১৫০০৭০<br>
+                                <strong>মফস্বল সম্পাদকঃ</strong>০১৭৯৪-৯৯৩৯৯৪<br>
+                                <strong>ইমেইলঃ</strong> news.alokitotetulia@gmail.com<br>
+                                <strong>ইমেইলঃ</strong> alokitotetulia@gmail.com</p>
+                            <p></p>
+                        </div>
+
+
+                <div class="col-xl-4 col-md-6 col-sm-12 footerOption mb-3">
+                    <div class="padding">
+                        <div class="width100"><router-link to="/">
+                            Developed by : <br>
+                            <img width="50%" :src="$asseturl + 'syslogo.png'" ></router-link></div>
+                        <div class="width100"><a href="https://www.softwebsys.com" target="_blank" rel="noopener">Softweb System Solution</a><p style="font-size:14px">Panchagarh, Bangladesh.</p>
+                            <ul style="">
+                                <li><a href="mailto:info@softwebsys.com"><i class="fa-solid fa-envelope"></i> info@softwebsys.com</a></li>
+                                <li><a target="_blank" href="https://www.softwebsys.com"> <i class="fa-solid fa-earth-americas"></i> www.softwebsys.com</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="width66 right">
+
+
+
+<!--
+                <div class="col-xl-4 width66 right">
                     <div class="padding" style="width: 100%;">
                         <div>
                             <p>
                                 <strong>সম্পাদক: এস.কে. দোয়েল</strong><br>
                                 <strong>বার্তা সম্পাদক: মোবারক হোসাইন</strong><br>
                                 <strong>মফস্বল সম্পাদক: এম আরই রতন</strong><br>
-                          
-                             
+
+
                                 <hr style="margin: 6px 0;"/>
                                 <strong>ই-মেইলঃ</strong> skdoyel2020@gmail.com<br>
                                 <strong>ফোনঃ</strong> ০১৭৫০-১৪০৯১৯</p>
@@ -310,7 +372,14 @@
                             <p></p>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+
+
+
+
+
+
             </div>
             <!-- <div class="links"> <a href="https://www.bd24live.com/bangla/about-us">About Us</a> <a
                     href="https://www.bd24live.com/bangla/terms-conditions">Terms &amp; Conditions</a> <a
@@ -323,18 +392,19 @@
     </div>
 </footer>
 <div class="jFooterBottom">
-        <div class="container">
+        <div class="container" style="padding: 9px 0 0px 0px;">
             <div class="row d-flex align-items-center">
                 <div class="col-sm-6">
-                    <p style="    display: flex;
+                    <p class="footerText" style="    display: flex;
     align-items: center;
     color: white;
     font-size: 13px;">
                         <i class="fa fa-copyright"></i> &nbsp; ২০২৩ সর্বস্বত্ব সংরক্ষিত  &nbsp; <a href="https://alokitotetulia.com" class="text-white">আলোকিত তেঁতুলিয়া</a>
+
                     </p>
                 </div>
                 <div class="col-sm-6 text-right">
-                    <ul>
+                    <ul class="footerSocialLink">
                         <li><a href="#" title="Facebook" target="_blank" rel="nofollow noopener"><i class="fa-brands fa-facebook-f"></i></a></li>
                         <li><a href="#" title="Twitter" target="_blank" rel="nofollow noopener"><i class="fa-brands fa-twitter"></i></a></li>
                         <li><a href="#" title="Instagram" target="_blank" rel="nofollow noopener"><i class="fa-brands fa-instagram"></i></a></li>
@@ -413,6 +483,12 @@ export default {
         }
     },
     methods: {
+
+        openMenu(){
+            console.log('open menu')
+        },
+
+
         async getMainMenu() {
             var res = await this.callApi('get', `/api/get/all/category`, []);
             this.menus = res.data
@@ -636,5 +712,28 @@ div#pagetop {
     background: #b1b1b1;
     color: white;
 }
+
+
+.footerOption {
+    border-left: 3px solid #ad1818;
+    line-height: 30px;
+    font-size: 18px;
+    padding-left: 25px;
+}
+
+
+
+@media screen and (max-width:768px) {
+
+    .footerText{
+        justify-content: center !important;
+    }
+    .footerSocialLink{
+        text-align: center !important;
+    }
+
+}
+
+
 
 </style>

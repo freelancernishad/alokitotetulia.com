@@ -46,15 +46,20 @@
                                     </div>
 
                                     <hr class="pb-2 fix-padding-0" />
-                                    <div class="news-image">
 
+
+                                    <div class="news-image" v-if="posts.category.name=='ভিডিও গ্যালারি'" v-html="row.video"></div>
+
+
+                                    <div class="news-image" v-else>
                                         <img  :src="$asseturl+row.fiture" v-if="row.fiture"  :alt="row.title" class="lazyload img-loader">
                                        <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="row.title" class="lazyload img-loader">
-
-
-
                                         <p class="news-image-caption"></p>
                                     </div>
+
+
+
+
                                     <div class="news-details" v-html="row.long_description">
 
 
@@ -227,3 +232,8 @@ export default {
         }
 }
 </script>
+<style>
+.news-image iframe {
+    width: 100% !important;
+}
+</style>

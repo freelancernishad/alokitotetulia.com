@@ -227,6 +227,8 @@ function ekpayToken($trnx_id=123456789,$trns_info=[],$cust_info=[],$path='paymen
             $data = 'health';
         }elseif($text=='পঞ্চগড়ের খবর'){
             $data = 'Panchagarh_news';
+        }elseif($text=='ভিডিও গ্যালারি'){
+            $data = 'videoGallery';
         }else{
             $data = $text;
         }

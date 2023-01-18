@@ -2,6 +2,7 @@
 
 use App\Models\Blog;
 use App\Models\Role;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -48,7 +49,22 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
 });
 Route::get('/{vue_capture?}', function () {
 
-    $latestpost = Blog::orderBy('id','desc')->latest()->limit(8)->get();
+
+    $categoriesCount = Category::where('name','ভিডিও গ্যালারি')->count();
+    if($categoriesCount>0){
+          $categories = Category::where('name','ভিডিও গ্যালারি')->first();
+
+        $latestpost = Blog::where('cat_id','!=',$categories->id)->orderBy('id','desc')->latest()->limit(8)->get();
+    }else{
+
+        $latestpost = Blog::orderBy('id','desc')->latest()->limit(8)->get();
+    }
+
+
+
+
+
+
 
     return view('frontlayout',compact('latestpost'));
 })->where('vue_capture', '.*')->name('frontend');
