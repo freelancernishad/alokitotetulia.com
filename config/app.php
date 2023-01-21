@@ -177,6 +177,10 @@ return [
         Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
 
+
+        S1K3\Bangla\Date\BanglaDateServiceProvider::class
+
+
     ],
 
     /*

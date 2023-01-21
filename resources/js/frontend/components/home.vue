@@ -418,7 +418,7 @@
                     <div class="width100 block-2 row">
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'লাইফ স্টাইল' } }">লাইফ স্টাইল</router-link></h3>
@@ -439,7 +439,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'তথ্যপ্রযুক্তি' } }">তথ্যপ্রযুক্তি</router-link></h3>
@@ -460,7 +460,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'বিশেষ প্রতিবেদন' } }">বিশেষ প্রতিবেদন</router-link></h3>
@@ -481,7 +481,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'খেলাধূলা' } }">খেলাধূলা</router-link></h3>
@@ -508,7 +508,7 @@
                     <div class="width100 block-2 row">
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'স্বাস্থ্য' } }">স্বাস্থ্য</router-link></h3>
@@ -529,7 +529,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ধর্ম ও জীবন' } }">ধর্ম ও জীবন</router-link></h3>
@@ -550,7 +550,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'কৃষি' } }">কৃষি</router-link></h3>
@@ -571,7 +571,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ফিচার' } }">ফিচার</router-link></h3>
@@ -598,7 +598,7 @@
                     <div class="width100 block-2 row">
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ক্যাম্পাস' } }">ক্যাম্পাস</router-link></h3>
@@ -619,7 +619,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ভ্রমণ' } }">ভ্রমণ</router-link></h3>
@@ -640,7 +640,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'চাকুরী' } }">চাকুরী</router-link></h3>
@@ -661,7 +661,7 @@
 
 
 
-                        <div class="col-xl-3 col-md-6 col-sm-12">
+                        <div class="col-xl-3 col-md-6 col-sm-12 postbgFooter">
                             <div class="padding">
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'অন্যান্য' } }">ভিন্ন সংবাদ</router-link></h3>
@@ -816,7 +816,7 @@ span.prev {
     position: absolute;
     top: 47%;
     left: 0;
-    z-index: 1;
+    z-index: 9;
 }
 
 
@@ -1304,6 +1304,9 @@ img.img-fluid.img100 {
 
 
 
+.postbgFooter{
+    background: #a3ffaa26;
+}
 
 
 </style>

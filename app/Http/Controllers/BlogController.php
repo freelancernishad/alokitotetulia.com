@@ -6,8 +6,26 @@ use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+
 class BlogController extends Controller
 {
+
+
+
+    public function dateTime()
+    {
+    $banglaDate =  bangla_date(time());
+
+        $EnDate = date('d');
+        $EnMonth = date('F');
+        $EnYear = date('Y');
+
+
+
+
+        return int_en_to_bn($EnDate)."ই ".month_en_to_bn($EnMonth).", ".int_en_to_bn($EnYear)." খ্রিস্টাব্দ | $banglaDate বঙ্গাব্দ | ১৬ই জমাদিউস সানি, ১৪৪৪ হিজরি";
+    }
+
 
     public function getblog(Request $request)
     {

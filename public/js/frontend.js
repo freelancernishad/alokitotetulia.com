@@ -2504,7 +2504,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               _this.getMainMenu();
 
-            case 2:
+              _this.getDateTime();
+
+            case 3:
             case "end":
               return _context.stop();
           }
@@ -2516,14 +2518,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       menus: {},
       scTimer: 0,
-      scY: 0
+      scY: 0,
+      dateTime: ''
     };
   },
   methods: {
     openMenu: function openMenu() {
       console.log('open menu');
     },
-    getMainMenu: function getMainMenu() {
+    getDateTime: function getDateTime() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
@@ -2533,11 +2536,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _this2.callApi('get', "/api/get/all/category", []);
+                return _this2.callApi('get', "/api/get/date/time", []);
 
               case 2:
                 res = _context2.sent;
-                _this2.menus = res.data;
+                _this2.dateTime = res.data;
 
               case 4:
               case "end":
@@ -2547,14 +2550,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
-    handleScroll: function handleScroll() {
+    getMainMenu: function getMainMenu() {
       var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+        var res;
+        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return _this3.callApi('get', "/api/get/all/category", []);
+
+              case 2:
+                res = _context3.sent;
+                _this3.menus = res.data;
+
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
+    handleScroll: function handleScroll() {
+      var _this4 = this;
 
       if (this.scTimer) return;
       this.scTimer = setTimeout(function () {
-        _this3.scY = window.scrollY;
-        clearTimeout(_this3.scTimer);
-        _this3.scTimer = 0;
+        _this4.scY = window.scrollY;
+        clearTimeout(_this4.scTimer);
+        _this4.scTimer = 0;
       }, 100);
     },
     toTop: function toTop() {
@@ -4303,7 +4330,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "width100 block-2 row"
   }, [_c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4367,7 +4394,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(Life_style.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4431,7 +4458,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(Information_technology.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4495,7 +4522,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(Special_report.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4566,7 +4593,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "width100 block-2 row"
   }, [_c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4630,7 +4657,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(health.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4694,7 +4721,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(Religion_and_life.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4758,7 +4785,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(agriculture.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4829,7 +4856,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "width100 block-2 row"
   }, [_c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4893,7 +4920,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(campus.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -4957,7 +4984,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(traveling.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -5021,7 +5048,7 @@ var render = function render() {
       staticClass: "fas fa-long-arrow-right"
     }), _vm._v("  " + _vm._s(the_job.title))])], 1) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
-    staticClass: "col-xl-3 col-md-6 col-sm-12"
+    staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
     staticClass: "padding"
   }, [_c("div", {
@@ -5237,7 +5264,23 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_vm._m(0), _vm._v(" "), _c("div", {
+  return _c("div", [_c("section", {
+    staticClass: "header_top_section"
+  }, [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row"
+  }, [_c("div", {
+    staticClass: "col-sm-7"
+  }, [_c("small", {
+    staticClass: "date"
+  }, [_c("i", {
+    staticClass: "fa fa-map-marker"
+  }), _vm._v(" তেঁতুলিয়া,পঞ্চগড়   "), _c("i", {
+    staticClass: "fa fa-calendar"
+  }), _vm._v("\n                            " + _vm._s(_vm.dateTime) + "\n                        ")])]), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-3"
+  }), _vm._v(" "), _vm._m(0)])])]), _vm._v(" "), _c("div", {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "scroll width100",
@@ -5512,27 +5555,11 @@ var staticRenderFns = [function () {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("section", {
-    staticClass: "header_top_section"
-  }, [_c("div", {
-    staticClass: "container"
-  }, [_c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-sm-7"
-  }, [_c("small", {
-    staticClass: "date"
-  }, [_c("i", {
-    staticClass: "fa fa-map-marker"
-  }), _vm._v(" তেঁতুলিয়া,পঞ্চগড়   "), _c("i", {
-    staticClass: "fa fa-calendar"
-  }), _vm._v("\n                            ১০ই জানুয়ারি, ২০২৩ খ্রিস্টাব্দ | ২৬শে পৌষ, ১৪২৯ বঙ্গাব্দ | ১৬ই জমাদিউস সানি, ১৪৪৪ হিজরি\n                        ")])]), _vm._v(" "), _c("div", {
-    staticClass: "col-sm-3"
-  }), _vm._v(" "), _c("div", {
+  return _c("div", {
     staticClass: "col-sm-2"
   }, [_c("ul", {
     staticClass: "social-media"
-  })])])])]);
+  })]);
 }, function () {
   var _vm = this,
       _c = _vm._self._c;
@@ -17871,7 +17898,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nspan.next {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    right: 0;\n    z-index: 1;\n}\nspan.prev {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    left: 0;\n    z-index: 1;\n}\n.overlay {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    background: #3d566e;\n    overflow: hidden;\n    opacity: 0;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay {\n    opacity: 0.8;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay-info {\n    opacity: 1;\n}\n.cat {\n    position: absolute;\n    text-transform: capitalize;\n    left: 15px;\n    top: 0;\n    padding: 0;\n    margin: 0;\n    z-index: 10;\n    width: auto;\n    height: 36px;\n    line-height: 36px;\n    color: #fff;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .cat {\n    top: 15px;\n    opacity: 1;\n}\n.cat-data span {\n    width: 36px;\n    height: 36px;\n    text-align: center;\n    color: #fff;\n    line-height: 36px;\n    font-weight: 700;\n    font-size: 22px;\n    background: #e74c3c;\n    display: inline-block;\n    margin-right: 5px;\n    float: left;\n}\n.box:hover .cat {\n    top: 15px;\n    opacity: 1;\n}\n.info {\n    display: block;\n    position: absolute;\n    left: 15px;\n    bottom: 0;\n    z-index: 100;\n    text-align: center;\n    color: #fff;\n    height: 36px;\n    line-height: 36px;\n    font-weight: normal;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.info span {\n    font-size: 12px;\n    display: inline-block;\n    padding: 0 5px 0 10px;\n}\n.info span:first-child {\n    padding-left: 0;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.box {\n    position: relative;\n    overflow: hidden;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.carousel-caption {\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n    background: #637684d9;\n    padding: 24px 16px;\n}\n.banner-outer-thumb .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n    opacity: 0;\n}\n.banner-outer-thumb a p,\n.banner-oute-thumbr a:hover p {\n    color: #fff;\n}\n.banner-outer-thumb .box:hover .carousel-caption {\n    opacity: 1;\n}\n.banner-outer-thumb .item {\n    margin: 0 5px;\n    padding: 4px;\n    ;\n    background-color: #f8f8f8;\n    border: 1px solid #ededed;\n}\n.banner-outer .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 24px;\n}\n.banner-outer a p,\n.banner-outer a:hover p {\n    color: #fff;\n}\n.right-img-top {\n    margin-bottom: 10px;\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-top .box {\n    height: 212px;\n}\n.right-img-btm {\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-btm .box {\n    height: 212px;\n}\n\n/*8-4 OWL CAROUSEL SYNC*/\n#sync2 .item {\n    margin: 0 5px;\n    cursor: pointer;\n}\n#sync2 .owl-wrapper-outer {}\n#sync2 .synced .item {\n    border: 2px solid #e74c3c;\n}\n.box img {\n    transition: all 0.3s ease;\n    image-rendering: optimizequality;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\na:hover img {\n    border: 1px solid #ffcfca;\n    opacity: 0.6;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.left,\n.middle {\n    float: left;\n}\n.news {\n    margin-bottom: 15px;\n    float: left;\n}\n.news .title {\n    border-bottom: 2px solid #f01010;\n    font-size: 23px;\n    line-height: 30px;\n    margin-bottom: 10px;\n    margin-top: 0;\n}\n.news-3 .other {\n\n    margin-bottom: 5px;\n}\n.width25 {\n    width: 25%;\n    float: left;\n}\n.width100 {\n    width: 100%;\n    float: left;\n}\n.first.width100 a h3 {\n    font-size: 22px;\n    margin-bottom: 18px;\n    margin-top: 11px;\n}\n\n\n/* video gallery */\n.LeadTitlebar3 {\n    position: relative;\n}\n.LeadTitlebar3 h2 {\n    /* background: url(../../media/common/dot.png); */\n    width: 100%;\n    position: relative;\n    border-bottom: 2px solid #939297;\n    line-height: 100%;\n    margin: 0 0 15px;\n    font-size: 20px;\n    font-weight: bold;\n    letter-spacing: .3px;\n}\n.LeadTitlebar3 h2 span {\n    background: #A91717;\n    padding: 7px 18px;\n    color: #fff;\n    height: 30px;\n    line-height: 39px;\n    position: relative;\n    border-bottom: 2px solid#939297;\n}\n.LeadTitlebar3 h2 span::after {\n    border-color: #939297 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)rgba(0, 0, 0, 0);\n    position: absolute;\n    content: \" \";\n    width: auto;\n    height: auto;\n    bottom: -20px;\n    margin-left: -10px;\n    left: 50%;\n    border-width: 10px;\n    border-style: solid;\n}\n.VideoGalleryList {\n    margin-bottom: 15px;\n}\n.VideoGalleryList .thumbnail {\n    border: 0 none;\n    box-shadow: none;\n    margin: 0 0 0 0;\n    padding: 0;\n}\n.Imgresize {\n    position: relative;\n}\n.VideoGalleryList .thumbnail .caption {\n    padding: 7px;\n}\n.VideoGalleryList .caption h3 {\n    color: #fff;\n    font-size: 1.1em;\n    font-weight: 400;\n}\n.VideoGalleryList .caption {\n    width: 100%;\n    bottom: 0;\n    position: absolute;\n    background: rgba(0, 0, 0, 0.5) linear-gradient(to bottom, rgba(0, 0, 0, 0.14) 0%, rgb(0, 0, 0) 100%) repeat scroll 0 0;\n    z-index: 10;\n    border-bottom: 1px solid #2d2d2d;\n}\n.VideoGalleryList .VideoIcon::after {\n    position: absolute;\n    top: 18%;\n    left: 10%;\n    transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    content: \"\\f144\";\n    font-family: FontAwesome;\n    font-size: 40px;\n    color: #fff;\n    text-shadow: 0px 0px 30px rgb(0 0 0 / 50%);\n}\n.navDotsImage {\n    border: 2px solid #bbbbbb;\n    margin: 1px;\n}\n.category-header {\n    background: #b1aeae;\n}\nh3.title.width100 {\n    background: #a3ffaa;\n}\n\n\n    /* width */\n.dots::-webkit-scrollbar {\n        width: 10px;\n        height: 5px;\n        display:none;\n}\n.dots:hover::-webkit-scrollbar {\n\n        display:block;\n}\n\n    /* Track */\n.dots::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px grey;\n    border-radius: 10px;\n}\n\n    /* Handle */\n.dots::-webkit-scrollbar-thumb {\n    background: #0d5404;\n    border-radius: 10px;\n}\nimg.img-fluid.img100.Ratio.Ratio16x9 {\n    width: 100%;\n    height: 358px;\n}\nimg.img-fluid.img100 {\n    width: 100%;\n    height: 173px;\n}\n@media screen and (max-width:768px) {\nimg.img-fluid.img100.Ratio.Ratio16x9 {\n    width: 100%;\n    height: 100%;\n}\n}\n\n\n\n\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nspan.next {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    right: 0;\n    z-index: 1;\n}\nspan.prev {\n    background: red;\n    padding: 3px 11px;\n    font-size: 24px;\n    color: white;\n    position: absolute;\n    top: 47%;\n    left: 0;\n    z-index: 9;\n}\n.overlay {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    background: #3d566e;\n    overflow: hidden;\n    opacity: 0;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay {\n    opacity: 0.8;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.box:hover .overlay-info {\n    opacity: 1;\n}\n.cat {\n    position: absolute;\n    text-transform: capitalize;\n    left: 15px;\n    top: 0;\n    padding: 0;\n    margin: 0;\n    z-index: 10;\n    width: auto;\n    height: 36px;\n    line-height: 36px;\n    color: #fff;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .cat {\n    top: 15px;\n    opacity: 1;\n}\n.cat-data span {\n    width: 36px;\n    height: 36px;\n    text-align: center;\n    color: #fff;\n    line-height: 36px;\n    font-weight: 700;\n    font-size: 22px;\n    background: #e74c3c;\n    display: inline-block;\n    margin-right: 5px;\n    float: left;\n}\n.box:hover .cat {\n    top: 15px;\n    opacity: 1;\n}\n.info {\n    display: block;\n    position: absolute;\n    left: 15px;\n    bottom: 0;\n    z-index: 100;\n    text-align: center;\n    color: #fff;\n    height: 36px;\n    line-height: 36px;\n    font-weight: normal;\n    font-size: 12px;\n    opacity: 0;\n    transition: all 0.3s;\n}\n.banner-outer-thumb .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.info span {\n    font-size: 12px;\n    display: inline-block;\n    padding: 0 5px 0 10px;\n}\n.info span:first-child {\n    padding-left: 0;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.box {\n    position: relative;\n    overflow: hidden;\n}\n.box:hover .info {\n    bottom: 10px;\n    opacity: 1;\n}\n.banner-outer-thumb {\n    padding-bottom: 15px;\n}\n.carousel-caption {\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n    background: #637684d9;\n    padding: 24px 16px;\n}\n.banner-outer-thumb .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 18px;\n    font-weight: bold;\n    line-height: 24px;\n    opacity: 0;\n}\n.banner-outer-thumb a p,\n.banner-oute-thumbr a:hover p {\n    color: #fff;\n}\n.banner-outer-thumb .box:hover .carousel-caption {\n    opacity: 1;\n}\n.banner-outer-thumb .item {\n    margin: 0 5px;\n    padding: 4px;\n    ;\n    background-color: #f8f8f8;\n    border: 1px solid #ededed;\n}\n.banner-outer .carousel-caption {\n    position: absolute;\n    left: 15px;\n    right: 8%;\n    bottom: 10px;\n    z-index: 10;\n    padding-top: 20px;\n    padding-bottom: 30px;\n    color: #ffffff;\n    text-align: left;\n    text-shadow: none;\n    font-size: 20px;\n    font-weight: bold;\n    line-height: 24px;\n}\n.banner-outer a p,\n.banner-outer a:hover p {\n    color: #fff;\n}\n.right-img-top {\n    margin-bottom: 10px;\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-top .box {\n    height: 212px;\n}\n.right-img-btm {\n    overflow: hidden;\n    height: 212px;\n}\n.right-img-btm .box {\n    height: 212px;\n}\n\n/*8-4 OWL CAROUSEL SYNC*/\n#sync2 .item {\n    margin: 0 5px;\n    cursor: pointer;\n}\n#sync2 .owl-wrapper-outer {}\n#sync2 .synced .item {\n    border: 2px solid #e74c3c;\n}\n.box img {\n    transition: all 0.3s ease;\n    image-rendering: optimizequality;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\na:hover img {\n    border: 1px solid #ffcfca;\n    opacity: 0.6;\n}\n.box:hover img {\n    transform: scale(1.25);\n    display: inline-block;\n    line-height: 0;\n}\n.overlay-info {\n    display: block;\n    position: absolute;\n    top: 0;\n    left: 0;\n    z-index: 9;\n    overflow: hidden;\n    transition: all 0.5s;\n    width: 100%;\n    height: 100%;\n}\n.left,\n.middle {\n    float: left;\n}\n.news {\n    margin-bottom: 15px;\n    float: left;\n}\n.news .title {\n    border-bottom: 2px solid #f01010;\n    font-size: 23px;\n    line-height: 30px;\n    margin-bottom: 10px;\n    margin-top: 0;\n}\n.news-3 .other {\n\n    margin-bottom: 5px;\n}\n.width25 {\n    width: 25%;\n    float: left;\n}\n.width100 {\n    width: 100%;\n    float: left;\n}\n.first.width100 a h3 {\n    font-size: 22px;\n    margin-bottom: 18px;\n    margin-top: 11px;\n}\n\n\n/* video gallery */\n.LeadTitlebar3 {\n    position: relative;\n}\n.LeadTitlebar3 h2 {\n    /* background: url(../../media/common/dot.png); */\n    width: 100%;\n    position: relative;\n    border-bottom: 2px solid #939297;\n    line-height: 100%;\n    margin: 0 0 15px;\n    font-size: 20px;\n    font-weight: bold;\n    letter-spacing: .3px;\n}\n.LeadTitlebar3 h2 span {\n    background: #A91717;\n    padding: 7px 18px;\n    color: #fff;\n    height: 30px;\n    line-height: 39px;\n    position: relative;\n    border-bottom: 2px solid#939297;\n}\n.LeadTitlebar3 h2 span::after {\n    border-color: #939297 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)rgba(0, 0, 0, 0);\n    position: absolute;\n    content: \" \";\n    width: auto;\n    height: auto;\n    bottom: -20px;\n    margin-left: -10px;\n    left: 50%;\n    border-width: 10px;\n    border-style: solid;\n}\n.VideoGalleryList {\n    margin-bottom: 15px;\n}\n.VideoGalleryList .thumbnail {\n    border: 0 none;\n    box-shadow: none;\n    margin: 0 0 0 0;\n    padding: 0;\n}\n.Imgresize {\n    position: relative;\n}\n.VideoGalleryList .thumbnail .caption {\n    padding: 7px;\n}\n.VideoGalleryList .caption h3 {\n    color: #fff;\n    font-size: 1.1em;\n    font-weight: 400;\n}\n.VideoGalleryList .caption {\n    width: 100%;\n    bottom: 0;\n    position: absolute;\n    background: rgba(0, 0, 0, 0.5) linear-gradient(to bottom, rgba(0, 0, 0, 0.14) 0%, rgb(0, 0, 0) 100%) repeat scroll 0 0;\n    z-index: 10;\n    border-bottom: 1px solid #2d2d2d;\n}\n.VideoGalleryList .VideoIcon::after {\n    position: absolute;\n    top: 18%;\n    left: 10%;\n    transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    content: \"\\f144\";\n    font-family: FontAwesome;\n    font-size: 40px;\n    color: #fff;\n    text-shadow: 0px 0px 30px rgb(0 0 0 / 50%);\n}\n.navDotsImage {\n    border: 2px solid #bbbbbb;\n    margin: 1px;\n}\n.category-header {\n    background: #b1aeae;\n}\nh3.title.width100 {\n    background: #a3ffaa;\n}\n\n\n    /* width */\n.dots::-webkit-scrollbar {\n        width: 10px;\n        height: 5px;\n        display:none;\n}\n.dots:hover::-webkit-scrollbar {\n\n        display:block;\n}\n\n    /* Track */\n.dots::-webkit-scrollbar-track {\n    box-shadow: inset 0 0 5px grey;\n    border-radius: 10px;\n}\n\n    /* Handle */\n.dots::-webkit-scrollbar-thumb {\n    background: #0d5404;\n    border-radius: 10px;\n}\nimg.img-fluid.img100.Ratio.Ratio16x9 {\n    width: 100%;\n    height: 358px;\n}\nimg.img-fluid.img100 {\n    width: 100%;\n    height: 173px;\n}\n@media screen and (max-width:768px) {\nimg.img-fluid.img100.Ratio.Ratio16x9 {\n    width: 100%;\n    height: 100%;\n}\n}\n.postbgFooter{\n    background: #a3ffaa26;\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

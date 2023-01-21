@@ -56,6 +56,10 @@ Route::get('get/roles',[authController::class,'getRoles']);
 Route::post('role/assign',[authController::class,'roleAssign']);
 
 
+Route::get('get/date/time',[BlogController::class,'dateTime']);
+
+
+
 Route::get('get/all/latest/news',[BlogController::class,'latestNews']);
 Route::get('get/all/category',[CategoryController::class,'index']);
 Route::get('get/category/list',[CategoryController::class,'getCategory']);

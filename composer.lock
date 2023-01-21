@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3bacfb901d6adef82c1027bbdd43cd8",
+    "content-hash": "6aa0db6b7426ee7fadd3926ca4bf361a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4871,6 +4871,56 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "s1k3/bangla-date",
+            "version": "1.07",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/s1k3/laravel_bangla_date.git",
+                "reference": "bfdbddbc4444fd7bb314b190764cb315c6bcbe3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/s1k3/laravel_bangla_date/zipball/bfdbddbc4444fd7bb314b190764cb315c6bcbe3e",
+                "reference": "bfdbddbc4444fd7bb314b190764cb315c6bcbe3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0||^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "S1K3\\Bangla\\Date\\BanglaDateServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helper/bangla_date.php"
+                ],
+                "psr-4": {
+                    "S1K3\\Bangla\\Date\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robin Khan",
+                    "email": "sk118420@gmail.com"
+                }
+            ],
+            "description": "Laravel Library for converting English date to corresponding Bangla Date",
+            "support": {
+                "issues": "https://github.com/s1k3/laravel_bangla_date/issues",
+                "source": "https://github.com/s1k3/laravel_bangla_date/tree/1.07"
+            },
+            "time": "2022-02-21T08:26:45+00:00"
         },
         {
             "name": "setasign/fpdi",

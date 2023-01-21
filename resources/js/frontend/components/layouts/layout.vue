@@ -8,7 +8,7 @@
                     <div class="col-sm-7">
                         <small class="date">
                             <i class="fa fa-map-marker"></i> তেঁতুলিয়া,পঞ্চগড় &nbsp;&nbsp;<i class="fa fa-calendar"> </i>
-                            ১০ই জানুয়ারি, ২০২৩ খ্রিস্টাব্দ | ২৬শে পৌষ, ১৪২৯ বঙ্গাব্দ | ১৬ই জমাদিউস সানি, ১৪৪৪ হিজরি
+                            {{ dateTime }}
                         </small>
                     </div>
 
@@ -472,6 +472,7 @@ export default {
         this.$store.commit('setlatestpost', this.latestpost)
 
         this.getMainMenu();
+        this.getDateTime();
 
     },
 
@@ -480,12 +481,19 @@ export default {
             menus: {},
             scTimer: 0,
             scY: 0,
+            dateTime:''
         }
     },
     methods: {
 
         openMenu(){
             console.log('open menu')
+        },
+
+
+        async getDateTime() {
+            var res = await this.callApi('get', `/api/get/date/time`, []);
+            this.dateTime = res.data
         },
 
 
