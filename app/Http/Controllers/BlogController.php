@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Remls\HijriDate\HijriDate;
+use Carbon\Carbon;
 
 class BlogController extends Controller
 {
@@ -14,16 +15,31 @@ class BlogController extends Controller
 
     public function dateTime()
     {
-    $banglaDate =  bangla_date(time());
+
+
+
 
         $EnDate = date('d');
         $EnMonth = date('F');
         $EnYear = date('Y');
+        $cureentdate =  date('Y-m-d');
+        $input = Carbon::parse($cureentdate);
+
+        $previosDate =  date('Y-m-d');
+        $timedate =   strtotime($previosDate);
 
 
+        $banglaDate =  bangla_date($timedate);
+
+        $date =  HijriDate::getEstimateFromGregorian($input);
+        $date->setLocale('bn');
+        $date->format("d F Y", true);         // "رمضان ١٤٤٣"
+      $ArDate = $date->format("d", true);
+      $ArMonth = $date->format("F", true);
+      $ArYear = $date->format("Y", true);
 
 
-        return int_en_to_bn($EnDate)."ই ".month_en_to_bn($EnMonth).", ".int_en_to_bn($EnYear)." খ্রিস্টাব্দ | $banglaDate বঙ্গাব্দ | ১৬ই জমাদিউস সানি, ১৪৪৪ হিজরি";
+        return int_en_to_bn($EnDate)."ই ".month_en_to_bn($EnMonth).", ".int_en_to_bn($EnYear)." খ্রিস্টাব্দ | $banglaDate বঙ্গাব্দ | ".$ArDate ."ই $ArMonth, $ArYear হিজরি";
     }
 
 

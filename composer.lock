@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6aa0db6b7426ee7fadd3926ca4bf361a",
+    "content-hash": "fea488940593c4e48393614319ed60a6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4871,6 +4871,58 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "remls/hijri-date",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Remls/hijri-date.git",
+                "reference": "9c081290069917b0320c4c576705afde28df6003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Remls/hijri-date/zipball/9c081290069917b0320c4c576705afde28df6003",
+                "reference": "9c081290069917b0320c4c576705afde28df6003",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "laravel/framework": "^8.0||^9.0",
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Remls\\HijriDate\\HijriDateServiceProvider"
+                    ]
+                },
+                "aliases": {
+                    "HijriDate": "Remls\\HijriDate\\Facades\\HijriDate"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Remls\\HijriDate\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Raaif Nasheed",
+                    "email": "adam.raaif.nasheed7@gmail.com"
+                }
+            ],
+            "description": "Laravel helper package for Hijri dates. Supports displaying dates in Dhivehi, Arabic and English.",
+            "support": {
+                "issues": "https://github.com/Remls/hijri-date/issues",
+                "source": "https://github.com/Remls/hijri-date/tree/v1.4.0"
+            },
+            "time": "2022-05-10T08:38:48+00:00"
         },
         {
             "name": "s1k3/bangla-date",

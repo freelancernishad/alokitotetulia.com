@@ -18,6 +18,7 @@
         "livewire/livewire": "^2.9",
         "maatwebsite/excel": "^3.1",
         "munafio/chatify": "^1.5",
+        "remls/hijri-date": "^1.4",
         "s1k3/bangla-date": "^1.07",
         "simplesoftwareio/simple-qrcode": "~4",
         "spatie/laravel-query-builder": "4",
