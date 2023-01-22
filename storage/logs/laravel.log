@@ -24761,3 +24761,94 @@ ew\
 ewspaper\\laravel-vue-js-fresh-project\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #29 {main}
 "} 
+[2023-01-22 22:10:28] local.ERROR: Undefined constant App\Providers\RouteServiceProvider::LOGIN {"exception":"[object] (Error(code: 0): Undefined constant App\\Providers\\RouteServiceProvider::LOGIN at F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php:903)
+[stacktrace]
+#0 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(758): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#1 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(851): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array, true)
+#2 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(694): Illuminate\\Foundation\\Application->resolve('App\\\\Http\\\\Contro...', Array)
+#3 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(836): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#4 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(276): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#5 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1069): Illuminate\\Routing\\Route->getController()
+#6 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(1012): Illuminate\\Routing\\Route->controllerMiddleware()
+#7 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(708): Illuminate\\Routing\\Route->gatherMiddleware()
+#8 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(175): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#9 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(119): Illuminate\\Foundation\\Console\\RouteListCommand->getMiddleware(Object(Illuminate\\Routing\\Route))
+#10 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(91): Illuminate\\Foundation\\Console\\RouteListCommand->getRouteInformation(Object(Illuminate\\Routing\\Route))
+#11 [internal function]: Illuminate\\Foundation\\Console\\RouteListCommand->Illuminate\\Foundation\\Console\\{closure}(Object(Illuminate\\Routing\\Route), 94)
+#12 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Collections\\Collection.php(677): array_map(Object(Closure), Array, Array)
+#13 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(92): Illuminate\\Support\\Collection->map(Object(Closure))
+#14 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\RouteListCommand.php(76): Illuminate\\Foundation\\Console\\RouteListCommand->getRoutes()
+#15 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(36): Illuminate\\Foundation\\Console\\RouteListCommand->handle()
+#16 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#18 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(136): Illuminate\\Container\\Container->call(Array)
+#21 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\symfony\\console\\Command\\Command.php(298): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(121): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\symfony\\console\\Application.php(1005): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\symfony\\console\\Application.php(299): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\RouteListCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\symfony\\console\\Application.php(171): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(94): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(129): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 F:\
+ew\
+ewspaper\\laravel-vue-js-fresh-project\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 {main}
+"} 
