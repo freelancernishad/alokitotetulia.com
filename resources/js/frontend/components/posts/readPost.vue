@@ -234,8 +234,8 @@ export default {
                     this.row = res.data
 
                     document.title = this.row.title
-                    document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
-                    document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
+                    // document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
+                    // document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
                     // document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
                     // document.querySelector('meta[name="news_keywords"]').setAttribute("content", res.data.title);
                     // document.querySelector('meta[property="og:title"]').setAttribute("content", res.data.title);

@@ -2670,9 +2670,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this2.preloader = true;
                 axios.get("/api/update/blog/".concat(id)).then(function (res) {
                   _this2.row = res.data;
-                  document.title = _this2.row.title;
-                  document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
-                  document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description); // document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
+                  document.title = _this2.row.title; // document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
+                  // document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
+                  // document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
                   // document.querySelector('meta[name="news_keywords"]').setAttribute("content", res.data.title);
                   // document.querySelector('meta[property="og:title"]').setAttribute("content", res.data.title);
                   // document.querySelector('meta[property="og:description"]').setAttribute("content", res.data.short_description);
