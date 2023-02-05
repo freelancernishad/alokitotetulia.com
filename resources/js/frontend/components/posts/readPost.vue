@@ -263,9 +263,6 @@ export default {
       document.querySelector('meta[name="news_keywords"]').setAttribute("content", data.title);
       document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
       document.querySelector('meta[property="og:description"]').setAttribute("content", data.short_description);
-      document.querySelector('meta[name="twitter:title"]').setAttribute("content", data.title);
-      document.querySelector('meta[name="twitter:description"]').setAttribute("content", data.short_description);
-      document.querySelector('meta[name="twitter:image"]').setAttribute("content", window.location.origin + this.$asseturl + data.fiture);
       document.querySelector('meta[property="og:image"]').setAttribute("content", window.location.origin + this.$asseturl + data.fiture);
       document.querySelector('meta[property="og:url"]').setAttribute("content", this.shareurl);
 
@@ -286,6 +283,7 @@ export default {
       .then((res) => {
         this.row = res.data;
         this.updateMetaTags(res.data);
+        this.preloader = false
       })
 
 
