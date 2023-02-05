@@ -10,7 +10,7 @@
 <meta name="description" content="আলোকিত তেঁতুলিয়া" />
 <meta name="keywords" content="আলোকিত তেঁতুলিয়া" />
 <meta name="author" content="আলোকিত তেঁতুলিয়া " />
-<meta name="news_keywords" content="রাশিয়া ইউক্রেন সংঘাত,ইউক্রেন,রাশিয়া,রাশি খান্না" />
+<meta name="news_keywords" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="আলোকিত তেঁতুলিয়া" />
 <meta property="og:description" content="আলোকিত তেঁতুলিয়া" />
