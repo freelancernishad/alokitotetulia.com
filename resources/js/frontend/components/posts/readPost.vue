@@ -241,7 +241,7 @@ export default {
                     // document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
                     // document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
                     // document.querySelector('meta[name="news_keywords"]').setAttribute("content", res.data.title);
-                    document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
+                    // document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
                     // document.querySelector('meta[property="og:description"]').setAttribute("content", res.data.short_description);
                     // document.querySelector('meta[name="twitter:title"]').setAttribute("content", res.data.title);
                     // document.querySelector('meta[name="twitter:description"]').setAttribute("content", res.data.short_description);
@@ -265,6 +265,9 @@ export default {
            this.getunionInfo(this.$route.params.id);
            this.getposts(this.$route.params.id);
 
+           this.$nextTick(() => {
+            document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
+    })
 
         }
 }

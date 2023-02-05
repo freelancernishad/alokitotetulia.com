@@ -2674,8 +2674,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   // document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
                   // document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
                   // document.querySelector('meta[name="news_keywords"]').setAttribute("content", res.data.title);
-
-                  document.querySelector('meta[property="og:title"]').setAttribute("content", _this2.$route.params.slug); // document.querySelector('meta[property="og:description"]').setAttribute("content", res.data.short_description);
+                  // document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
+                  // document.querySelector('meta[property="og:description"]').setAttribute("content", res.data.short_description);
                   // document.querySelector('meta[name="twitter:title"]').setAttribute("content", res.data.title);
                   // document.querySelector('meta[name="twitter:description"]').setAttribute("content", res.data.short_description);
                   // document.querySelector('meta[name="twitter:image"]').setAttribute("content",  window.location.origin+this.$asseturl+res.data.fiture);
@@ -2696,9 +2696,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   mounted: function mounted() {
+    var _this3 = this;
+
     this.shareurl = document.URL;
     this.getunionInfo(this.$route.params.id);
     this.getposts(this.$route.params.id);
+    this.$nextTick(function () {
+      document.querySelector('meta[property="og:title"]').setAttribute("content", _this3.$route.params.slug);
+    });
   }
 });
 
