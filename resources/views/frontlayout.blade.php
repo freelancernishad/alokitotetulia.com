@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="আলোকিত তেঁতুলিয়া" />
 <meta name="twitter:description" content="আলোকিত তেঁতুলিয়া" />
 <meta name="twitter:image" content="" />
-<meta property="og:image" content="" />
+<meta property="og:image" content="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png" />
 <meta property="og:image:width" content="1200" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
 
