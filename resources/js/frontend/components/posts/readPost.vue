@@ -227,7 +227,7 @@ export default {
 
         },
 
-       getposts(id=''){
+      async getposts(id=''){
         this.preloader = true;
                 axios.get(`/api/update/blog/${id}`)
                 .then((res)=>{
