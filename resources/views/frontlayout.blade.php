@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>আলোকিত তেঁতুলিয়া</title>
     <meta property="og:url" content="" />
+    <link rel="shortcut icon" type="image" href="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png" />
 <meta name="title" content="আলোকিত তেঁতুলিয়া" />
 <meta name="description" content="আলোকিত তেঁতুলিয়া" />
 <meta name="keywords" content="আলোকিত তেঁতুলিয়া" />
