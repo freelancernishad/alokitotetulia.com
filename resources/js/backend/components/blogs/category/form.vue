@@ -2,12 +2,12 @@
     <div>
 
 <div class="breadcrumbs-area">
-    <h3>Category form</h3>
+    <h3>নতুন ক্যাটাগরি যোগ করুন</h3>
     <ul>
         <li>
             <router-link :to="{name:'Dashboard'}">Home</router-link>
         </li>
-        <li>Category form</li>
+        <li>নতুন ক্যাটাগরি যোগ করুন</li>
     </ul>
 </div>
 

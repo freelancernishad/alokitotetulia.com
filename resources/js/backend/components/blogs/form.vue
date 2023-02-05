@@ -2,12 +2,12 @@
     <div>
 
 <div class="breadcrumbs-area">
-    <h3>Blog form</h3>
+    <h3>নতুন পোস্ট</h3>
     <ul>
         <li>
             <router-link :to="{name:'Dashboard'}">Home</router-link>
         </li>
-        <li>Blog form</li>
+        <li>নতুন পোস্ট</li>
     </ul>
 </div>
 
@@ -30,8 +30,19 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Title</label>
+                                        <label>শিরোনাম</label>
                                         <input type="text" class="form-control" v-model="form.title" id="title"
+                                            value="">
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>প্রতিবেদকের নাম</label>
+                                        <input type="text" class="form-control" v-model="form.author" id="title"
                                             value="">
                                     </div>
 
@@ -40,7 +51,7 @@
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Category</label>
+                                        <label>ক্যাটাগরি নির্বাচন করুন</label>
 
 
 
@@ -71,19 +82,19 @@
 
 
 
-                                <div class="col-md-12">
+                                <!-- <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Short Description</label>
                                         <input type="text" class="form-control" v-model="form.short_description"
                                             id="short_description" value="">
                                     </div>
 
-                                </div>
+                                </div> -->
 
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Description</label>
+                                        <label>বিস্তারিত সংবাদ</label>
 
                                         <vue-editor v-model="form.long_description" />
 
@@ -98,7 +109,7 @@
 
                                             <input type="file" class="form-control" id="Images"  @change="FileSelected($event, 'Images')"  />
                                             <label for="Images">
-                                            <img thumbnail fluid :src="form.Images" alt="Image 3"/>
+                                            <img thumbnail fluid :src="form.Images" width="300px" alt="Image 3"/>
                                             </label>
                                     </div>
                                 </div>
@@ -123,7 +134,7 @@
                             <div class="item form-group">
                                 <div class="col-md-6 col-sm-6 offset-md-3">
 
-                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-success" style="font-size: 25px;">পোস্ট করুন</button>
                                 </div>
                             </div>
 
@@ -141,6 +152,7 @@ export default {
         return {
            form: {
                 title:null,
+                author:'Admin',
                 cat_id:null,
                 short_description:null,
                 long_description:null,

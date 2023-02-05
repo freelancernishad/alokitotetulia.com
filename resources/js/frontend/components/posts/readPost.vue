@@ -22,28 +22,34 @@
                                     </h1>
                                     <div class="details-writer d-flex align-items-center justify-content-between my-2 py-2"
                                         style="gap: 10px">
-                                        <div class="d-flex align-items-center">
-                                            <div style="width: 38px;height: 38px;overflow: hidden;">
-                                                <i class="fa-regular fa-calendar-days" style="font-size: 28px;padding: 4px 6px;color: #9f4404;"></i>
-                                                <!-- <img class="author-image" style="width: 100%" src="https://cdn.dhakapost.com/media/common/icon.png" alt="Dhaka Post Desk" /> -->
 
-                                            </div>
-                                            <div class="d-flex justify-content-start flex-column ml-2">
-                                                <!-- <div class="d-flex align-items-center author-reporting-area">
-                                                    <div class="d-flex align-items-center">
-                                                        <p class="author">
-                                                            জ্যেষ্ঠ প্রতিবেদক
-                                                        </p>
-                                                    </div>
-                                                </div> -->
-                                                <p class="news-time" style="color: rgba( 0, 0,0,0.7);">
-                                                    <!-- ০৩ জানুয়ারি ২০২৩, ১১:২১ এএম -->
 
-                                                    {{ dateformatGlobal(row.created_at)[8] }}
-                                                </p>
-                                            </div>
+
+
+                                        <div class="d-flex flex-column">
+
+
+
+
+    <div class="d-flex justify-content-start flex-row align-items-center ml-2">
+        <i class="fa-solid fa-user-pen" style="font-size: 28px;padding: 4px 6px;color: #006328;"></i>
+        <p class="news-time" style="color: rgba( 0, 0,0,0.7);font-size: 20px;font-weight: 700;">{{ row.author }}</p>
+    </div>
+
+
+    <div class="d-flex justify-content-start flex-row align-items-center ml-2">
+        <i class="fa-regular fa-calendar-days" style="font-size: 28px;padding: 4px 6px;color: #9f4404;"></i>
+        <p class="news-time" style="color: rgba( 0, 0,0,0.7);"> {{ dateformatGlobal(row.created_at)[8] }}</p>
+    </div>
+
+
+
+
                                         </div>
+
                                     </div>
+
+
 
                                     <hr class="pb-2 fix-padding-0" />
 

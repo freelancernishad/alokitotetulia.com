@@ -33,12 +33,12 @@
                 <ul class="navbar-nav">
                     <li class="navbar-item header-search-bar">
                         <div class="input-group stylish-input-group">
-                            <span class="input-group-addon">
+                            <!-- <span class="input-group-addon">
                                 <button type="submit">
                                     <span class="flaticon-search" aria-hidden="true"></span>
                                 </button>
-                            </span>
-                            <input type="text" class="form-control" placeholder="Find Something . . .">
+                            </span> -->
+                            <!-- <input type="text" class="form-control" placeholder="Find Something . . ."> -->
                         </div>
                     </li>
                 </ul>
@@ -61,7 +61,7 @@
                             <div class="item-content">
                                 <ul class="settings-list">
                                     <li><a href="#"><i class="flaticon-user"></i>My Profile</a></li>
-                                    <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li>
+                                    <!-- <li><a href="#"><i class="flaticon-gear-loading"></i>Account Settings</a></li> -->
                                     <li>
                                         <router-link class="dropdown-item" :to="{name:'logout'}">
                                             <i class="flaticon-turn-off"></i> Logout
@@ -71,128 +71,6 @@
                             </div>
                         </div>
                     </li>
-
-  <li class="navbar-item dropdown header-message">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="far fa-envelope text-white"></i>
-                            <div class="item-title d-md-none text-16 mg-l-10">Message</div>
-                            <span>5</span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="item-header">
-                                <h6 class="item-title">05 Message</h6>
-                            </div>
-                            <div class="item-content">
-                                <div class="media">
-                                    <div class="item-img bg-skyblue author-online">
-                                        <img src="img/figure/student11.png" alt="img">
-                                    </div>
-                                    <div class="media-body space-sm">
-                                        <div class="item-title">
-                                            <a href="#">
-                                                <span class="item-name">Maria Zaman</span>
-                                                <span class="item-time">18:30</span>
-                                            </a>
-                                        </div>
-                                        <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="item-img bg-yellow author-online">
-                                        <img src="img/figure/student12.png" alt="img">
-                                    </div>
-                                    <div class="media-body space-sm">
-                                        <div class="item-title">
-                                            <a href="#">
-                                                <span class="item-name">Benny Roy</span>
-                                                <span class="item-time">10:35</span>
-                                            </a>
-                                        </div>
-                                        <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="item-img bg-pink">
-                                        <img src="img/figure/student13.png" alt="img">
-                                    </div>
-                                    <div class="media-body space-sm">
-                                        <div class="item-title">
-                                            <a href="#">
-                                                <span class="item-name">Steven</span>
-                                                <span class="item-time">02:35</span>
-                                            </a>
-                                        </div>
-                                        <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="item-img bg-violet-blue">
-                                        <img src="img/figure/student11.png" alt="img">
-                                    </div>
-                                    <div class="media-body space-sm">
-                                        <div class="item-title">
-                                            <a href="#">
-                                                <span class="item-name">Joshep Joe</span>
-                                                <span class="item-time">12:35</span>
-                                            </a>
-                                        </div>
-                                        <p>What is the reason of buy this item.
-                                        Is it usefull for me.....</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="navbar-item dropdown header-notification">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="far fa-bell text-white"></i>
-                            <div class="item-title d-md-none text-16 mg-l-10">Notification</div>
-                            <span>{{ nT.itemsC }}</span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <div class="item-header">
-                                <h6 class="item-title">{{ nT.itemsC }} Notifiacations</h6>
-                            </div>
-                            <div class="item-content">
-                                <div class="media" v-for="nTs in nT.items" :key="'nTs'+nTs.id">
-                                    <div class="item-icon bg-skyblue">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                    <div class="media-body space-sm">
-                                        <div class="post-title">{{ nTs.title }}</div>
-                                        <span>   <timeago :datetime="nTs.created_at" :auto-update="5"></timeago></span>
-                                    </div>
-                                </div>
-
-                                <div class="media">
-                                    <router-link style="    width: 100%;
-    text-align: center;
-    font-size: 15px;
-    border: 1px solid var(--bgColor1);
-    color: var(--bgColor1);" :to="{name:'notificatoins'}">See All</router-link>
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                     <li class="navbar-item dropdown header-language">
-                        <a class="navbar-nav-link dropdown-toggle" href="#" role="button"
-                        data-toggle="dropdown" aria-expanded="false"><i class="fas fa-globe-americas"></i>EN</a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Spanish</a>
-                            <a class="dropdown-item" href="#">Franchis</a>
-                            <a class="dropdown-item" href="#">Chiness</a>
-                        </div>
-                    </li>
-
 
                 </ul>
             </div>
@@ -245,15 +123,17 @@
                         </li> -->
 
 
-                        <li  @click="submenu(0)"  class="nav-item">
-                            <router-link :to="{name:'category'}" class="nav-link"><i class="flaticon-dashboard"></i><span>ক্যাটাগরি</span></router-link>
-                        </li>
-
-
 
                         <li  @click="submenu(0)"  class="nav-item">
                             <router-link :to="{name:'blogs'}" class="nav-link"><i class="flaticon-dashboard"></i><span>পোস্ট</span></router-link>
                         </li>
+
+
+
+                        <li  @click="submenu(0)"  class="nav-item">
+                            <router-link :to="{name:'category'}" class="nav-link"><i class="flaticon-dashboard"></i><span>মেন্যু ও ক্যাটাগরি</span></router-link>
+                        </li>
+
 
 
 
@@ -309,8 +189,8 @@
                 <slot></slot>
                 <!-- Footer Area Start Here -->
                 <footer class="footer-wrap-layout1">
-                    <div class="copyright">© Copyrights <a href="#">Company name</a> 2019. All rights reserved. Developed by <a target="_blank"
-                            href="https://api.whatsapp.com/send?phone=8801909756552&text=I%27m%20interested%20in%20your%20services">Freelancer Nishad</a></div>
+                    <div class="copyright">© Copyrights 2023. All rights reserved. Developed by <a target="_blank"
+                            href="https://softwebsys.com/">সফটওয়েব সিস্টেম সল্যুশন</a></div>
                 </footer>
                 <!-- Footer Area End Here -->
             </div>

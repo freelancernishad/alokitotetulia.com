@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-sm-7">
                         <small class="date">
-                            <i class="fa fa-map-marker"></i> তেঁতুলিয়া,পঞ্চগড় &nbsp;&nbsp;<i class="fa fa-calendar"> </i>
+                            <i class="fa fa-map-marker"  style="color: #7c7c7c;"></i> তেঁতুলিয়া,পঞ্চগড় &nbsp;&nbsp;<i class="fa fa-calendar" style="color: #7c7c7c;"> </i>
                             {{ dateTime }}
                         </small>
                     </div>
@@ -92,9 +92,9 @@
             <div class="container d-none d-lg-flex py-3 navbar-root" id="section-down"
                 style="padding-top: 5px !important;">
                 <div class="d-flex justify-content-between align-items-center w-100">
-                    <router-link class="brand-logo-top" title="Dhaka Post" to="/" style="border: 2px solid #006328;padding: 7px;">
+                    <router-link class="brand-logo-top" title="" to="/" style="border: 2px solid #006328;padding: 7px;">
                         <img style="max-width: 300px;" :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'"
-                            alt="Dhaka Post" />
+                            alt="" />
                     </router-link>
 
 
@@ -125,8 +125,8 @@
 
 
                     <div class="navbar-brand align-items-center d-flex d-lg-none mr-0">
-                        <a title="Dhaka Post" href="/">
-                            <img :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="Dhaka Post"
+                        <a title="" href="/">
+                            <img :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt=""
                                 width="1345" height="192" />
                         </a>
                     </div>

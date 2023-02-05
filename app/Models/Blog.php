@@ -14,6 +14,7 @@ class Blog extends Model
         'cat_id',
         'cat_name',
         'title',
+        'author',
         'slug',
         'video',
         'short_description',

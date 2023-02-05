@@ -4,12 +4,12 @@
 
 
 <div class="breadcrumbs-area">
-    <h3>ক্যাটাগরি</h3>
+    <h3>মেন্যু ও ক্যাটাগরি</h3>
     <ul>
         <li>
             <router-link :to="{name:'Dashboard'}">Home</router-link>
         </li>
-        <li>ক্যাটাগরি</li>
+        <li>মেন্যু ও ক্যাটাগরি</li>
     </ul>
 </div>
 
