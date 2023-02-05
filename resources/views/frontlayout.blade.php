@@ -8,13 +8,13 @@
     <meta property="og:url" content="" />
     <link rel="shortcut icon" type="image" href="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png" />
 
-<meta name="title" content="আলোকিত তেঁতুলিয়া22222" />
+<meta name="title" content="আলোকিত তেঁতুলিয়া" />
 <meta name="description" content="আলোকিত তেঁতুলিয়া" />
 <meta name="keywords" content="আলোকিত তেঁতুলিয়া" />
 <meta name="author" content="আলোকিত তেঁতুলিয়া " />
 <meta name="news_keywords" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="আলোকিত তেঁতুলিয়া" />
+<meta property="og:title" content="আলোকিত তেঁতুলিয়া2222" />
 <meta property="og:description" content="আলোকিত তেঁতুলিয়া" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="আলোকিত তেঁতুলিয়া" />
