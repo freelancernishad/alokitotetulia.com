@@ -17,7 +17,8 @@
 <meta property="og:title" content="আগামীতেও সফলভাবে নির্বাচনী দায়িত্ব পালন করবে পুলিশ" />
 <meta property="og:description" content="আলোকিত তেঁতুলিয়া" />
 <meta property="og:image" content="https://www.alokitotetulia.com/public/blogs/1674063022____70348.jpeg" />
-<meta property="og:image:width" content="1200" />
+<meta property="og:image:width" content="200" />
+<meta property="og:image:height" content="200" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
 
 
