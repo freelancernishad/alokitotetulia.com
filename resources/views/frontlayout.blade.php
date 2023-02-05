@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>আলোকিত তেঁতুলিয়া</title>
-    <meta name="title" content="আলোকিত তেঁতুলিয়া" />
-    <meta name="description" content="আলোকিত তেঁতুলিয়া" />
+    <meta property="og:url" content="" />
+<meta name="title" content="আলোকিত তেঁতুলিয়া" />
+<meta name="description" content="আলোকিত তেঁতুলিয়া" />
+<meta name="keywords" content="আলোকিত তেঁতুলিয়া" />
+<meta name="author" content="আলোকিত তেঁতুলিয়া " />
+<meta name="news_keywords" content="রাশিয়া ইউক্রেন সংঘাত,ইউক্রেন,রাশিয়া,রাশি খান্না" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="আলোকিত তেঁতুলিয়া" />
+<meta property="og:description" content="আলোকিত তেঁতুলিয়া" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="আলোকিত তেঁতুলিয়া" />
+<meta name="twitter:description" content="আলোকিত তেঁতুলিয়া" />
+<meta name="twitter:image" content="" />
+<meta property="og:image" content="" />
+<meta property="og:image:width" content="1200" />
+<meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
+
+
+
+
+
+
+
+
+
+
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
@@ -33,7 +57,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.14') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.15') }}"></script>
 
 <script>
 

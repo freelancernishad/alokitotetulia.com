@@ -82,6 +82,7 @@
 
                                     <ShareNetwork network="facebook" :url="shareurl" :title="row.title" :description="row.long_description"> <i class="fa-brands fa-facebook-f"></i> </ShareNetwork>
                                     <ShareNetwork network="Twitter" :url="shareurl" :title="row.title"> <i class="fa-brands fa-twitter"></i> </ShareNetwork>
+
                                 </div>
 
                                 <div class="d-print-none">
@@ -231,9 +232,19 @@ export default {
                 axios.get(`/api/update/blog/${id}`)
                 .then((res)=>{
                     this.row = res.data
+
                     document.title = this.row.title
-                    document.querySelector('meta[name="title"]').setAttribute("content", this.row.title);
-                    document.querySelector('meta[name="description"]').setAttribute("content", this.row.short_description);
+                    document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
+                    document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
+                    document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
+                    document.querySelector('meta[name="news_keywords"]').setAttribute("content", res.data.title);
+                    document.querySelector('meta[property="og:title"]').setAttribute("content", res.data.title);
+                    document.querySelector('meta[property="og:description"]').setAttribute("content", res.data.short_description);
+                    document.querySelector('meta[name="twitter:title"]').setAttribute("content", res.data.title);
+                    document.querySelector('meta[name="twitter:description"]').setAttribute("content", res.data.short_description);
+                    document.querySelector('meta[name="twitter:image"]').setAttribute("content",  window.location.origin+this.$asseturl+res.data.fiture);
+                    document.querySelector('meta[property="og:image"]').setAttribute("content",  window.location.origin+this.$asseturl+res.data.fiture);
+                    document.querySelector('meta[property="og:url"]').setAttribute("content",  this.shareurl);
                     this.preloader = false;
                 })
 
@@ -241,6 +252,7 @@ export default {
 
     },
     mounted(){
+
 
 
 
