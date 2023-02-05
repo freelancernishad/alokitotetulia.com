@@ -230,6 +230,7 @@ export default {
                 axios.get(`/api/update/blog/${id}`)
                 .then((res)=>{
                     this.row = res.data
+                    document.title = this.row.title
                     this.preloader = false;
                 })
 
@@ -237,6 +238,8 @@ export default {
 
     },
     mounted(){
+
+
 
         this.shareurl = document.URL
 

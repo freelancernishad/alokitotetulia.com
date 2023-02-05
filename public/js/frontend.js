@@ -2655,6 +2655,7 @@ __webpack_require__.r(__webpack_exports__);
       this.preloader = true;
       axios.get("/api/update/blog/".concat(id)).then(function (res) {
         _this2.row = res.data;
+        document.title = _this2.row.title;
         _this2.preloader = false;
       });
     }

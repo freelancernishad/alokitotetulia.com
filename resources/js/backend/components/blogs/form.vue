@@ -82,14 +82,14 @@
 
 
 
-                                <!-- <div class="col-md-12">
+                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Short Description</label>
+                                        <label>সংক্ষিপ্ত শিরোনাম</label>
                                         <input type="text" class="form-control" v-model="form.short_description"
                                             id="short_description" value="">
                                     </div>
 
-                                </div> -->
+                                </div>
 
 
                                 <div class="col-md-12">
