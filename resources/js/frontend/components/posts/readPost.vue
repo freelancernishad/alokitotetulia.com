@@ -255,7 +255,8 @@ export default {
 
     //     },
         updateMetaTags(data) {
-      document.title = data.title;
+
+            document.title = data.title;
       document.querySelector('meta[name="title"]').setAttribute("content", data.title);
       document.querySelector('meta[name="description"]').setAttribute("content", data.short_description);
       document.querySelector('meta[name="keywords"]').setAttribute("content", data.title);
@@ -267,6 +268,7 @@ export default {
       document.querySelector('meta[name="twitter:image"]').setAttribute("content", window.location.origin + this.$asseturl + data.fiture);
       document.querySelector('meta[property="og:image"]').setAttribute("content", window.location.origin + this.$asseturl + data.fiture);
       document.querySelector('meta[property="og:url"]').setAttribute("content", this.shareurl);
+
     }
 
     },
