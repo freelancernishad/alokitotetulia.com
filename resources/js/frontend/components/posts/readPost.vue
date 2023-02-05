@@ -254,21 +254,39 @@ export default {
     //             })
 
     //     },
-        updateMetaTags(data) {
 
-            document.title = data.title;
-      document.querySelector('meta[name="title"]').setAttribute("content", data.title);
-      document.querySelector('meta[name="description"]').setAttribute("content", data.short_description);
-      document.querySelector('meta[name="keywords"]').setAttribute("content", data.title);
-      document.querySelector('meta[name="news_keywords"]').setAttribute("content", data.title);
-      document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
-      document.querySelector('meta[property="og:description"]').setAttribute("content", data.short_description);
-      document.querySelector('meta[property="og:image"]').setAttribute("content", window.location.origin + this.$asseturl + data.fiture);
-      document.querySelector('meta[property="og:url"]').setAttribute("content", this.shareurl);
-
-    }
 
     },
+
+    beforeRouteEnter(to, from, next) {
+        console.log(to)
+
+    axios
+      .get(`/api/update/blog/${to.params.id}`)
+      .then(response => {
+        next(vm => {
+          vm.row = response.data;
+
+
+
+
+          document.title = response.data.title;
+      document.querySelector('meta[name="title"]').setAttribute("content", response.data.title);
+      document.querySelector('meta[name="description"]').setAttribute("content", response.data.short_description);
+      document.querySelector('meta[name="keywords"]').setAttribute("content", response.data.title);
+      document.querySelector('meta[name="news_keywords"]').setAttribute("content", response.data.title);
+      document.querySelector('meta[property="og:title"]').setAttribute("content", to.params.slug);
+      document.querySelector('meta[property="og:description"]').setAttribute("content", response.data.short_description);
+      document.querySelector('meta[property="og:image"]').setAttribute("content", window.location.origin + "/public/" + response.data.fiture);
+    //   document.querySelector('meta[property="og:url"]').setAttribute("content", this.shareurl);
+
+vm.preloader = false
+
+
+        });
+      });
+  },
+
     mounted(){
 
 
@@ -279,12 +297,12 @@ export default {
            this.getunionInfo(this.$route.params.id);
         //    this.getposts(this.$route.params.id);
 
-           axios.get(`/api/update/blog/${this.$route.params.id}`)
-      .then((res) => {
-        this.row = res.data;
-        this.updateMetaTags(res.data);
-        this.preloader = false
-      })
+    //        axios.get(`/api/update/blog/${this.$route.params.id}`)
+    //   .then((res) => {
+    //     this.row = res.data;
+    //     this.updateMetaTags(res.data);
+    //     this.preloader = false
+    //   })
 
 
         }
