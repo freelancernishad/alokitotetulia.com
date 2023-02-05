@@ -2656,6 +2656,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/api/update/blog/".concat(id)).then(function (res) {
         _this2.row = res.data;
         document.title = _this2.row.title;
+        document.querySelector('meta[name="title"]').setAttribute("content", _this2.row.title);
+        document.querySelector('meta[name="description"]').setAttribute("content", _this2.row.short_description);
         _this2.preloader = false;
       });
     }
@@ -40234,7 +40236,11 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0__["default"].use((vue_social_sharing__WEBPACK_IMPORTED_MODULE_4___default()));
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].use((vue_social_sharing__WEBPACK_IMPORTED_MODULE_4___default())); // import VueMeta from 'vue-meta'
+// Vue.use(VueMeta, {
+//     keyName: 'head'
+//   })
+
 window.Reload = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]();
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_2__.routes,

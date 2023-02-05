@@ -183,6 +183,7 @@
 
 <script>
 export default {
+
     data(){
         return {
            row: {
@@ -231,6 +232,8 @@ export default {
                 .then((res)=>{
                     this.row = res.data
                     document.title = this.row.title
+                    document.querySelector('meta[name="title"]').setAttribute("content", this.row.title);
+                    document.querySelector('meta[name="description"]').setAttribute("content", this.row.short_description);
                     this.preloader = false;
                 })
 

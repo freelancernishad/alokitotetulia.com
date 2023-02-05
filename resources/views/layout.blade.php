@@ -39,7 +39,7 @@
     </div>
 
 
-<script src="{{ asset('js/backend.js?ver=1.0.13') }}"></script>
+<script src="{{ asset('js/backend.js?ver=1.0.14') }}"></script>
 <!-- Popper js -->
 <script src="{{ asset('dashboard_asset/js/popper.min.js') }}"></script>
 <!-- Bootstrap js -->

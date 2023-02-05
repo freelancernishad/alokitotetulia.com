@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>আলোকিত তেঁতুলিয়া</title>
+    <meta name="title" content="আলোকিত তেঁতুলিয়া" />
+    <meta name="description" content="আলোকিত তেঁতুলিয়া" />
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
@@ -31,7 +33,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.13') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.14') }}"></script>
 
 <script>
 
