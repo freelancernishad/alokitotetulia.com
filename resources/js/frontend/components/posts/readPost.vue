@@ -1,4 +1,7 @@
 <template>
+
+
+
     <div>
         <loader v-if="preloader"  object="#ff0000" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
         <main role="main">
@@ -238,7 +241,7 @@ export default {
                     // document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
                     // document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
                     // document.querySelector('meta[name="news_keywords"]').setAttribute("content", res.data.title);
-                    // document.querySelector('meta[property="og:title"]').setAttribute("content", res.data.title);
+                    document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
                     // document.querySelector('meta[property="og:description"]').setAttribute("content", res.data.short_description);
                     // document.querySelector('meta[name="twitter:title"]').setAttribute("content", res.data.title);
                     // document.querySelector('meta[name="twitter:description"]').setAttribute("content", res.data.short_description);

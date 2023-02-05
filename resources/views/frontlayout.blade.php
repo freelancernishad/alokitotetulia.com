@@ -16,10 +16,6 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="আগামীতেও সফলভাবে নির্বাচনী দায়িত্ব পালন করবে পুলিশ" />
 <meta property="og:description" content="আলোকিত তেঁতুলিয়া" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="আলোকিত তেঁতুলিয়া" />
-<meta name="twitter:description" content="আলোকিত তেঁতুলিয়া" />
-<meta name="twitter:image" content="https://www.alokitotetulia.com/public/blogs/1674063022____70348.jpeg" />
 <meta property="og:image" content="https://www.alokitotetulia.com/public/blogs/1674063022____70348.jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
@@ -58,7 +54,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.180') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.1800') }}"></script>
 
 <script>
 
