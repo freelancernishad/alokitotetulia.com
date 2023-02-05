@@ -77,6 +77,13 @@
 
                                 </article>
 
+                                <h3>Share</h3>
+                                <div class="d-flex shareIcons">
+
+                                    <ShareNetwork network="facebook" :url="shareurl" :title="row.title" :description="row.long_description"> <i class="fa-brands fa-facebook-f"></i> </ShareNetwork>
+                                    <ShareNetwork network="Twitter" :url="shareurl" :title="row.title"> <i class="fa-brands fa-twitter"></i> </ShareNetwork>
+                                </div>
+
                                 <div class="d-print-none">
                                     <div class="py-3 m-py-2">
                                         <div
@@ -192,6 +199,7 @@ export default {
                 'latestPost':{},
                 'latestPost2':{},
              },
+             shareurl:'',
              preloader:true,
         }
     },
@@ -230,6 +238,7 @@ export default {
     },
     mounted(){
 
+        this.shareurl = document.URL
 
            this.getunionInfo(this.$route.params.id);
            this.getposts(this.$route.params.id);
@@ -241,5 +250,25 @@ export default {
 <style>
 .news-image iframe {
     width: 100% !important;
+}
+.d-flex.shareIcons a {
+    padding: 0 0;
+    font-size: 31px;
+    width: 45px;
+    height: 45px;
+    margin: 6px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+}
+
+a.share-network-facebook {
+    background: #0F8FF2;
+}
+
+a.share-network-twitter {
+    background: #1D9BF0;
 }
 </style>

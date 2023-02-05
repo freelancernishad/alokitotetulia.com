@@ -4,7 +4,9 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import {routes} from './routes';
 import store from '../store'
+import VueSocialSharing from 'vue-social-sharing'
 
+Vue.use(VueSocialSharing);
 
 
 window.Reload = new Vue();
