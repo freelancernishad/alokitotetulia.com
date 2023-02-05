@@ -2666,6 +2666,7 @@ __webpack_require__.r(__webpack_exports__);
         document.querySelector('meta[name="twitter:description"]').setAttribute("content", res.data.short_description);
         document.querySelector('meta[name="twitter:image"]').setAttribute("content", window.location.origin + _this2.$asseturl + res.data.fiture);
         document.querySelector('meta[property="og:image"]').setAttribute("content", window.location.origin + _this2.$asseturl + res.data.fiture);
+        document.querySelector('link[type="image"]').setAttribute("href", window.location.origin + _this2.$asseturl + res.data.fiture);
         document.querySelector('meta[property="og:url"]').setAttribute("content", _this2.shareurl);
         _this2.preloader = false;
       });

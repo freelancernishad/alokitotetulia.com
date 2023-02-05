@@ -7,7 +7,8 @@
     <title>আলোকিত তেঁতুলিয়া</title>
     <meta property="og:url" content="" />
     <link rel="shortcut icon" type="image" href="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png" />
-<meta name="title" content="আলোকিত তেঁতুলিয়া" />
+
+<meta name="title" content="আলোকিত তেঁতুলিয়া22222" />
 <meta name="description" content="আলোকিত তেঁতুলিয়া" />
 <meta name="keywords" content="আলোকিত তেঁতুলিয়া" />
 <meta name="author" content="আলোকিত তেঁতুলিয়া " />
@@ -22,7 +23,6 @@
 <meta property="og:image" content="https://www.alokitotetulia.com/public/blogs/1674063022____70348.jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
-
 
 
 
@@ -58,7 +58,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.15') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.16') }}"></script>
 
 <script>
 
