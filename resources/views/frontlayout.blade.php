@@ -14,7 +14,7 @@
 <meta name="author" content="আলোকিত তেঁতুলিয়া " />
 <meta name="news_keywords" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="আলোকিত তেঁতুলিয়া" />
+<meta property="og:title" content="আগামীতেও সফলভাবে নির্বাচনী দায়িত্ব পালন করবে পুলিশ" />
 <meta property="og:description" content="আলোকিত তেঁতুলিয়া" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="আলোকিত তেঁতুলিয়া" />
