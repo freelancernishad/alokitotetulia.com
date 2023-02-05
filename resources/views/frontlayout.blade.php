@@ -18,8 +18,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="আলোকিত তেঁতুলিয়া" />
 <meta name="twitter:description" content="আলোকিত তেঁতুলিয়া" />
-<meta name="twitter:image" content="" />
-<meta property="og:image" content="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png" />
+<meta name="twitter:image" content="https://www.alokitotetulia.com/public/blogs/1674063022____70348.jpeg" />
+<meta property="og:image" content="https://www.alokitotetulia.com/public/blogs/1674063022____70348.jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
 
