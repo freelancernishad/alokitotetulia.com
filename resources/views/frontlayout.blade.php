@@ -21,6 +21,7 @@
 <meta property="og:image:height" content="200px" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
 
+<meta property="fb:app_id" content="863998424666012"/>
 
 
 
