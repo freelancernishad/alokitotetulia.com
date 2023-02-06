@@ -794,6 +794,24 @@ function resultSub($class = '', $group = '')
 
 
 
+function base64Withsize($Image,$width=200,$height=200)
+{
+
+    // $url = $Image;
+    if (File::exists(env('FILE_PATH') . $Image)) {
+        $Image = env('FILE_PATH') . $Image;
+    } else {
+        $Image = env('FILE_PATH') . 'backend/image.png';
+    }
+    $img = Image::make($Image);
+    $img->resize($width, $height);
+    $img->encode('jpg');
+    $data = base64_encode($img->__toString());
+    return 'data:image/jpg;base64,' . $data;
+
+
+}
+
 function base642($Image)
 {
     $url = $Image;

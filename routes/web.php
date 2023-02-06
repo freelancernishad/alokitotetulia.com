@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Http\Request;
-
+use Intervention\Image\Facades\Image;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,26 +54,31 @@ Route::get('/{vue_capture?}', function ($vue_capture='') {
      if($urldata[0]=='read' && $urldata[1]=='post'){
         $blogId = $urldata[2];
         $ReadPost =  Blog::find($blogId);
+        $fiture =  base64Withsize($ReadPost->fiture);
+        $ReadPost['fiture'] = $fiture;
      }else{
+
+
+        $fiture =  base64Withsize('cropped-cropped-Alokitotetulia.png.png');
         $ReadPost = [
             "title"=> "আলোকিত তেঁতুলিয়া",
             "short_description"=> 'আলোকিত তেঁতুলিয়া',
             "long_description"=> "",
-            "fiture"=> asset('cropped-cropped-Alokitotetulia.png.png'),
+            "fiture"=> $fiture,
     ];
      $ReadPost= json_decode(json_encode($ReadPost));
      }
 
     }else{
+        $fiture =  base64Withsize('cropped-cropped-Alokitotetulia.png.png');
         $ReadPost = [
             "title"=> "আলোকিত তেঁতুলিয়া",
             "short_description"=> 'আলোকিত তেঁতুলিয়া',
             "long_description"=> "",
-            "fiture"=> asset('cropped-cropped-Alokitotetulia.png.png'),
+            "fiture"=> $fiture,
     ];
      $ReadPost= json_decode(json_encode($ReadPost));
     }
-
 
 
 
