@@ -2342,13 +2342,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 _this.catname = name;
+                document.title = name; // document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
+                // document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
+
                 axios.get("/api/get/blog/list?allpost=".concat(postsShow, "&category=").concat(name)).then(function (res) {
                   _this.rows = res.data;
                   _this.last_page = res.data.last_page;
                   _this.preloader = false;
                 });
 
-              case 6:
+              case 7:
               case "end":
                 return _context.stop();
             }
@@ -2402,7 +2405,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       preloader: true
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    document.title = 'আলোকিত তেঁতুলিয়া';
+  },
   methods: {
     getPosts: function getPosts() {
       var _this = this;

@@ -21,7 +21,7 @@
 
                                         <div class="col-lg-8 top-left-section lead-top" v-for="(row,index) in rows.data" v-if="index==0" :key="'big'+index">
                                             <div class="lead-news">
-                                                <a :href="'/read/post/'+row.id+'/'+row.title" 
+                                                <a :href="'/read/post/'+row.id+'/'+row.title"
                                                     class="news-item news-item-lead border-0">
                                                     <img style="height:335px !important;" :src="$asseturl+row.fiture" v-if="row.fiture"  :alt="row.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="row.title" class="lazyload img-loader">
@@ -232,6 +232,9 @@ export default {
             name = this.$route.params.cat;
         }
       this.catname = name
+                          document.title = name
+                    // document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
+                    // document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
 
 
 

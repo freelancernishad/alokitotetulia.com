@@ -755,6 +755,7 @@ export default {
         };
     },
     mounted() {
+        document.title = 'আলোকিত তেঁতুলিয়া'
     },
     methods: {
         async getPosts() {
