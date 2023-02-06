@@ -102,12 +102,12 @@
 
 
                                                 <div class="col-sm-4 box-news" v-for="(latestPost,index) in posts.latestPost2" :key="index">
-                                                    <router-link :to="{name:'readPost',params:{id:latestPost.id,slug:latestPost.title}}"
+                                                    <a :href="'/read/post/'+latestPost.id+'/'+latestPost.title"
                                                         class="news-item news-item-box">
                                                         <img style=" width:100% !important;height:165px !important;" :src="$asseturl+latestPost.fiture" v-if="latestPost.fiture"  :alt="latestPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="latestPost.title" class="lazyload img-loader">
                                                         <h2 class="title"> {{ latestPost.title }}</h2>
-                                                    </router-link>
+                                                </a>
                                                 </div>
 
 
@@ -135,7 +135,7 @@
                                             <div class="regular-list scaled m-px-0">
 
 
-                                                <router-link v-for="(relatedPost,index) in posts.relatedPosts" :key="index" :to="{name:'readPost',params:{id:relatedPost.id,slug:relatedPost.title}}" class="news-item news-item-regular py-2" >
+                                                <a v-for="(relatedPost,index) in posts.relatedPosts" :key="index"  :href="'/read/post/'+relatedPost.id+'/'+relatedPost.title"  class="news-item news-item-regular py-2" >
                                                     <div class="image-container">
                                                         <img style=" width:100% !important;height:75px !important;" :src="$asseturl+relatedPost.fiture" v-if="relatedPost.fiture"  :alt="relatedPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="relatedPost.title" class="lazyload img-loader">
@@ -143,7 +143,7 @@
                                                     <h2 class="title">
                                                         {{ relatedPost.title }}
                                                     </h2>
-                                                </router-link>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
                                             <div class="regular-list scaled m-px-0">
 
 
-                                                <router-link v-for="(latestPost,index) in posts.latestPost" :key="index" :to="{name:'readPost',params:{id:latestPost.id,slug:latestPost.title}}" class="news-item news-item-regular py-2" >
+                                                <a v-for="(latestPost,index) in posts.latestPost" :key="index"  :href="'/read/post/'+latestPost.id+'/'+latestPost.title"  class="news-item news-item-regular py-2" >
                                                     <div class="image-container">
                                                         <img style=" width:100% !important;height:75px !important;" :src="$asseturl+latestPost.fiture" v-if="latestPost.fiture"  :alt="latestPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="latestPost.title" class="lazyload img-loader">
@@ -167,7 +167,7 @@
                                                     <h2 class="title">
                                                         {{ latestPost.title }}
                                                     </h2>
-                                                </router-link>
+                                                </a>
 
 
                                             </div>
@@ -211,6 +211,7 @@ export default {
     watch: {
         '$route': {
             handler(newValue, oldValue) {
+
                 this.getunionInfo(this.$route.params.id);
            this.getposts(this.$route.params.id);
             },

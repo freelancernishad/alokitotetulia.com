@@ -21,14 +21,14 @@
 
                                         <div class="col-lg-8 top-left-section lead-top" v-for="(row,index) in rows.data" v-if="index==0" :key="'big'+index">
                                             <div class="lead-news">
-                                                <router-link :to="{name:'readPost',params:{id:row.id,slug:row.title}}"
+                                                <a :href="'/read/post/'+row.id+'/'+row.title" 
                                                     class="news-item news-item-lead border-0">
                                                     <img style="height:335px !important;" :src="$asseturl+row.fiture" v-if="row.fiture"  :alt="row.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="row.title" class="lazyload img-loader">
                                                     <h2 class="title liveTitle" style="margin: 10px 0">
                                                         {{ row.title }}
                                                     </h2>
-                                                </router-link>
+                                                </a>
                                             </div>
                                         </div>
 
@@ -36,7 +36,7 @@
                                         <div class="col-lg-4 cat-two-items">
                                             <div class="row">
                                                 <div class="col-12 col-sm-6 col-lg-12 box-news" v-for="(row,index1) in rows.data" v-if="index1==1 || index1==2" :key="'sm'+index1">
-                                                    <router-link :to="{name:'readPost',params:{id:row.id,slug:row.title}}"
+                                                    <a :href="'/read/post/'+row.id+'/'+row.title"
                                                         class="news-item news-item-box m-py-2 border-bottom">
                                                         <img style="height:175px !important;" :src="$asseturl+row.fiture" v-if="row.fiture"  :alt="row.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="row.title" class="lazyload img-loader">
@@ -44,7 +44,7 @@
                                                         <h2 class="title">
                                                             {{ row.title }}
                                                         </h2>
-                                                    </router-link>
+                                                    </a>
                                                 </div>
 
                                             </div>
@@ -59,14 +59,14 @@
 
 
                                     <div class="col-sm-4 box-news" v-for="(row,index2) in rows.data"  :key="'sm2'+index2" v-if="index2" :style="[index2==0 || index2==1 || index2==2 ? {'display': 'none'} : '']">
-                                        <router-link :to="{name:'readPost',params:{id:row.id,slug:row.title}}"
+                                        <a :href="'/read/post/'+row.id+'/'+row.title"
                                             class="news-item news-item-box m-py-2">
                                             <img style="height:175px !important;" :src="$asseturl+row.fiture" v-if="row.fiture"  :alt="row.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="row.title" class="lazyload img-loader">
                                             <h2 class="title">
                                                 {{ row.title }}
                                             </h2>
-                                        </router-link>
+                                        </a>
                                     </div>
 
 

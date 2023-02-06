@@ -17,8 +17,7 @@
                                         </div>
                                     </div>
                                     <div class="regular-list scaled ai-custom" style="height: 425px;overflow: auto;">
-                                        <router-link
-                                            :to="{ name: 'readPost', params: { id: LPost.id, slug: LPost.title } }"
+                                        <a :href="'/read/post/'+LPost.id+'/'+LPost.title"
                                             v-for="(LPost, Pindex) in posts.latestPost" :key="'Lpost' + Pindex"
                                             class="news-item news-item-regular py-2 d-flex">
                                             <img style="width: 83px;height: 70px;margin-right: 8px;padding-left: 7px;"
@@ -30,10 +29,10 @@
                                             <div class="d-flex flex-column" style="">
                                                 {{ LPost.title }}
                                             </div>
-                                        </router-link>
+                                        </a>
                                     </div>
                                 </div>
-              
+
                             </div>
                         </div>
 
@@ -44,8 +43,7 @@
                                             class="fa-solid fa-chevron-left"></i></span></template>
                                 <div class="box item" :id="'owlItem'+index" v-for="(featured_post, index) in getlatestpost"
                                     :key="'Fpost' + index">
-                                    <router-link
-                                        :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.title } }">
+                                    <a :href="'/read/post/'+featured_post.id+'/'+featured_post.title">
                                         <div class="carousel-caption"> {{ featured_post.title }}</div>
                                         <img class="img-responsive cover_image" :src="$asseturl + featured_post.fiture"
                                             v-if="featured_post.fiture" width="600" height="364" alt="">
@@ -57,7 +55,7 @@
                                                         class="ion-chatbubbles"></span>351</p>
                                             </div>
                                         </div>
-                                    </router-link>
+                                    </a>
                                 </div>
                                 <template slot="next"><span class="next"><i
                                             class="fa-solid fa-chevron-right"></i></span></template>
@@ -77,9 +75,7 @@
                             <div class="row">
                                 <div class="col-12 lead-news" v-for="(featured_post, index) in posts.featured_post"
                                     :key="'Fpost' + index" v-if="index==0">
-                                    <router-link
-                                        :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.title } }"
-                                        class="news-item news-item-lead">
+                                    <a :href="'/read/post/'+featured_post.id+'/'+featured_post.title" class="news-item news-item-lead">
                                         <div class="image-container">
                                             <img :src="$asseturl + featured_post.fiture" v-if="featured_post.fiture"
                                                 :alt="featured_post.title" class="lazyload img-loader">
@@ -89,7 +85,7 @@
                                         <h2 class="title" style="margin: 10px 0">
                                             {{ featured_post.title }}
                                         </h2>
-                                    </router-link>
+                                    </a>
                                 </div>
                             </div> -->
 
@@ -99,8 +95,7 @@
                         <!--
                         <div class="col-lg-3 col-md-6 top-list-1 m-order-1  " style="order: -1">
                             <div class="second-center scaled" style="background: #Eff5F4">
-                                <router-link
-                                    :to="{ name: 'readPost', params: { id: featured_post.id, slug: featured_post.title } }"
+                                <a :href="'/read/post/'+featured_post.id+'/'+featured_post.title"
                                     class="news-item news-item-list py-2 "
                                     v-for="(featured_post, index4) in posts.featured_post" :key="'F1post' + index4"
                                     :style="[index4 == 0 ? { 'display': 'none' } : '']">
@@ -115,7 +110,7 @@
                                             {{ featured_post.title }}
                                         </h2>
                                     </div>
-                                </router-link>
+                                </a>
                             </div>
                         </div> -->
 
@@ -158,9 +153,7 @@
                                 <div class="row">
                                     <div class="col-sm-3 box-news " v-for="(National, Pindex) in posts.national"
                                         :key="'National' + Pindex">
-                                        <router-link
-                                            :to="{ name: 'readPost', params: { id: National.id, slug: National.title } }"
-                                            class="news-item news-item-box m-py-2">
+                                        <a :href="'/read/post/'+National.id+'/'+National.title" class="news-item news-item-box m-py-2">
                                             <div class="image-container">
                                                 <img style="height:167px !important;" :src="$asseturl + National.fiture"
                                                     v-if="National.fiture" :alt="National.title" class="lazyload img-loader">
@@ -172,7 +165,7 @@
                                                     {{ National.title }}
                                                 </h2>
                                             </div>
-                                        </router-link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -201,9 +194,7 @@
                                 <div class="col-12 col-md-6 col-xl-4" v-for="(the_whole_country, naindex) in posts.the_whole_country"
                                     :key="'naindex' + naindex">
                                     <div class="clk-list clk-center">
-                                        <router-link
-                                            :to="{ name: 'readPost', params: { id: the_whole_country.id, slug: the_whole_country.title } }"
-                                            class="clk-item clk-item-regular py-2 ">
+                                        <a :href="'/read/post/'+the_whole_country.id+'/'+the_whole_country.title" class="clk-item clk-item-regular py-2 ">
                                             <img style="height:75px !important;" :src="$asseturl + the_whole_country.fiture"
                                                 v-if="the_whole_country.fiture" :alt="the_whole_country.title"
                                                 class="lazyload img-loader">
@@ -212,7 +203,7 @@
                                             <h2 class="title">
                                                 {{ the_whole_country.title }}
                                             </h2>
-                                        </router-link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -236,9 +227,7 @@
                                 </router-link>
                             </div>
                             <div class="regular-list scaled ai-custom">
-                                <router-link
-                                    :to="{ name: 'readPost', params: { id: international.id, slug: international.title } }"
-                                    class="news-item news-item-regular py-2"
+                                <a :href="'/read/post/'+international.id+'/'+international.title" class="news-item news-item-regular py-2"
                                     v-for="(international, naindex) in posts.international" :key="'naindex' + naindex">
                                     <div class="image-container">
                                         <img style="height:75px !important;" :src="$asseturl + international.fiture"
@@ -250,7 +239,7 @@
                                     <h2 class="title">
                                         {{ international.title }}
                                     </h2>
-                                </router-link>
+                                </a>
                             </div>
                         </div>
 
@@ -284,9 +273,7 @@
                                     v-for="(Panchagarh_news, naindex) in posts.Panchagarh_news"
                                     :key="'naindex' + naindex">
                                     <div class="clk-list clk-center">
-                                        <router-link
-                                            :to="{ name: 'readPost', params: { id: Panchagarh_news.id, slug: Panchagarh_news.title } }"
-                                            class="clk-item clk-item-regular py-2 ">
+                                        <a :href="'/read/post/'+international.id+'/'+international.title" class="clk-item clk-item-regular py-2 ">
                                             <img style="height:75px !important;"
                                                 :src="$asseturl + Panchagarh_news.fiture"
                                                 v-if="Panchagarh_news.fiture" :alt="Panchagarh_news.title"
@@ -296,7 +283,7 @@
                                             <h2 class="title">
                                                 {{ Panchagarh_news.title }}
                                             </h2>
-                                        </router-link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -319,8 +306,7 @@
                                 </router-link>
                             </div>
                             <div class="regular-list scaled ai-custom">
-                                <router-link
-                                    :to="{ name: 'readPost', params: { id: politics.id, slug: politics.title } }"
+                                <a :href="'/read/post/'+politics.id+'/'+politics.title"
                                     class="news-item news-item-regular py-2"
                                     v-for="(politics, naindex) in posts.politics" :key="'naindex' + naindex">
                                     <div class="image-container">
@@ -332,7 +318,7 @@
                                     <h2 class="title">
                                         {{ politics.title }}
                                     </h2>
-                                </router-link>
+                                </a>
                             </div>
                         </div>
 
@@ -363,8 +349,7 @@
                                 <div class="col-12 col-md-6 col-xl-4"
                                     v-for="(entertainment, naindex) in posts.entertainment" :key="'naindex' + naindex">
                                     <div class="clk-list clk-center">
-                                        <router-link
-                                            :to="{ name: 'readPost', params: { id: entertainment.id, slug: entertainment.title } }"
+                                        <a :href="'/read/post/'+entertainment.id+'/'+entertainment.title"
                                             class="clk-item clk-item-regular py-2 ">
                                             <img style="height:75px !important;"
                                                 :src="$asseturl + entertainment.fiture" v-if="entertainment.fiture"
@@ -374,7 +359,7 @@
                                             <h2 class="title">
                                                 {{ entertainment.title }}
                                             </h2>
-                                        </router-link>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -396,7 +381,7 @@
                                 </router-link>
                             </div>
                             <div class="regular-list scaled ai-custom">
-                                <router-link :to="{ name: 'readPost', params: { id: education.id, slug: education.title } }"
+                                <a :href="'/read/post/'+education.id+'/'+education.title"
                                     class="news-item news-item-regular py-2"
                                     v-for="(education, naindex) in posts.education" :key="'naindex' + naindex">
                                     <div class="image-container">
@@ -408,7 +393,7 @@
                                     <h2 class="title">
                                         {{ education.title }}
                                     </h2>
-                                </router-link>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -423,15 +408,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'লাইফ স্টাইল' } }">লাইফ স্টাইল</router-link></h3>
                                     <div class="first width100" v-for="(Life_style, naindex) in posts.Life_style" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: Life_style.id, slug: Life_style.title } }">
+                                        <a :href="'/read/post/'+Life_style.id+'/'+Life_style.title" >
 
                                             <img :src="$asseturl + Life_style.fiture" v-if="Life_style.fiture" :alt="Life_style.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="Life_style.title"  width="233" height="148">
                                             <h3> {{ Life_style.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(Life_style, naindex) in posts.Life_style" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: Life_style.id, slug: Life_style.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ Life_style.title }}</router-link>
+                                        <a :href="'/read/post/'+Life_style.id+'/'+Life_style.title" > <i class="fas fa-long-arrow-right"></i>  {{ Life_style.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -444,15 +429,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'তথ্যপ্রযুক্তি' } }">তথ্যপ্রযুক্তি</router-link></h3>
                                     <div class="first width100" v-for="(Information_technology, naindex) in posts.Information_technology" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: Information_technology.id, slug: Information_technology.title } }">
+                                        <a :href="'/read/post/'+Information_technology.id+'/'+Information_technology.title" >
 
                                             <img :src="$asseturl + Information_technology.fiture" v-if="Information_technology.fiture" :alt="Information_technology.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="Information_technology.title"  width="233" height="148">
                                             <h3> {{ Information_technology.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(Information_technology, naindex) in posts.Information_technology" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: Information_technology.id, slug: Information_technology.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ Information_technology.title }}</router-link>
+                                        <a :href="'/read/post/'+Information_technology.id+'/'+Information_technology.title" > <i class="fas fa-long-arrow-right"></i>  {{ Information_technology.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -465,15 +450,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'বিশেষ প্রতিবেদন' } }">বিশেষ প্রতিবেদন</router-link></h3>
                                     <div class="first width100" v-for="(Special_report, naindex) in posts.Special_report" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: Special_report.id, slug: Special_report.title } }">
+                                        <a :href="'/read/post/'+Special_report.id+'/'+Special_report.title" >
 
                                             <img :src="$asseturl + Special_report.fiture" v-if="Special_report.fiture" :alt="Special_report.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="Special_report.title"  width="233" height="148">
                                             <h3> {{ Special_report.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(Special_report, naindex) in posts.Special_report" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: Special_report.id, slug: Special_report.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ Special_report.title }}</router-link>
+                                        <a :href="'/read/post/'+Special_report.id+'/'+Special_report.title" > <i class="fas fa-long-arrow-right"></i>  {{ Special_report.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -486,15 +471,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'খেলাধূলা' } }">খেলাধূলা</router-link></h3>
                                     <div class="first width100" v-for="(sports, naindex) in posts.sports" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: sports.id, slug: sports.title } }">
+                                        <a :href="'/read/post/'+sports.id+'/'+sports.title" >
 
                                             <img :src="$asseturl + sports.fiture" v-if="sports.fiture" :alt="sports.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="sports.title"  width="233" height="148">
                                             <h3> {{ sports.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(sports, naindex) in posts.sports" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: sports.id, slug: sports.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ sports.title }}</router-link>
+                                        <a :href="'/read/post/'+sports.id+'/'+sports.title" > <i class="fas fa-long-arrow-right"></i>  {{ sports.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -513,15 +498,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'স্বাস্থ্য' } }">স্বাস্থ্য</router-link></h3>
                                     <div class="first width100" v-for="(health, naindex) in posts.health" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: health.id, slug: health.title } }">
+                                        <a :href="'/read/post/'+health.id+'/'+health.title" >
 
                                             <img :src="$asseturl + health.fiture" v-if="health.fiture" :alt="health.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="health.title"  width="233" height="148">
                                             <h3> {{ health.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(health, naindex) in posts.health" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: health.id, slug: health.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ health.title }}</router-link>
+                                        <a :href="'/read/post/'+health.id+'/'+health.title" > <i class="fas fa-long-arrow-right"></i>  {{ health.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -534,15 +519,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ধর্ম ও জীবন' } }">ধর্ম ও জীবন</router-link></h3>
                                     <div class="first width100" v-for="(Religion_and_life, naindex) in posts.Religion_and_life" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: Religion_and_life.id, slug: Religion_and_life.title } }">
+                                        <a :href="'/read/post/'+Religion_and_life.id+'/'+Religion_and_life.title" >
 
                                             <img :src="$asseturl + Religion_and_life.fiture" v-if="Religion_and_life.fiture" :alt="Religion_and_life.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="Religion_and_life.title"  width="233" height="148">
                                             <h3> {{ Religion_and_life.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(Religion_and_life, naindex) in posts.Religion_and_life" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: Religion_and_life.id, slug: Religion_and_life.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ Religion_and_life.title }}</router-link>
+                                        <a :href="'/read/post/'+Religion_and_life.id+'/'+Religion_and_life.title" > <i class="fas fa-long-arrow-right"></i>  {{ Religion_and_life.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -555,15 +540,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'কৃষি' } }">কৃষি</router-link></h3>
                                     <div class="first width100" v-for="(agriculture, naindex) in posts.agriculture" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: agriculture.id, slug: agriculture.title } }">
+                                        <a :href="'/read/post/'+agriculture.id+'/'+agriculture.title" >
 
                                             <img :src="$asseturl + agriculture.fiture" v-if="agriculture.fiture" :alt="agriculture.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="agriculture.title"  width="233" height="148">
                                             <h3> {{ agriculture.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(agriculture, naindex) in posts.agriculture" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: agriculture.id, slug: agriculture.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ agriculture.title }}</router-link>
+                                        <a :href="'/read/post/'+agriculture.id+'/'+agriculture.title" > <i class="fas fa-long-arrow-right"></i>  {{ agriculture.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -576,15 +561,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ফিচার' } }">ফিচার</router-link></h3>
                                     <div class="first width100" v-for="(feature, naindex) in posts.feature" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: feature.id, slug: feature.title } }">
+                                        <a :href="'/read/post/'+feature.id+'/'+feature.title" >
 
                                             <img :src="$asseturl + feature.fiture" v-if="feature.fiture" :alt="feature.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="feature.title"  width="233" height="148">
                                             <h3> {{ feature.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(feature, naindex) in posts.feature" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: feature.id, slug: feature.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ feature.title }}</router-link>
+                                        <a :href="'/read/post/'+feature.id+'/'+feature.title" > <i class="fas fa-long-arrow-right"></i>  {{ feature.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -603,15 +588,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ক্যাম্পাস' } }">ক্যাম্পাস</router-link></h3>
                                     <div class="first width100" v-for="(campus, naindex) in posts.campus" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: campus.id, slug: campus.title } }">
+                                        <a :href="'/read/post/'+campus.id+'/'+campus.title" >
 
                                             <img :src="$asseturl + campus.fiture" v-if="campus.fiture" :alt="campus.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="campus.title"  width="233" height="148">
                                             <h3> {{ campus.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(campus, naindex) in posts.campus" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: campus.id, slug: campus.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ campus.title }}</router-link>
+                                        <a :href="'/read/post/'+campus.id+'/'+campus.title" > <i class="fas fa-long-arrow-right"></i>  {{ campus.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -624,15 +609,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ভ্রমণ' } }">ভ্রমণ</router-link></h3>
                                     <div class="first width100" v-for="(traveling, naindex) in posts.traveling" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: traveling.id, slug: traveling.title } }">
+                                        <a :href="'/read/post/'+traveling.id+'/'+traveling.title" >
 
                                             <img :src="$asseturl + traveling.fiture" v-if="traveling.fiture" :alt="traveling.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="traveling.title"  width="233" height="148">
                                             <h3> {{ traveling.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(traveling, naindex) in posts.traveling" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: traveling.id, slug: traveling.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ traveling.title }}</router-link>
+                                        <a :href="'/read/post/'+traveling.id+'/'+traveling.title" > <i class="fas fa-long-arrow-right"></i>  {{ traveling.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -645,15 +630,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'চাকুরী' } }">চাকুরী</router-link></h3>
                                     <div class="first width100" v-for="(the_job, naindex) in posts.the_job" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: the_job.id, slug: the_job.title } }">
+                                        <a :href="'/read/post/'+the_job.id+'/'+the_job.title" >
 
                                             <img :src="$asseturl + the_job.fiture" v-if="the_job.fiture" :alt="the_job.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="the_job.title"  width="233" height="148">
                                             <h3> {{ the_job.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(the_job, naindex) in posts.the_job" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: the_job.id, slug: the_job.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ the_job.title }}</router-link>
+                                        <a :href="'/read/post/'+the_job.id+'/'+the_job.title" > <i class="fas fa-long-arrow-right"></i>  {{ the_job.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -666,15 +651,15 @@
                                 <div class="news news-3 width100">
                                     <h3 class="title width100"><router-link title="" :to="{ name: 'categoryPost', params: { cat: 'অন্যান্য' } }">ভিন্ন সংবাদ</router-link></h3>
                                     <div class="first width100" v-for="(other, naindex) in posts.other" :key="'naindex' + naindex" v-if="naindex==0">
-                                        <router-link :to="{ name: 'readPost', params: { id: other.id, slug: other.title } }">
+                                        <a :href="'/read/post/'+other.id+'/'+other.title" >
 
                                             <img :src="$asseturl + other.fiture" v-if="other.fiture" :alt="other.title" width="233" height="148">
                                             <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="other.title"  width="233" height="148">
                                             <h3> {{ other.title }}</h3>
-                                        </router-link>
+                                        </a>
                                     </div>
                                     <div v-for="(other, naindex) in posts.other" :key="'naindex' + naindex" v-if="naindex!=0" class="other width100">
-                                        <router-link :to="{ name: 'readPost', params: { id: other.id, slug: other.title } }"> <i class="fas fa-long-arrow-right"></i>  {{ other.title }}</router-link>
+                                        <a :href="'/read/post/'+other.id+'/'+other.title" > <i class="fas fa-long-arrow-right"></i>  {{ other.title }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -696,7 +681,7 @@
                         <div class="col-lg-5 col-sm-12 rowresize mb-3">
                             <div class="VideoGalleryTop">
                                 <div class="thumbnail" v-for="(videoGallery, naindex) in posts.videoGallery" :key="'naindex' + naindex" v-if="naindex==0">
-                                    <router-link :to="{ name: 'readPost', params: { id: videoGallery.id, slug: videoGallery.title } }">
+                                    <a :href="'/read/post/'+videoGallery.id+'/'+videoGallery.title" >
                                         <div class="Imgresize">
                                             <picture class="Ratio Ratio16x9 VideoIcon">
                                                 <img :src="$asseturl + videoGallery.fiture" v-if="videoGallery.fiture" :alt="videoGallery.title"
@@ -706,7 +691,7 @@
                                         <div class="caption">
                                             <h3></h3>
                                         </div>
-                                    </router-link>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -716,7 +701,7 @@
                                     <div class="col-lg-4 col-sm-6 mb-3" v-for="(videoGallery, naindex) in posts.videoGallery" :key="'naindex' + naindex" v-if="naindex!=0">
                                         <div class="VideoGalleryList">
                                             <div class="col-sm-12 thumbnail">
-                                                <router-link :to="{ name: 'readPost', params: { id: videoGallery.id, slug: videoGallery.title } }">
+                                                <a :href="'/read/post/'+videoGallery.id+'/'+videoGallery.title" >
                                                     <div class="Imgresize">
                                                         <picture class="Ratio Ratio16x9 VideoIcon">
                                                             <img :src="$asseturl + videoGallery.fiture" v-if="videoGallery.fiture" :alt="videoGallery.title" class="img-fluid img100">
@@ -725,7 +710,7 @@
                                                     <div class="caption">
                                                         <h3>{{ videoGallery.title }}</h3>
                                                     </div>
-                                                </router-link>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

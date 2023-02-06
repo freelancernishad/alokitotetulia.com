@@ -803,7 +803,7 @@ function base64Withsize($savefilename,$Image,$width=200,$height=200)
     if (File::exists(env('FILE_PATH') . $Image)) {
         $Image = env('FILE_PATH') . $Image;
     } else {
-        $Image = env('FILE_PATH') . 'backend/image.png';
+        $Image = env('FILE_PATH') . 'image.png';
     }
 
 

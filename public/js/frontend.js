@@ -3289,16 +3289,10 @@ var render = function render() {
       staticClass: "col-lg-8 top-left-section lead-top"
     }, [_c("div", {
       staticClass: "lead-news"
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "news-item news-item-lead border-0",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: row.id,
-            slug: row.title
-          }
-        }
+        href: "/read/post/" + row.id + "/" + row.title
       }
     }, [row.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -3320,7 +3314,7 @@ var render = function render() {
       staticStyle: {
         margin: "10px 0"
       }
-    }, [_vm._v("\n                                                    " + _vm._s(row.title) + "\n                                                ")])])], 1)]) : _vm._e();
+    }, [_vm._v("\n                                                    " + _vm._s(row.title) + "\n                                                ")])])])]) : _vm._e();
   }), _vm._v(" "), _c("div", {
     staticClass: "col-lg-4 cat-two-items"
   }, [_c("div", {
@@ -3329,16 +3323,10 @@ var render = function render() {
     return index1 == 1 || index1 == 2 ? _c("div", {
       key: "sm" + index1,
       staticClass: "col-12 col-sm-6 col-lg-12 box-news"
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "news-item news-item-box m-py-2 border-bottom",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: row.id,
-            slug: row.title
-          }
-        }
+        href: "/read/post/" + row.id + "/" + row.title
       }
     }, [row.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -3357,7 +3345,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h2", {
       staticClass: "title"
-    }, [_vm._v("\n                                                        " + _vm._s(row.title) + "\n                                                    ")])])], 1) : _vm._e();
+    }, [_vm._v("\n                                                        " + _vm._s(row.title) + "\n                                                    ")])])]) : _vm._e();
   }), 0)])], 2)]), _vm._v(" "), _c("div", {
     staticClass: "row more-contents"
   }, _vm._l(_vm.rows.data, function (row, index2) {
@@ -3367,16 +3355,10 @@ var render = function render() {
       style: [index2 == 0 || index2 == 1 || index2 == 2 ? {
         display: "none"
       } : ""]
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "news-item news-item-box m-py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: row.id,
-            slug: row.title
-          }
-        }
+        href: "/read/post/" + row.id + "/" + row.title
       }
     }, [row.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -3395,7 +3377,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h2", {
       staticClass: "title"
-    }, [_vm._v("\n                                            " + _vm._s(row.title) + "\n                                        ")])])], 1) : _vm._e();
+    }, [_vm._v("\n                                            " + _vm._s(row.title) + "\n                                        ")])])]) : _vm._e();
   }), 0), _vm._v(" "), _c("div", {
     staticClass: "w-100 text-center py-2"
   }, [_vm.last_page > 1 ? _c("button", {
@@ -3608,17 +3590,11 @@ var render = function render() {
       overflow: "auto"
     }
   }, _vm._l(_vm.posts.latestPost, function (LPost, Pindex) {
-    return _c("router-link", {
+    return _c("a", {
       key: "Lpost" + Pindex,
       staticClass: "news-item news-item-regular py-2 d-flex",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: LPost.id,
-            slug: LPost.title
-          }
-        }
+        href: "/read/post/" + LPost.id + "/" + LPost.title
       }
     }, [LPost.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -3647,7 +3623,7 @@ var render = function render() {
     }), _vm._v(" "), _c("div", {
       staticClass: "d-flex flex-column"
     }, [_vm._v("\n                                            " + _vm._s(LPost.title) + "\n                                        ")])]);
-  }), 1)])])]), _vm._v(" "), _c("div", {
+  }), 0)])])]), _vm._v(" "), _c("div", {
     staticClass: "col-lg-6 col-md-12 top-left-section lead-top m-order-0"
   }, [_c("carousel", {
     staticStyle: {
@@ -3672,15 +3648,9 @@ var render = function render() {
       attrs: {
         id: "owlItem" + index
       }
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: featured_post.id,
-            slug: featured_post.title
-          }
-        }
+        href: "/read/post/" + featured_post.id + "/" + featured_post.title
       }
     }, [_c("div", {
       staticClass: "carousel-caption"
@@ -3708,7 +3678,7 @@ var render = function render() {
       staticClass: "ion-android-data"
     }), _vm._v("8th January 2023"), _c("span", {
       staticClass: "ion-chatbubbles"
-    }), _vm._v("351")])])])])], 1);
+    }), _vm._v("351")])])])])]);
   }), _vm._v(" "), _c("template", {
     slot: "next"
   }, [_c("span", {
@@ -3842,16 +3812,10 @@ var render = function render() {
     return _c("div", {
       key: "National" + Pindex,
       staticClass: "col-sm-3 box-news"
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "news-item news-item-box m-py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: National.id,
-            slug: National.title
-          }
-        }
+        href: "/read/post/" + National.id + "/" + National.title
       }
     }, [_c("div", {
       staticClass: "image-container"
@@ -3872,7 +3836,7 @@ var render = function render() {
       }
     })]), _vm._v(" "), _c("div", [_c("h2", {
       staticClass: "title"
-    }, [_vm._v("\n                                                " + _vm._s(National.title) + "\n                                            ")])])])], 1);
+    }, [_vm._v("\n                                                " + _vm._s(National.title) + "\n                                            ")])])])]);
   }), 0)])])])]), _vm._v(" "), _c("div", {
     staticClass: "container pt-3"
   }, [_c("div", {
@@ -3928,16 +3892,10 @@ var render = function render() {
       staticClass: "col-12 col-md-6 col-xl-4"
     }, [_c("div", {
       staticClass: "clk-list clk-center"
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "clk-item clk-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: the_whole_country.id,
-            slug: the_whole_country.title
-          }
-        }
+        href: "/read/post/" + the_whole_country.id + "/" + the_whole_country.title
       }
     }, [the_whole_country.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -3956,7 +3914,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h2", {
       staticClass: "title"
-    }, [_vm._v("\n                                            " + _vm._s(the_whole_country.title) + "\n                                        ")])])], 1)]);
+    }, [_vm._v("\n                                            " + _vm._s(the_whole_country.title) + "\n                                        ")])])])]);
   }), 0)]), _vm._v(" "), _c("div", {
     staticClass: "col-lg-3 col-md-4 politics",
     staticStyle: {
@@ -4003,17 +3961,11 @@ var render = function render() {
   })])])])], 1), _vm._v(" "), _c("div", {
     staticClass: "regular-list scaled ai-custom"
   }, _vm._l(_vm.posts.international, function (international, naindex) {
-    return _c("router-link", {
+    return _c("a", {
       key: "naindex" + naindex,
       staticClass: "news-item news-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: international.id,
-            slug: international.title
-          }
-        }
+        href: "/read/post/" + international.id + "/" + international.title
       }
     }, [_c("div", {
       staticClass: "image-container"
@@ -4035,7 +3987,7 @@ var render = function render() {
     })]), _vm._v(" "), _c("h2", {
       staticClass: "title"
     }, [_vm._v("\n                                    " + _vm._s(international.title) + "\n                                ")])]);
-  }), 1)])])]), _vm._v(" "), _c("div", {
+  }), 0)])])]), _vm._v(" "), _c("div", {
     staticClass: "container pt-3 m-pt-2"
   }, [_c("div", {
     staticClass: "row"
@@ -4090,16 +4042,10 @@ var render = function render() {
       staticClass: "col-12 col-md-6 col-xl-4"
     }, [_c("div", {
       staticClass: "clk-list clk-center"
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "clk-item clk-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Panchagarh_news.id,
-            slug: Panchagarh_news.title
-          }
-        }
+        href: "/read/post/" + _vm.international.id + "/" + _vm.international.title
       }
     }, [Panchagarh_news.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -4118,7 +4064,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h2", {
       staticClass: "title"
-    }, [_vm._v("\n                                            " + _vm._s(Panchagarh_news.title) + "\n                                        ")])])], 1)]);
+    }, [_vm._v("\n                                            " + _vm._s(Panchagarh_news.title) + "\n                                        ")])])])]);
   }), 0)]), _vm._v(" "), _c("div", {
     staticClass: "col-lg-3 col-md-4 politics"
   }, [_c("div", {
@@ -4159,17 +4105,11 @@ var render = function render() {
   })])])])], 1), _vm._v(" "), _c("div", {
     staticClass: "regular-list scaled ai-custom"
   }, _vm._l(_vm.posts.politics, function (politics, naindex) {
-    return _c("router-link", {
+    return _c("a", {
       key: "naindex" + naindex,
       staticClass: "news-item news-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: politics.id,
-            slug: politics.title
-          }
-        }
+        href: "/read/post/" + politics.id + "/" + politics.title
       }
     }, [_c("div", {
       staticClass: "image-container"
@@ -4191,7 +4131,7 @@ var render = function render() {
     })]), _vm._v(" "), _c("h2", {
       staticClass: "title"
     }, [_vm._v("\n                                    " + _vm._s(politics.title) + "\n                                ")])]);
-  }), 1)])])]), _vm._v(" "), _c("div", {
+  }), 0)])])]), _vm._v(" "), _c("div", {
     staticClass: "container pt-3 m-pt-2"
   }, [_c("div", {
     staticClass: "row"
@@ -4246,16 +4186,10 @@ var render = function render() {
       staticClass: "col-12 col-md-6 col-xl-4"
     }, [_c("div", {
       staticClass: "clk-list clk-center"
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "clk-item clk-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: entertainment.id,
-            slug: entertainment.title
-          }
-        }
+        href: "/read/post/" + entertainment.id + "/" + entertainment.title
       }
     }, [entertainment.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -4274,7 +4208,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h2", {
       staticClass: "title"
-    }, [_vm._v("\n                                            " + _vm._s(entertainment.title) + "\n                                        ")])])], 1)]);
+    }, [_vm._v("\n                                            " + _vm._s(entertainment.title) + "\n                                        ")])])])]);
   }), 0)]), _vm._v(" "), _c("div", {
     staticClass: "col-lg-3 col-md-4 politics"
   }, [_c("div", {
@@ -4315,17 +4249,11 @@ var render = function render() {
   })])])])], 1), _vm._v(" "), _c("div", {
     staticClass: "regular-list scaled ai-custom"
   }, _vm._l(_vm.posts.education, function (education, naindex) {
-    return _c("router-link", {
+    return _c("a", {
       key: "naindex" + naindex,
       staticClass: "news-item news-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: education.id,
-            slug: education.title
-          }
-        }
+        href: "/read/post/" + education.id + "/" + education.title
       }
     }, [_c("div", {
       staticClass: "image-container"
@@ -4347,7 +4275,7 @@ var render = function render() {
     })]), _vm._v(" "), _c("h2", {
       staticClass: "title"
     }, [_vm._v("\n                                    " + _vm._s(education.title) + "\n                                ")])]);
-  }), 1)])])]), _vm._v(" "), _c("div", {
+  }), 0)])])]), _vm._v(" "), _c("div", {
     staticClass: "container pt-3 m-pt-2 mt-5",
     staticStyle: {
       overflow: "hidden"
@@ -4376,15 +4304,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Life_style.id,
-            slug: Life_style.title
-          }
-        }
+        href: "/read/post/" + Life_style.id + "/" + Life_style.title
       }
     }, [Life_style.fiture ? _c("img", {
       attrs: {
@@ -4400,24 +4322,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Life_style.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Life_style.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.Life_style, function (Life_style, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Life_style.id,
-            slug: Life_style.title
-          }
-        }
+        href: "/read/post/" + Life_style.id + "/" + Life_style.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(Life_style.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(Life_style.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -4440,15 +4356,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Information_technology.id,
-            slug: Information_technology.title
-          }
-        }
+        href: "/read/post/" + Information_technology.id + "/" + Information_technology.title
       }
     }, [Information_technology.fiture ? _c("img", {
       attrs: {
@@ -4464,24 +4374,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Information_technology.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Information_technology.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.Information_technology, function (Information_technology, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Information_technology.id,
-            slug: Information_technology.title
-          }
-        }
+        href: "/read/post/" + Information_technology.id + "/" + Information_technology.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(Information_technology.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(Information_technology.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -4504,15 +4408,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Special_report.id,
-            slug: Special_report.title
-          }
-        }
+        href: "/read/post/" + Special_report.id + "/" + Special_report.title
       }
     }, [Special_report.fiture ? _c("img", {
       attrs: {
@@ -4528,24 +4426,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Special_report.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Special_report.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.Special_report, function (Special_report, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Special_report.id,
-            slug: Special_report.title
-          }
-        }
+        href: "/read/post/" + Special_report.id + "/" + Special_report.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(Special_report.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(Special_report.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -4568,15 +4460,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: sports.id,
-            slug: sports.title
-          }
-        }
+        href: "/read/post/" + sports.id + "/" + sports.title
       }
     }, [sports.fiture ? _c("img", {
       attrs: {
@@ -4592,24 +4478,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(sports.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(sports.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.sports, function (sports, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: sports.id,
-            slug: sports.title
-          }
-        }
+        href: "/read/post/" + sports.id + "/" + sports.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(sports.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(sports.title))])]) : _vm._e();
   })], 2)])])])]), _vm._v(" "), _c("div", {
     staticClass: "container pt-3 m-pt-2 mt-5",
     staticStyle: {
@@ -4639,15 +4519,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: health.id,
-            slug: health.title
-          }
-        }
+        href: "/read/post/" + health.id + "/" + health.title
       }
     }, [health.fiture ? _c("img", {
       attrs: {
@@ -4663,24 +4537,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(health.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(health.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.health, function (health, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: health.id,
-            slug: health.title
-          }
-        }
+        href: "/read/post/" + health.id + "/" + health.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(health.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(health.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -4703,15 +4571,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Religion_and_life.id,
-            slug: Religion_and_life.title
-          }
-        }
+        href: "/read/post/" + Religion_and_life.id + "/" + Religion_and_life.title
       }
     }, [Religion_and_life.fiture ? _c("img", {
       attrs: {
@@ -4727,24 +4589,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Religion_and_life.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(Religion_and_life.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.Religion_and_life, function (Religion_and_life, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: Religion_and_life.id,
-            slug: Religion_and_life.title
-          }
-        }
+        href: "/read/post/" + Religion_and_life.id + "/" + Religion_and_life.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(Religion_and_life.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(Religion_and_life.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -4767,15 +4623,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: agriculture.id,
-            slug: agriculture.title
-          }
-        }
+        href: "/read/post/" + agriculture.id + "/" + agriculture.title
       }
     }, [agriculture.fiture ? _c("img", {
       attrs: {
@@ -4791,24 +4641,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(agriculture.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(agriculture.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.agriculture, function (agriculture, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: agriculture.id,
-            slug: agriculture.title
-          }
-        }
+        href: "/read/post/" + agriculture.id + "/" + agriculture.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(agriculture.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(agriculture.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -4831,15 +4675,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: feature.id,
-            slug: feature.title
-          }
-        }
+        href: "/read/post/" + feature.id + "/" + feature.title
       }
     }, [feature.fiture ? _c("img", {
       attrs: {
@@ -4855,24 +4693,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(feature.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(feature.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.feature, function (feature, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: feature.id,
-            slug: feature.title
-          }
-        }
+        href: "/read/post/" + feature.id + "/" + feature.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(feature.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(feature.title))])]) : _vm._e();
   })], 2)])])])]), _vm._v(" "), _c("div", {
     staticClass: "container pt-3 m-pt-2 mt-5",
     staticStyle: {
@@ -4902,15 +4734,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: campus.id,
-            slug: campus.title
-          }
-        }
+        href: "/read/post/" + campus.id + "/" + campus.title
       }
     }, [campus.fiture ? _c("img", {
       attrs: {
@@ -4926,24 +4752,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(campus.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(campus.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.campus, function (campus, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: campus.id,
-            slug: campus.title
-          }
-        }
+        href: "/read/post/" + campus.id + "/" + campus.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(campus.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(campus.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -4966,15 +4786,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: traveling.id,
-            slug: traveling.title
-          }
-        }
+        href: "/read/post/" + traveling.id + "/" + traveling.title
       }
     }, [traveling.fiture ? _c("img", {
       attrs: {
@@ -4990,24 +4804,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(traveling.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(traveling.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.traveling, function (traveling, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: traveling.id,
-            slug: traveling.title
-          }
-        }
+        href: "/read/post/" + traveling.id + "/" + traveling.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(traveling.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(traveling.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -5030,15 +4838,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: the_job.id,
-            slug: the_job.title
-          }
-        }
+        href: "/read/post/" + the_job.id + "/" + the_job.title
       }
     }, [the_job.fiture ? _c("img", {
       attrs: {
@@ -5054,24 +4856,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(the_job.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(the_job.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.the_job, function (the_job, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: the_job.id,
-            slug: the_job.title
-          }
-        }
+        href: "/read/post/" + the_job.id + "/" + the_job.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(the_job.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(the_job.title))])]) : _vm._e();
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-md-6 col-sm-12 postbgFooter"
   }, [_c("div", {
@@ -5094,15 +4890,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "first width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: other.id,
-            slug: other.title
-          }
-        }
+        href: "/read/post/" + other.id + "/" + other.title
       }
     }, [other.fiture ? _c("img", {
       attrs: {
@@ -5118,24 +4908,18 @@ var render = function render() {
         width: "233",
         height: "148"
       }
-    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(other.title))])])], 1) : _vm._e();
+    }), _vm._v(" "), _c("h3", [_vm._v(" " + _vm._s(other.title))])])]) : _vm._e();
   }), _vm._v(" "), _vm._l(_vm.posts.other, function (other, naindex) {
     return naindex != 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "other width100"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: other.id,
-            slug: other.title
-          }
-        }
+        href: "/read/post/" + other.id + "/" + other.title
       }
     }, [_c("i", {
       staticClass: "fas fa-long-arrow-right"
-    }), _vm._v("  " + _vm._s(other.title))])], 1) : _vm._e();
+    }), _vm._v("  " + _vm._s(other.title))])]) : _vm._e();
   })], 2)])])])]), _vm._v(" "), _c("div", {
     staticClass: "container mb-3"
   }, [_vm._m(1), _vm._v(" "), _c("div", {
@@ -5148,15 +4932,9 @@ var render = function render() {
     return naindex == 0 ? _c("div", {
       key: "naindex" + naindex,
       staticClass: "thumbnail"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: videoGallery.id,
-            slug: videoGallery.title
-          }
-        }
+        href: "/read/post/" + videoGallery.id + "/" + videoGallery.title
       }
     }, [_c("div", {
       staticClass: "Imgresize"
@@ -5169,9 +4947,7 @@ var render = function render() {
         alt: videoGallery.title,
         width: "100%"
       }
-    }) : _vm._e()])]), _vm._v(" "), _c("div", {
-      staticClass: "caption"
-    }, [_c("h3")])])], 1) : _vm._e();
+    }) : _vm._e()])]), _vm._v(" "), _vm._m(2, true)])]) : _vm._e();
   }), 0)]), _vm._v(" "), _c("div", {
     staticClass: "col-lg-7 col-sm-12 rowresize"
   }, [_c("div", {
@@ -5186,15 +4962,9 @@ var render = function render() {
       staticClass: "VideoGalleryList"
     }, [_c("div", {
       staticClass: "col-sm-12 thumbnail"
-    }, [_c("router-link", {
+    }, [_c("a", {
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: videoGallery.id,
-            slug: videoGallery.title
-          }
-        }
+        href: "/read/post/" + videoGallery.id + "/" + videoGallery.title
       }
     }, [_c("div", {
       staticClass: "Imgresize"
@@ -5208,7 +4978,7 @@ var render = function render() {
       }
     }) : _vm._e()])]), _vm._v(" "), _c("div", {
       staticClass: "caption"
-    }, [_c("h3", [_vm._v(_vm._s(videoGallery.title))])])])], 1)])]) : _vm._e();
+    }, [_c("h3", [_vm._v(_vm._s(videoGallery.title))])])])])])]) : _vm._e();
   }), 0)])])])])])])], 1);
 };
 
@@ -5242,6 +5012,13 @@ var staticRenderFns = [function () {
       href: "https://www.risingbd.com/videogallery/archives"
     }
   }, [_c("h2", [_c("span", [_vm._v("ভিডিও গ্যালারি")])])])]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "caption"
+  }, [_c("h3")]);
 }];
 render._withStripped = true;
 
@@ -5900,16 +5677,10 @@ var render = function render() {
     return _c("div", {
       key: index,
       staticClass: "col-sm-4 box-news"
-    }, [_c("router-link", {
+    }, [_c("a", {
       staticClass: "news-item news-item-box",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: latestPost.id,
-            slug: latestPost.title
-          }
-        }
+        href: "/read/post/" + latestPost.id + "/" + latestPost.title
       }
     }, [latestPost.fiture ? _c("img", {
       staticClass: "lazyload img-loader",
@@ -5929,7 +5700,7 @@ var render = function render() {
       }
     }), _vm._v(" "), _c("h2", {
       staticClass: "title"
-    }, [_vm._v(" " + _vm._s(latestPost.title))])])], 1);
+    }, [_vm._v(" " + _vm._s(latestPost.title))])])]);
   }), 0)])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-xl-3 col-lg-4 d-print-none"
   }, [_c("div", {
@@ -5952,17 +5723,11 @@ var render = function render() {
   }, [_vm._v(_vm._s(_vm.posts.category.name) + " থেকে\n                                                        আরও")])])])]), _vm._v(" "), _c("div", {
     staticClass: "regular-list scaled m-px-0"
   }, _vm._l(_vm.posts.relatedPosts, function (relatedPost, index) {
-    return _c("router-link", {
+    return _c("a", {
       key: index,
       staticClass: "news-item news-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: relatedPost.id,
-            slug: relatedPost.title
-          }
-        }
+        href: "/read/post/" + relatedPost.id + "/" + relatedPost.title
       }
     }, [_c("div", {
       staticClass: "image-container"
@@ -5985,24 +5750,18 @@ var render = function render() {
     })]), _vm._v(" "), _c("h2", {
       staticClass: "title"
     }, [_vm._v("\n                                                    " + _vm._s(relatedPost.title) + "\n                                                ")])]);
-  }), 1)])]), _vm._v(" "), _c("div", {
+  }), 0)])]), _vm._v(" "), _c("div", {
     staticClass: "fy-selective third-right"
   }, [_c("div", {
     staticClass: "same-category-items pt-2"
   }, [_vm._m(1), _vm._v(" "), _c("div", {
     staticClass: "regular-list scaled m-px-0"
   }, _vm._l(_vm.posts.latestPost, function (latestPost, index) {
-    return _c("router-link", {
+    return _c("a", {
       key: index,
       staticClass: "news-item news-item-regular py-2",
       attrs: {
-        to: {
-          name: "readPost",
-          params: {
-            id: latestPost.id,
-            slug: latestPost.title
-          }
-        }
+        href: "/read/post/" + latestPost.id + "/" + latestPost.title
       }
     }, [_c("div", {
       staticClass: "image-container"
@@ -6025,7 +5784,7 @@ var render = function render() {
     })]), _vm._v(" "), _c("h2", {
       staticClass: "title"
     }, [_vm._v("\n                                                    " + _vm._s(latestPost.title) + "\n                                                ")])]);
-  }), 1)])])])])])])])])])], 1);
+  }), 0)])])])])])])])])])], 1);
 };
 
 var staticRenderFns = [function () {
