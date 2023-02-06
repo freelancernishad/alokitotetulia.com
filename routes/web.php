@@ -54,12 +54,12 @@ Route::get('/{vue_capture?}', function ($vue_capture='') {
      if($urldata[0]=='read' && $urldata[1]=='post'){
         $blogId = $urldata[2];
         $ReadPost =  Blog::find($blogId);
-        $fiture =  base64Withsize($ReadPost->fiture);
+        $fiture =  base64Withsize("blog-$blogId",$ReadPost->fiture);
         $ReadPost['fiture'] = $fiture;
      }else{
 
 
-        $fiture =  base64Withsize('cropped-cropped-Alokitotetulia.png.png');
+        $fiture =  base64Withsize('blog-main','cropped-cropped-Alokitotetulia.png.png');
         $ReadPost = [
             "title"=> "আলোকিত তেঁতুলিয়া",
             "short_description"=> 'আলোকিত তেঁতুলিয়া',
@@ -70,7 +70,7 @@ Route::get('/{vue_capture?}', function ($vue_capture='') {
      }
 
     }else{
-        $fiture =  base64Withsize('cropped-cropped-Alokitotetulia.png.png');
+        $fiture =  base64Withsize('blog-main','cropped-cropped-Alokitotetulia.png.png');
         $ReadPost = [
             "title"=> "আলোকিত তেঁতুলিয়া",
             "short_description"=> 'আলোকিত তেঁতুলিয়া',

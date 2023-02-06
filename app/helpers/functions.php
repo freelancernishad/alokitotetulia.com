@@ -794,20 +794,27 @@ function resultSub($class = '', $group = '')
 
 
 
-function base64Withsize($Image,$width=200,$height=200)
+function base64Withsize($savefilename,$Image,$width=200,$height=200)
 {
-
+    if (!file_exists(env('FILE_PATH') . 'facebook')) {
+        File::makeDirectory(env('FILE_PATH') . 'facebook', 0777, true, true);
+    }
     // $url = $Image;
     if (File::exists(env('FILE_PATH') . $Image)) {
         $Image = env('FILE_PATH') . $Image;
     } else {
         $Image = env('FILE_PATH') . 'backend/image.png';
     }
+
+
+
     $img = Image::make($Image);
     $img->resize($width, $height);
-    $img->encode('jpg');
-    $data = base64_encode($img->__toString());
-    return 'data:image/jpg;base64,' . $data;
+    $img->save("facebook/$savefilename.jpg");
+
+    return asset("facebook/$savefilename.jpg");
+
+
 
 
 }
