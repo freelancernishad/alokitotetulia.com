@@ -230,79 +230,25 @@ export default {
 
         },
 
-    //   async getposts(id=''){
-    //     this.preloader = true;
-    //             axios.get(`/api/update/blog/${id}`)
-    //             .then((res)=>{
-    //                 this.row = res.data
-    //                 this.updateMetaTags(res.data);
+      async getposts(id=''){
+        this.preloader = true;
+                axios.get(`/api/update/blog/${id}`)
+                .then((res)=>{
+                    this.row = res.data
+                    this.preloader = false;
+                })
 
-    //                 document.title = this.row.title
-    //                 document.querySelector('meta[name="title"]').setAttribute("content", res.data.title);
-    //                 document.querySelector('meta[name="description"]').setAttribute("content", res.data.short_description);
-    //                 document.querySelector('meta[name="keywords"]').setAttribute("content", res.data.title);
-    //                 document.querySelector('meta[name="news_keywords"]').setAttribute("content", res.data.title);
-    //                 document.querySelector('meta[property="og:title"]').setAttribute("content", this.$route.params.slug);
-    //                 document.querySelector('meta[property="og:description"]').setAttribute("content", res.data.short_description);
-    //                 document.querySelector('meta[name="twitter:title"]').setAttribute("content", res.data.title);
-    //                 document.querySelector('meta[name="twitter:description"]').setAttribute("content", res.data.short_description);
-    //                 document.querySelector('meta[name="twitter:image"]').setAttribute("content",  window.location.origin+this.$asseturl+res.data.fiture);
-    //                 document.querySelector('meta[property="og:image"]').setAttribute("content",  window.location.origin+this.$asseturl+res.data.fiture);
-    //                 // document.querySelector('link[type="image"]').setAttribute("href",  window.location.origin+this.$asseturl+res.data.fiture);
-    //                 document.querySelector('meta[property="og:url"]').setAttribute("content",  this.shareurl);
-    //                 this.preloader = false;
-    //             })
-
-    //     },
+        },
 
 
     },
 
-    beforeRouteEnter(to, from, next) {
-        console.log(to)
-
-    axios
-      .get(`/api/update/blog/${to.params.id}`)
-      .then(response => {
-        next(vm => {
-          vm.row = response.data;
-
-
-
-
-          document.title = response.data.title;
-      document.querySelector('meta[name="title"]').setAttribute("content", response.data.title);
-      document.querySelector('meta[name="description"]').setAttribute("content", response.data.short_description);
-      document.querySelector('meta[name="keywords"]').setAttribute("content", response.data.title);
-      document.querySelector('meta[name="news_keywords"]').setAttribute("content", response.data.title);
-      document.querySelector('meta[property="og:title"]').setAttribute("content", to.params.slug);
-      document.querySelector('meta[property="og:description"]').setAttribute("content", response.data.short_description);
-      document.querySelector('meta[property="og:image"]').setAttribute("content", window.location.origin + "/public/" + response.data.fiture);
-    //   document.querySelector('meta[property="og:url"]').setAttribute("content", this.shareurl);
-
-vm.preloader = false
-
-
-        });
-      });
-  },
-
     mounted(){
-
-
-
-
         this.shareurl = document.URL
 
            this.getunionInfo(this.$route.params.id);
-        //    this.getposts(this.$route.params.id);
+           this.getposts(this.$route.params.id);
 
-    //        axios.get(`/api/update/blog/${this.$route.params.id}`)
-    //   .then((res) => {
-    //     this.row = res.data;
-    //     this.updateMetaTags(res.data);
-    //     this.preloader = false
-    //   })
 
 
         }

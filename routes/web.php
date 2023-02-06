@@ -6,8 +6,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-
-
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,7 +46,36 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth']], function () {
         return view('layout');
     })->where('vue_capture', '.*')->name('dashboard');
 });
-Route::get('/{vue_capture?}', function () {
+Route::get('/{vue_capture?}', function ($vue_capture='') {
+
+
+     $urldata = explode('/',$vue_capture);
+     if(count($urldata)>2){
+     if($urldata[0]=='read' && $urldata[1]=='post'){
+        $blogId = $urldata[2];
+        $ReadPost =  Blog::find($blogId);
+     }else{
+        $ReadPost = [
+            "title"=> "আলোকিত তেঁতুলিয়া",
+            "short_description"=> 'আলোকিত তেঁতুলিয়া',
+            "long_description"=> "",
+            "fiture"=> asset('cropped-cropped-Alokitotetulia.png.png'),
+    ];
+     $ReadPost= json_decode(json_encode($ReadPost));
+     }
+
+    }else{
+        $ReadPost = [
+            "title"=> "আলোকিত তেঁতুলিয়া",
+            "short_description"=> 'আলোকিত তেঁতুলিয়া',
+            "long_description"=> "",
+            "fiture"=> asset('cropped-cropped-Alokitotetulia.png.png'),
+    ];
+     $ReadPost= json_decode(json_encode($ReadPost));
+    }
+
+
+
 
 
     $categoriesCount = Category::where('name','ভিডিও গ্যালারি')->count();
@@ -66,5 +94,5 @@ Route::get('/{vue_capture?}', function () {
 
 
 
-    return view('frontlayout',compact('latestpost'));
+    return view('frontlayout',compact('latestpost','ReadPost'));
 })->where('vue_capture', '.*')->name('frontend');

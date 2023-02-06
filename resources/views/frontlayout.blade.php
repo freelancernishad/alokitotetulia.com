@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>আলোকিত তেঁতুলিয়া</title>
+    <title>{{ $ReadPost->title }}</title>
     <meta property="og:url" content="" />
     <link rel="shortcut icon" type="image" href="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png" />
 
-<meta name="title" content="আলোকিত তেঁতুলিয়া" />
-<meta name="description" content="আলোকিত তেঁতুলিয়া" />
-<meta name="keywords" content="আলোকিত তেঁতুলিয়া" />
-<meta name="author" content="আলোকিত তেঁতুলিয়া " />
+<meta name="title" content="{{ $ReadPost->title }}" />
+<meta name="description" content="{{ $ReadPost->short_description }}" />
+<meta name="keywords" content="{{ $ReadPost->title }}" />
+<meta name="author" content="আলোকিত তেঁতুলিয়া" />
 <meta name="news_keywords" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="আগামীতেও সফলভাবে নির্বাচনী দায়িত্ব পালন করবে পুলিশ" />
-<meta property="og:description" content="আলোকিত তেঁতুলিয়া" />
-<meta property="og:image" content="https://www.alokitotetulia.com/public/blogs/1674063022____70348.jpeg" />
+<meta property="og:title" content="{{ $ReadPost->title }}" />
+<meta property="og:description" content="{{ $ReadPost->short_description }}" />
+<meta property="og:image" content="{{ asset($ReadPost->fiture) }}" />
 <meta property="og:image:width" content="200px" />
 <meta property="og:image:height" content="200px" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
@@ -55,7 +55,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.18000000') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.180000000') }}"></script>
 
 <script>
 
