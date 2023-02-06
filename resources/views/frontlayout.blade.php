@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ $ReadPost->title }}" />
 <meta property="og:description" content="{{ $ReadPost->short_description }}" />
-<meta property="og:image" content="{{ asset($ReadPost->fiture) }}" />
+<meta property="og:image" content="{{ $ReadPost->fiture }}" />
 <meta property="og:image:width" content="200px" />
 <meta property="og:image:height" content="200px" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
