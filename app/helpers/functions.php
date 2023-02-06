@@ -810,7 +810,7 @@ function base64Withsize($savefilename,$Image,$width=200,$height=200)
 
     $img = Image::make($Image);
     $img->resize($width, $height);
-    $img->save("facebook/$savefilename.jpg");
+    $img->save(env('FILE_PATH') ."facebook/$savefilename.jpg");
 
     return asset("facebook/$savefilename.jpg");
 
