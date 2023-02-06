@@ -794,7 +794,7 @@ function resultSub($class = '', $group = '')
 
 
 
-function base64Withsize($savefilename,$Image,$width=200,$height=200)
+function base64Withsize($savefilename,$Image,$width=1200,$height=1200)
 {
     if (!file_exists(env('FILE_PATH') . 'facebook')) {
         File::makeDirectory(env('FILE_PATH') . 'facebook', 0777, true, true);

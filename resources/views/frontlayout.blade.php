@@ -17,8 +17,8 @@
 <meta property="og:title" content="{{ $ReadPost->title }}" />
 <meta property="og:description" content="{{ $ReadPost->short_description }}" />
 <meta property="og:image" content="{{ $ReadPost->fiture }}" />
-<meta property="og:image:width" content="200px" />
-<meta property="og:image:height" content="200px" />
+<meta property="og:image:width" content="1200px" />
+<meta property="og:image:height" content="1200px" />
 <meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
 
 <meta property="fb:app_id" content="863998424666012"/>
