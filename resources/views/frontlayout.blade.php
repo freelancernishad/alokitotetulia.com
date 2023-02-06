@@ -56,7 +56,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.20') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.21') }}"></script>
 
 <script>
 

@@ -4050,7 +4050,7 @@ var render = function render() {
     }, [_c("a", {
       staticClass: "clk-item clk-item-regular py-2",
       attrs: {
-        href: "/read/post/" + _vm.international.id + "/" + _vm.international.title
+        href: "/read/post/" + Panchagarh_news.id + "/" + Panchagarh_news.title
       }
     }, [Panchagarh_news.fiture ? _c("img", {
       staticClass: "lazyload img-loader",

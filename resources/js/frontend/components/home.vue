@@ -273,7 +273,7 @@
                                     v-for="(Panchagarh_news, naindex) in posts.Panchagarh_news"
                                     :key="'naindex' + naindex">
                                     <div class="clk-list clk-center">
-                                        <a :href="'/read/post/'+international.id+'/'+international.title" class="clk-item clk-item-regular py-2 ">
+                                        <a :href="'/read/post/'+Panchagarh_news.id+'/'+Panchagarh_news.title" class="clk-item clk-item-regular py-2 ">
                                             <img style="height:75px !important;"
                                                 :src="$asseturl + Panchagarh_news.fiture"
                                                 v-if="Panchagarh_news.fiture" :alt="Panchagarh_news.title"
