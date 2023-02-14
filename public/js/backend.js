@@ -2849,16 +2849,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      preloader: false,
       form: {
         title: null,
         author: 'Admin',
         cat_id: null,
+        cat_ids: [{}],
         short_description: null,
         long_description: null,
         Images: null
       },
       categorys: {},
-      getcatdata: {}
+      getcatdata: {},
+      options: []
     };
   },
   methods: {
@@ -2895,8 +2898,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 2:
                 res = _context.sent;
                 _this2.categorys = res.data;
+                res.data.forEach(function (cat) {
+                  // console.log(cat.id ,cat.name)
+                  _this2.options.push({
+                    catid: cat.id,
+                    catname: cat.name
+                  });
+                });
 
-              case 4:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -2945,10 +2955,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
+                _this5.preloader = true;
+                _context3.next = 3;
                 return _this5.callApi('post', '/api/update/blog', _this5.form);
 
-              case 2:
+              case 3:
                 res = _context3.sent;
 
                 // conseole.log(res)
@@ -2959,8 +2970,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 });
 
                 Notification.customSuccess('Blog Update Successfuly Done');
+                _this5.preloader = false;
 
-              case 6:
+              case 8:
               case "end":
                 return _context3.stop();
             }
@@ -3062,6 +3074,72 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             }
           }
         }, _callee);
+      }))();
+    },
+    postDelete: function postDelete(id) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+        return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                Swal.fire({
+                  title: 'আপনি কি নিশ্চিত?',
+                  text: "\u09AA\u09CB\u09B8\u09CD\u099F \u099F\u09BF \u09A1\u09BF\u09B2\u09BF\u099F \u0995\u09B0\u09A4\u09C7 \u099A\u09BE\u09A8!",
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: "\u09B9\u09BE \u09A8\u09BF\u09B6\u09CD\u099A\u09BF\u09A4",
+                  cancelButtonText: "\u09AC\u09BE\u09A4\u09BF\u09B2"
+                }).then( /*#__PURE__*/function () {
+                  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(result) {
+                    var res;
+                    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+                      while (1) {
+                        switch (_context2.prev = _context2.next) {
+                          case 0:
+                            if (!result.isConfirmed) {
+                              _context2.next = 9;
+                              break;
+                            }
+
+                            _context2.next = 3;
+                            return _this2.callApi('get', "/api/get/blog/delete/".concat(id), []);
+
+                          case 3:
+                            res = _context2.sent;
+                            Notification.customSuccess("\u09AA\u09CB\u09B8\u09CD\u099F \u099F\u09BF \u09A1\u09BF\u09B2\u09BF\u099F \u09B9\u09DF\u09C7\u099B\u09C7!");
+                            _this2.preLooding = false;
+
+                            _this2.blogsList();
+
+                            _context2.next = 10;
+                            break;
+
+                          case 9:
+                            _this2.preLooding = false;
+
+                          case 10:
+                          case "end":
+                            return _context2.stop();
+                        }
+                      }
+                    }, _callee2);
+                  }));
+
+                  return function (_x) {
+                    return _ref.apply(this, arguments);
+                  };
+                }());
+
+              case 1:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
       }))();
     }
   },
@@ -4688,7 +4766,20 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", {
+  return _c("div", [_vm.preloader ? _c("loader", {
+    attrs: {
+      object: "#ff0000",
+      color1: "#ffffff",
+      color2: "#17fd3d",
+      size: "8",
+      speed: "2",
+      bg: "#343a40",
+      objectbg: "#999793",
+      opacity: "80",
+      disableScrolling: "false",
+      name: "dots"
+    }
+  }) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "breadcrumbs-area"
   }, [_c("h3", [_vm._v("নতুন পোস্ট")]), _vm._v(" "), _c("ul", [_c("li", [_c("router-link", {
     attrs: {
@@ -4722,7 +4813,8 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "title",
-      value: ""
+      value: "",
+      required: ""
     },
     domProps: {
       value: _vm.form.title
@@ -4749,7 +4841,8 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "title",
-      value: ""
+      value: "",
+      required: ""
     },
     domProps: {
       value: _vm.form.author
@@ -4765,7 +4858,7 @@ var render = function render() {
     staticClass: "col-md-12"
   }, [_c("div", {
     staticClass: "form-group"
-  }, [_c("label", [_vm._v("ক্যাটাগরি নির্বাচন করুন")]), _vm._v(" "), _c("select", {
+  }, [_c("label", [_vm._v("মূল ক্যাটাগরি নির্বাচন করুন")]), _vm._v(" "), _c("select", {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -4774,7 +4867,8 @@ var render = function render() {
     }],
     staticClass: "form-control",
     attrs: {
-      id: "category"
+      id: "category",
+      required: ""
     },
     on: {
       change: [function ($event) {
@@ -4799,7 +4893,27 @@ var render = function render() {
         value: cat.id
       }
     }, [_vm._v(_vm._s(cat.name))]);
-  })], 2)])]), _vm._v(" "), _vm.getcatdata.name == "ভিডিও গ্যালারি" ? _c("div", {
+  })], 2)])]), _vm._v(" "), _c("div", {
+    staticClass: "col-md-12"
+  }, [_c("div", {
+    staticClass: "form-group"
+  }, [_c("label", [_vm._v("অন্যান্য ক্যাটাগরি নির্বাচন করুন")]), _vm._v(" "), _c("multiselect", {
+    attrs: {
+      "tag-placeholder": "Add this as new tag",
+      placeholder: "Search or add a tag",
+      label: "catname",
+      "track-by": "catid",
+      options: _vm.options,
+      multiple: true
+    },
+    model: {
+      value: _vm.form.cat_ids,
+      callback: function callback($$v) {
+        _vm.$set(_vm.form, "cat_ids", $$v);
+      },
+      expression: "form.cat_ids"
+    }
+  })], 1)]), _vm._v(" "), _vm.getcatdata.name == "ভিডিও গ্যালারি" ? _c("div", {
     staticClass: "col-md-12"
   }, [_c("div", {
     staticClass: "form-group"
@@ -4814,7 +4928,8 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "short_description",
-      value: ""
+      value: "",
+      required: ""
     },
     domProps: {
       value: _vm.form.video
@@ -4841,7 +4956,8 @@ var render = function render() {
     attrs: {
       type: "text",
       id: "short_description",
-      value: ""
+      value: "",
+      required: ""
     },
     domProps: {
       value: _vm.form.short_description
@@ -4858,6 +4974,9 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "form-group"
   }, [_c("label", [_vm._v("বিস্তারিত সংবাদ")]), _vm._v(" "), _c("vue-editor", {
+    attrs: {
+      required: ""
+    },
     model: {
       value: _vm.form.long_description,
       callback: function callback($$v) {
@@ -4896,7 +5015,7 @@ var render = function render() {
     }
   })])])])]), _vm._v(" "), _c("div", {
     staticClass: "ln_solid"
-  }), _vm._v(" "), _vm._m(0)])]);
+  }), _vm._v(" "), _vm._m(0)])], 1);
 };
 
 var staticRenderFns = [function () {
@@ -4938,7 +5057,20 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("div", {
+  return _c("div", [_vm.preLooding ? _c("loader", {
+    attrs: {
+      object: "#ff0000",
+      color1: "#ffffff",
+      color2: "#17fd3d",
+      size: "8",
+      speed: "2",
+      bg: "#343a40",
+      objectbg: "#999793",
+      opacity: "80",
+      disableScrolling: "false",
+      name: "dots"
+    }
+  }) : _vm._e(), _vm._v(" "), _c("div", {
     staticClass: "breadcrumbs-area"
   }, [_c("h3", [_vm._v("পোস্ট")]), _vm._v(" "), _c("ul", [_c("li", [_c("router-link", {
     attrs: {
@@ -4965,7 +5097,7 @@ var render = function render() {
     return _c("tr", {
       key: index
     }, [_c("td", [_vm._v(_vm._s(index + _vm.pageNO))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.title))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.slug))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.short_description))]), _vm._v(" "), _c("td", [_c("router-link", {
-      staticClass: "btn btn-info",
+      staticClass: "btn btn-info mt-3",
       attrs: {
         to: {
           name: "blogedit",
@@ -4974,7 +5106,14 @@ var render = function render() {
           }
         }
       }
-    }, [_vm._v("Edit")])], 1)]);
+    }, [_vm._v("Edit")]), _vm._v(" "), _c("span", {
+      staticClass: "btn btn-danger mt-3",
+      on: {
+        click: function click($event) {
+          return _vm.postDelete(item.id);
+        }
+      }
+    }, [_vm._v("Delete")])], 1)]);
   }), 0)])]), _vm._v(" "), _c("div", {
     staticClass: "card-footer"
   }, [_c("Pagination", {
@@ -4984,7 +5123,7 @@ var render = function render() {
       "route-params": _vm.RouteParams,
       "total-page": _vm.Totalpage
     }
-  })], 1)])]);
+  })], 1)])], 1);
 };
 
 var staticRenderFns = [function () {
@@ -5014,15 +5153,7 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_c("vue-editor", {
-    model: {
-      value: _vm.content,
-      callback: function callback($$v) {
-        _vm.content = $$v;
-      },
-      expression: "content"
-    }
-  })], 1);
+  return _c("div");
 };
 
 var staticRenderFns = [];
