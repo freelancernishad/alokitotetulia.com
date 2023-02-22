@@ -88,15 +88,15 @@ class BlogController extends Controller
             $cat_id = Category::where('slug',$category)->first()->id;
              $subcatCount = Category::where('cat_id',$cat_id)->count();
 
-             if($subcatCount>0){
-                $subcat = Category::where('cat_id',$cat_id)->get();
-                $blogs = Blog::orderBy('id','desc')->where(['cat_id'=>$cat_id]);
-                foreach ($subcat as $value) {
-                    $blogs->orwhere('cat_id',$value->id);
-                    // array_push($filter,['cat_id'=>$value->id]);
-                }
-                return $blogs->paginate($page);
-             }
+            //  if($subcatCount>0){
+            //     $subcat = Category::where('cat_id',$cat_id)->get();
+            //     $blogs = Blog::orderBy('id','desc')->where(['cat_id'=>$cat_id]);
+            //     foreach ($subcat as $value) {
+            //         $blogs->orwhere('cat_id',$value->id);
+            //         // array_push($filter,['cat_id'=>$value->id]);
+            //     }
+            //     return $blogs->paginate($page);
+            //  }
              return $this->postByCategoryPaginate($category,$page);
 
             return Blog::where('cat_id',$cat_id)->orderBy('id','desc')->paginate($page);
@@ -252,7 +252,7 @@ class BlogController extends Controller
 
 
             if($ImagesCount>1){
-                $data['fiture'] =  fileupload($request->Images,"blogs/",300,165);
+                $data['fiture'] =  fileupload($request->Images,"blogs/",1200,660);
             }
 
         // if($id){
@@ -263,7 +263,7 @@ class BlogController extends Controller
 
         $blog =  Blog::create($data);
 
-        Post::create(['blog_id'=>$blog->id,'cat_id'=>$$request->cat_id]);
+        Post::create(['blog_id'=>$blog->id,'cat_id'=>$request->cat_id]);
 
         if($request->cat_ids){
             foreach ($request->cat_ids as $cats) {
