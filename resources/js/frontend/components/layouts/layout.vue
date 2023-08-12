@@ -118,7 +118,7 @@
 
 
 
-                        <button style="    z-index: 99999;" class="navbar-toggler collapsed m-margin-reducer-left-14" type="button" @click="openMenu"
+                        <button id="mobileNavBar2" style="    z-index: 99999;" class="navbar-toggler collapsed m-margin-reducer-left-14" type="button" @click="openMenu"
                         data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar top-bar"></span>
@@ -190,7 +190,7 @@
 
                         <div class="d-flex d-lg-none"
                             style="position: fixed; padding: 1rem; background: #f5f5f5; width: 100%; color: #FFF; justify-content:space-between;z-index: 99999;">
-                            <button class="navbar-toggler m-margin-reducer-left-14 text-white"  type="button"
+                            <button id="mobileNavBar" class="navbar-toggler m-margin-reducer-left-14 text-white"  type="button"
                                 data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
                                 aria-expanded="true" aria-label="Toggle navigation" style=" ">
                                 <span class="icon-bar top-bar"></span>
@@ -494,6 +494,19 @@ export default {
             scTimer: 0,
             scY: 0,
             dateTime:''
+        }
+    },
+
+    watch: {
+        '$route': {
+            handler(newValue, oldValue) {
+
+                document.getElementById('main-nav-1').classList.remove('show');
+                document.getElementById('mobileNavBar').classList.remove('collapsed');
+                document.getElementById('mobileNavBar2').classList.add('collapsed');
+
+            },
+            deep: true
         }
     },
     methods: {

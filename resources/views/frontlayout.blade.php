@@ -42,6 +42,9 @@
         margin: 0 !important;
     }
 
+    #overlay-dots {
+        z-index: 999999 !important;
+    }
 
         </style>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -55,7 +58,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.24') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.25') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
 <script>
