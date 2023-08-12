@@ -230,7 +230,7 @@ export default {
             var res = await this.callApi('post', '/api/update/blog', this.form);
 
     // conseole.log(res)
-    this.getunionInfo();
+    // this.getunionInfo();
     this.$router.push({ name: 'blogs'})
     Notification.customSuccess('Blog Update Successfuly Done');
     this.preloader = false

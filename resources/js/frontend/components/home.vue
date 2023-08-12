@@ -673,14 +673,14 @@
 
                 <div class="container mb-3">
                     <div class="LeadTitlebar3">
-                        <a href="https://www.risingbd.com/videogallery/archives">
+                        <router-link title="" :to="{ name: 'categoryPost', params: { cat: 'ভিডিও গ্যালারি' } }">
                             <h2><span>ভিডিও গ্যালারি</span></h2>
-                        </a>
+                        </router-link>
                     </div>
                     <div class="row">
                         <div class="col-lg-5 col-sm-12 rowresize mb-3">
                             <div class="VideoGalleryTop">
-                                <div class="thumbnail" v-for="(videoGallery, naindex) in posts.videoGallery" :key="'naindex' + naindex" v-if="naindex==0">
+                                <div class="thumbnail" v-for="(videoGallery, videoGindex) in posts.videoGallery" :key="'videoGindex' + videoGindex" v-if="videoGindex==0">
                                     <a :href="'/read/post/'+videoGallery.id+'/'+videoGallery.title" >
                                         <div class="Imgresize">
                                             <picture class="Ratio Ratio16x9 VideoIcon">
@@ -695,10 +695,11 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-7 col-sm-12 rowresize">
                             <div class="DVideoArea">
                                 <div class="row">
-                                    <div class="col-lg-4 col-sm-6 mb-3" v-for="(videoGallery, naindex) in posts.videoGallery" :key="'naindex' + naindex" v-if="naindex!=0">
+                                    <div class="col-lg-4 col-sm-6 mb-3" v-for="(videoGallery, videoGindex) in posts.videoGallery" :key="'videoGindex' + videoGindex" v-if="videoGindex!=0">
                                         <div class="VideoGalleryList">
                                             <div class="col-sm-12 thumbnail">
                                                 <a :href="'/read/post/'+videoGallery.id+'/'+videoGallery.title" >
