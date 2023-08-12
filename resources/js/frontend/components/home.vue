@@ -135,8 +135,8 @@
                 <div class="section-two py-3 bg-section-two">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xl-12 col-sm-12 special-top" style="background: #00519738;">
-                                <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="    background: #005197 !important;">
+                            <div class="col-xl-12 col-sm-12 special-top" style="background: #1717cd24;">
+                                <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="    background: #1717cd !important;">
                                 <div class="heading opinion-heading">
                                     <p class="title"><router-link title="" style="color:white"
                                             :to="{ name: 'categoryPost', params: { cat: 'জাতীয়' } }"
@@ -175,8 +175,8 @@
 
                 <div class="container pt-3 ">
                     <div class="row">
-                        <div class="col-lg-9 col-md-8" style="    background: #87c90730;">
-                            <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="background: #87c907;">
+                        <div class="col-lg-9 col-md-8" style="    background: #1717cd24;">
+                            <div class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="background: #008000;">
                                 <div class="heading opinion-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'সারাদেশ' } }"
@@ -210,9 +210,9 @@
                         </div>
 
 
-                        <div class="col-lg-3 col-md-4 politics" style="background: #ff99001f;">
+                        <div class="col-lg-3 col-md-4 politics" style="background: #3b009924;">
                             <div
-                                class="category-header politics-ch d-flex justify-content-between align-items-center politics__home mt-2" style="    background: #ff9900;">
+                                class="category-header politics-ch d-flex justify-content-between align-items-center politics__home mt-2" style="    background: #008000;">
                                 <div class="heading politics-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'আন্তর্জাতিক' } }"
@@ -252,9 +252,9 @@
 
                 <div class="container pt-3 m-pt-2">
                     <div class="row">
-                        <div class="col-lg-9 col-md-8" style="background: #aeb5cb63 !important;">
+                        <div class="col-lg-9 col-md-8" style="background: #8b0cff3b !important;">
                             <div
-                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="background: #74d2e7 !important;">
+                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="background: #8b0cff !important;">
                                 <div class="heading opinion-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'পঞ্চগড়ের খবর' } }"
@@ -329,9 +329,9 @@
 
                 <div class="container pt-3 m-pt-2">
                     <div class="row">
-                        <div class="col-lg-9 col-md-8" style="background: #a24bf145;">
+                        <div class="col-lg-9 col-md-8" style="background: #fd50313b;">
                             <div
-                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="    background: #a24bf1;">
+                                class="category-header country-ch d-flex justify-content-between align-items-center opinion__home mt-2" style="    background: #8b0cff;">
                                 <div class="heading opinion-heading">
                                     <p class="title"><router-link title=""
                                             :to="{ name: 'categoryPost', params: { cat: 'বিনোদন' } }"
@@ -1236,7 +1236,7 @@ a:hover img {
     background: #b1aeae;
 }
 h3.title.width100 {
-    background: #a3ffaa;
+    background: #00667c;
 }
 
 
@@ -1294,5 +1294,13 @@ img.img-fluid.img100 {
     background: #a3ffaa26;
 }
 
+
+.heading.opinion-heading p.title a {
+    color: white;
+}
+.news.news-3.width100 h3.title.width100 a {
+    color: white;
+    padding: 2px 11px;
+}
 
 </style>
