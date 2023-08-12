@@ -18,7 +18,7 @@
 
         <div class="card">
             <div class="card-header">
-                <router-link :to="{name:'categoryform'}" class="btn btn-info">নতুন ক্যাটাগরি</router-link>
+                <router-link :to="{name:'categoryform'}" class="btn btn-info" style="font-size: 20px;">নতুন ক্যাটাগরি</router-link>
 
             </div>
         <div class="card-body">

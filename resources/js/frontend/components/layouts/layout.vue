@@ -86,7 +86,7 @@
 
             <div class="container d-none d-print">
                 <img class="print-logo" style="max-width: 250px;"
-                :src="$asseturl + 'northbangla.jpg'" alt="alokitotetulia.com" />
+                :src="$asseturl + 'northbangla.jpg'" alt="northbangla24.com" />
             </div>
 
             <div class="container d-none d-lg-flex py-3 navbar-root" id="section-down"
@@ -113,7 +113,12 @@
             <nav class="container navbar navbar-expand-lg sticky-top shadow-sm navigator-extra">
                 <!-- <div class="container"> -->
 
-                    <button class="navbar-toggler collapsed m-margin-reducer-left-14" type="button" @click="openMenu"
+
+
+
+
+
+                        <button style="    z-index: 99999;" class="navbar-toggler collapsed m-margin-reducer-left-14" type="button" @click="openMenu"
                         data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar top-bar"></span>
@@ -122,15 +127,18 @@
                         <span class="sr-only">AL</span>
                     </button>
 
-
-
-                    <div class="navbar-brand align-items-center d-flex d-lg-none mr-0">
+                    <div  style="    z-index: 99999;" class="navbar-brand align-items-center d-flex d-lg-none mr-0">
                         <a title="" href="/">
                             <img :src="$asseturl + 'northbangla.jpg'" alt=""
                                 width="1345" height="192" style="width: 112px !important;" />
                         </a>
                     </div>
                     <span></span>
+
+
+
+
+
 
                     <!-- <button type="button" class="btn btn-link d-flex d-lg-none" data-target="slide-down-m"
                         aria-label="Search" style="margin-right: -14px;">
@@ -162,7 +170,7 @@
 
                     <div class="navbar-collapse collapse" id="main-nav-1">
                         <div style="width: 99%">
-                            <ul class="navbar-nav m-auto d-none d-lg-flex d-menu-items justify-content-center">
+                            <ul class="navbar-nav d-lg-flex d-menu-items justify-content-center mobileMenu">
                                 <li class="nav-item">
                                     <router-link title="" to="/" class="nav-link">প্রচ্ছদ</router-link>
                                 </li>
@@ -179,9 +187,10 @@
                                 </li>
                             </ul>
                         </div>
+
                         <div class="d-flex d-lg-none"
-                            style="position: fixed; padding: 1rem; background: #f5f5f5; width: 100%; color: #FFF; justify-content:space-between">
-                            <button class="navbar-toggler m-margin-reducer-left-14 text-white" type="button"
+                            style="position: fixed; padding: 1rem; background: #f5f5f5; width: 100%; color: #FFF; justify-content:space-between;z-index: 99999;">
+                            <button class="navbar-toggler m-margin-reducer-left-14 text-white"  type="button"
                                 data-toggle="collapse" data-target="#main-nav-1" aria-controls="main-nav-1"
                                 aria-expanded="true" aria-label="Toggle navigation" style=" ">
                                 <span class="icon-bar top-bar"></span>
@@ -190,6 +199,8 @@
                                 <span class="sr-only">AL</span>
                             </button>
                         </div>
+
+
                     </div>
 
             </nav>
@@ -400,7 +411,7 @@
     align-items: center;
     color: white;
     font-size: 13px;">
-                        <i class="fa fa-copyright"></i> &nbsp; ২০২৩ সর্বস্বত্ব সংরক্ষিত  &nbsp; <a href="https://alokitotetulia.com" class="text-white">নর্থবাংলা</a>
+                        <i class="fa fa-copyright"></i> &nbsp; ২০২৩ সর্বস্বত্ব সংরক্ষিত  &nbsp; <a href="https://northbangla24.com" class="text-white">নর্থবাংলা</a>
 
                     </p>
                 </div>
@@ -740,7 +751,28 @@ div#pagetop {
     .footerSocialLink{
         text-align: center !important;
     }
+    .mobileMenu{
+        margin-top: 66px;
+    }
 
+    .mobileMenu li {
+    width: 100% !important;
+    border-bottom: 1px solid black !important;
+}
+
+.mobileMenu li a {
+    color: black !important;
+    display: block !important;
+    width: 100%;
+}
+
+.mobileMenu li a.router-link-exact-active.router-link-active {
+    color: white !important;
+}
+.navbar {
+
+z-index: 999999 !important;
+}
 }
 
 

@@ -18,7 +18,7 @@
 
 <div class="card">
     <div class="card-header">
-                <router-link :to="{name:'blogform'}" class="btn btn-info">নতুন পোস্ট</router-link>
+                <router-link :to="{name:'blogform'}" class="btn btn-info" style="    font-size: 20px;">নতুন পোস্ট</router-link>
 
             </div>
         <div class="card-body">

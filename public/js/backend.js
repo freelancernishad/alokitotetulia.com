@@ -4641,6 +4641,9 @@ var render = function render() {
     staticClass: "card-header"
   }, [_c("router-link", {
     staticClass: "btn btn-info",
+    staticStyle: {
+      "font-size": "20px"
+    },
     attrs: {
       to: {
         name: "categoryform"
@@ -4945,34 +4948,6 @@ var render = function render() {
     staticClass: "col-md-12"
   }, [_c("div", {
     staticClass: "form-group"
-  }, [_c("label", [_vm._v("সংক্ষিপ্ত শিরোনাম")]), _vm._v(" "), _c("input", {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.form.short_description,
-      expression: "form.short_description"
-    }],
-    staticClass: "form-control",
-    attrs: {
-      type: "text",
-      id: "short_description",
-      value: "",
-      required: ""
-    },
-    domProps: {
-      value: _vm.form.short_description
-    },
-    on: {
-      input: function input($event) {
-        if ($event.target.composing) return;
-
-        _vm.$set(_vm.form, "short_description", $event.target.value);
-      }
-    }
-  })])]), _vm._v(" "), _c("div", {
-    staticClass: "col-md-12"
-  }, [_c("div", {
-    staticClass: "form-group"
   }, [_c("label", [_vm._v("বিস্তারিত সংবাদ")]), _vm._v(" "), _c("vue-editor", {
     attrs: {
       required: ""
@@ -5084,6 +5059,9 @@ var render = function render() {
     staticClass: "card-header"
   }, [_c("router-link", {
     staticClass: "btn btn-info",
+    staticStyle: {
+      "font-size": "20px"
+    },
     attrs: {
       to: {
         name: "blogform"

@@ -51,11 +51,12 @@
     <div id="app">
         <component :is="$route.meta.layout || 'div'"  :latestpost="{{ $latestpost }}"  >
             <router-view />
-          </component>
+        </component>
 
     </div>
 
     <script src="{{ asset('js/frontend.js?ver=1.0.22') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
 <script>
 
