@@ -27,6 +27,7 @@ use Intervention\Image\Facades\Image;
 
 Auth::routes([
     'login' => false,
+    'register' => false,
 ]);
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout']);
