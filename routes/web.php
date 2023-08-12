@@ -59,10 +59,10 @@ Route::get('/{vue_capture?}', function ($vue_capture='') {
      }else{
 
 
-        $fiture =  base64Withsize('blog-main','cropped-cropped-Alokitotetulia.png.png');
+        $fiture =  base64Withsize('blog-main','northbangla.jpg');
         $ReadPost = [
-            "title"=> "আলোকিত তেঁতুলিয়া",
-            "short_description"=> 'আলোকিত তেঁতুলিয়া',
+            "title"=> "নর্থবাংলা",
+            "short_description"=> 'নর্থবাংলা',
             "long_description"=> "",
             "fiture"=> $fiture,
     ];
@@ -70,10 +70,10 @@ Route::get('/{vue_capture?}', function ($vue_capture='') {
      }
 
     }else{
-        $fiture =  base64Withsize('blog-main','cropped-cropped-Alokitotetulia.png.png');
+        $fiture =  base64Withsize('blog-main','northbangla.jpg');
         $ReadPost = [
-            "title"=> "আলোকিত তেঁতুলিয়া",
-            "short_description"=> 'আলোকিত তেঁতুলিয়া',
+            "title"=> "নর্থবাংলা",
+            "short_description"=> 'নর্থবাংলা',
             "long_description"=> "",
             "fiture"=> $fiture,
     ];
@@ -92,6 +92,8 @@ Route::get('/{vue_capture?}', function ($vue_capture='') {
 
         $latestpost = Blog::orderBy('id','desc')->latest()->limit(8)->get();
     }
+
+
 
 
 

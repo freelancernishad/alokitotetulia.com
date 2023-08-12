@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ $ReadPost->title }}</title>
     <meta property="og:url" content="" />
-    <link rel="shortcut icon" type="image" href="https://www.alokitotetulia.com/public/cropped-cropped-Alokitotetulia.png.png" />
+    <link rel="shortcut icon" type="image" href="{{ asset('northbanglaCurcel.jpg') }}" />
 
 <meta name="title" content="{{ $ReadPost->title }}" />
 <meta name="description" content="{{ $ReadPost->short_description }}" />
 <meta name="keywords" content="{{ $ReadPost->title }}" />
-<meta name="author" content="আলোকিত তেঁতুলিয়া" />
+<meta name="author" content="নর্থবাংলা" />
 <meta name="news_keywords" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ $ReadPost->title }}" />
 <meta property="og:description" content="{{ $ReadPost->short_description }}" />
 <meta property="og:image" content="{{ $ReadPost->fiture }}" />
 <meta property="og:image:width" content="1200px" />
-<meta name="brand_name" content="আলোকিত তেঁতুলিয়া" />
+<meta name="brand_name" content="নর্থবাংলা" />
 
 <meta property="fb:app_id" content="863998424666012"/>
 

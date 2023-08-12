@@ -127,7 +127,7 @@
 
                 <p class="d-flex align-items-center" style="    margin-left: 0;margin-top: 7px;">
 
-                     <img :src="$asseturl+'softwebad.jpeg'" width="100%" />
+                     <img :src="$asseturl+'ads.jpg'" width="100%" />
 
                </p>
             </div>
@@ -755,7 +755,7 @@ export default {
         };
     },
     mounted() {
-        document.title = 'আলোকিত তেঁতুলিয়া'
+        document.title = 'নর্থবাংলা'
     },
     methods: {
         async getPosts() {

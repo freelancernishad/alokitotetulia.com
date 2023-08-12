@@ -86,14 +86,14 @@
 
             <div class="container d-none d-print">
                 <img class="print-logo" style="max-width: 250px;"
-                :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="alokitotetulia.com" />
+                :src="$asseturl + 'northbangla.jpg'" alt="alokitotetulia.com" />
             </div>
 
             <div class="container d-none d-lg-flex py-3 navbar-root" id="section-down"
                 style="padding-top: 5px !important;">
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <router-link class="brand-logo-top" title="" to="/" style="border: 2px solid #006328;padding: 7px;">
-                        <img style="max-width: 300px;" :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'"
+                        <img style="max-width: 300px;" :src="$asseturl + 'northbangla.jpg'"
                             alt="" />
                     </router-link>
 
@@ -101,7 +101,7 @@
                     <div class="d-flex align-items-center social-media-icons">
                 <p class="d-flex align-items-center" style="    margin-left: 70px;margin-top: 7px;">
 
-                     <img :src="$asseturl+'softwebad.jpeg'" width="100%" />
+                     <img :src="$asseturl+'ads.jpg'" width="100%" />
 
                </p>
                </div>
@@ -126,8 +126,8 @@
 
                     <div class="navbar-brand align-items-center d-flex d-lg-none mr-0">
                         <a title="" href="/">
-                            <img :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt=""
-                                width="1345" height="192" />
+                            <img :src="$asseturl + 'northbangla.jpg'" alt=""
+                                width="1345" height="192" style="width: 112px !important;" />
                         </a>
                     </div>
                     <span></span>
@@ -221,7 +221,7 @@
                     </button>
                     <div class="navbar-brand align-items-center d-flex d-lg-none mr-0">
                         <a title="Dhaka Post" href="/">
-                            <img :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" alt="Dhaka Post"
+                            <img :src="$asseturl + 'cnorthbangla.jpg'" alt="Dhaka Post"
                                 width="1345" height="192" />
                         </a>
                     </div>
@@ -299,7 +299,7 @@
                 <div class="col-xl-4 col-md-6 col-sm-12  mb-3">
                     <div class="padding">
                         <div class="width100"><router-link to="/">
-                            <img width="50%" :src="$asseturl + 'cropped-cropped-Alokitotetulia.png.png'" ></router-link></div>
+                            <img width="50%" :src="$asseturl + 'northbangla.jpg'" ></router-link></div>
                         <div class="width100"> alokitotetulia.com © ২০২৩ | নিবন্ধন নং- .... | <br> - Developed by | <a href="https://www.softwebsys.com" target="_blank" rel="noopener">Softweb System solution</a> <br>
                         </div>
                     </div>
@@ -308,27 +308,28 @@
 
                 <div class="col-xl-4 col-md-4 col-sm-12 footerOption mb-3">
                             <p>
-                                <strong>সম্পাদক: এস.কে. দোয়েল</strong><br>
+                                <strong>সম্পাদক: রনি মিয়াজী</strong><br>
                                 <strong>বার্তা সম্পাদক: মোবারক হোসাইন</strong><br>
-                                <strong>মফস্বল সম্পাদক: এম আরই রতন</strong><br>
+                                <!-- <strong>মফস্বল সম্পাদক: এম আরই রতন</strong><br> -->
 
 
                                 <hr style="margin: 6px 0;"/>
-                                <strong>ই-মেইলঃ</strong> skdoyel2020@gmail.com<br>
-                                <strong>ফোনঃ</strong> ০১৭৫০-১৪০৯১৯</p>
+                                <strong>ই-মেইলঃ</strong> mrony.press@gmail.com<br>
+                                <strong>ফোনঃ</strong> 01744118711</p>
                         </div>
 
 
                         <div class="col-xl-4 col-md-6 col-sm-12 footerOption mb-3">
                             <p></p>
                             <p data-x="">
-                                <strong>নিউজ রুমঃ</strong> ০১৭৫৫৪৯০৮৯৪<br>
-                                <strong>বার্তা সম্পাদকঃ</strong> ০১৩০৩১৫০০৭০<br>
-                                <strong>মফস্বল সম্পাদকঃ</strong>০১৭৯৪-৯৯৩৯৯৪<br>
-                                <strong>ইমেইলঃ</strong> news.alokitotetulia@gmail.com<br>
-                                <strong>ইমেইলঃ</strong> alokitotetulia@gmail.com</p>
+                                <strong>নিউজ রুমঃ</strong> ০১৭৪৪১১৮৭১১<br>
+                                <strong>বার্তা সম্পাদকঃ</strong> ০১৭১৮৭৭২৭৪৯<br>
+                                <!-- <strong>মফস্বল সম্পাদকঃ</strong>০১৭৯৪-৯৯৩৯৯৪<br> -->
+                                <!-- <strong>ইমেইলঃ</strong> news.alokitotetulia@gmail.com<br> -->
+                                <strong>ইমেইলঃ</strong> northbanglabd24@gmail.com </p>
                             <p></p>
                         </div>
+
 
 
                 <div class="col-xl-4 col-md-6 col-sm-12 footerOption mb-3">
@@ -399,7 +400,7 @@
     align-items: center;
     color: white;
     font-size: 13px;">
-                        <i class="fa fa-copyright"></i> &nbsp; ২০২৩ সর্বস্বত্ব সংরক্ষিত  &nbsp; <a href="https://alokitotetulia.com" class="text-white">আলোকিত তেঁতুলিয়া</a>
+                        <i class="fa fa-copyright"></i> &nbsp; ২০২৩ সর্বস্বত্ব সংরক্ষিত  &nbsp; <a href="https://alokitotetulia.com" class="text-white">নর্থবাংলা</a>
 
                     </p>
                 </div>
@@ -422,7 +423,7 @@
                <div class="footer-top-items footer-mv d-flex align-items-center justify-content-between">
                   <div class="footer-logo d-none d-lg-flex">
                      <router-link to="/">
-                     <img style="max-width: 200px;" :src="$asseturl+'cropped-cropped-Alokitotetulia.png.png'" alt="Dhaka Post" />
+                     <img style="max-width: 200px;" :src="$asseturl+'northbangla.jpg'" alt="Dhaka Post" />
                      </router-link>
                   </div>
                   <div class="editor">
