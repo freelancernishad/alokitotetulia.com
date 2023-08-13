@@ -55,7 +55,14 @@ Route::get('/{vue_capture?}', function ($vue_capture='') {
      if($urldata[0]=='read' && $urldata[1]=='post'){
         $blogId = $urldata[2];
         $ReadPost =  Blog::find($blogId);
-        $fiture =  base64Withsize("blog-$blogId",$ReadPost->fiture);
+        if($ReadPost->fiture){
+
+            $fiture =  base64Withsize("blog-$blogId",$ReadPost->fiture);
+        }else{
+
+            $fiture =  base64Withsize("blog-$blogId",'northbangla.jpg');
+        }
+
         $ReadPost['fiture'] = $fiture;
      }else{
 
