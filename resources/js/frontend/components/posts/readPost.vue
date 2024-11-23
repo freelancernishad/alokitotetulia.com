@@ -245,7 +245,10 @@ export default {
     },
 
     mounted(){
-        this.shareurl = document.URL
+            // this.shareurl = document.URL
+
+            this.shareurl = "https://northbangla24.com/read/post".this.$route.params.id;
+
 
            this.getunionInfo(this.$route.params.id);
            this.getposts(this.$route.params.id);
