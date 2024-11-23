@@ -20,7 +20,7 @@
                                     </li>
                                 </ol> -->
 
-                                <article class="details-body" lg-uid="lg0">
+                                <article class="details-body" id='article-content' lg-uid="lg0">
                                     <h1 class="news-title">{{ row.title }}
                                     </h1>
                                     <div class="details-writer d-flex align-items-center justify-content-between my-2 py-2"
@@ -87,6 +87,10 @@
                                     <ShareNetwork network="Twitter" :url="shareurl" :title="row.title"> <i class="fa-brands fa-twitter"></i> </ShareNetwork>
 
                                 </div>
+
+                                        <button class="btn btn-primary my-3" @click="printArticle">
+            <i class="fa-solid fa-print"></i> Print Article
+        </button>
 
                                 <div class="d-print-none">
                                     <div class="py-3 m-py-2">
@@ -187,76 +191,90 @@
 
 <script>
 export default {
-
-    data(){
+    data() {
         return {
-           row: {
-                title:null,
-                cat_id:null,
-                short_description:null,
-                long_description:null,
-                Images:null,
-             },
-             categorys:{},
-             posts:{
-                'category':{},
-                'relatedPosts':{},
-                'latestPost':{},
-                'latestPost2':{},
-             },
-             shareurl:'',
-             preloader:true,
-        }
-    },
-    watch: {
-        '$route': {
-            handler(newValue, oldValue) {
-
-                this.getunionInfo(this.$route.params.id);
-           this.getposts(this.$route.params.id);
+            row: {
+                title: null,
+                cat_id: null,
+                short_description: null,
+                long_description: null,
+                Images: null,
             },
-            deep: true
-        }
+            categorys: {},
+            posts: {
+                category: {},
+                relatedPosts: {},
+                latestPost: {},
+                latestPost2: {},
+            },
+            shareurl: '',
+            preloader: true,
+        };
     },
-    methods:{
-
-
-
-       getunionInfo(id=''){
-
-                axios.get(`/api/get/post/by/post/${id}`)
-                .then((res)=>{
-                    this.posts = res.data
-                })
-
+    methods: {
+        printArticle() {
+            // Use a unique ID to isolate the content you want to print
+            const articleContent = document.getElementById('article-content').innerHTML;
+            const printWindow = window.open('', '', 'width=900,height=600');
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>${this.row.title}</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        h1, p { margin: 0 0 10px; }
+                        img { max-width: 100%; height: auto; }
+                    </style>
+                </head>
+                <body>${articleContent}</body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
         },
-
-      async getposts(id=''){
-        this.preloader = true;
-                axios.get(`/api/update/blog/${id}`)
-                .then((res)=>{
-                    this.row = res.data
-                    this.preloader = false;
-                })
-
+        getunionInfo(id = '') {
+            axios.get(`/api/get/post/by/post/${id}`).then((res) => {
+                this.posts = res.data;
+            });
         },
-
-
+        async getposts(id = '') {
+            this.preloader = true;
+            axios.get(`/api/update/blog/${id}`).then((res) => {
+                this.row = res.data;
+                this.preloader = false;
+            });
+        },
     },
-
-    mounted(){
-        // this.shareurl = document.URL
-        this.shareurl = "https://northbangla24.com/read/post/"+ this.$route.params.id;
-
-           this.getunionInfo(this.$route.params.id);
-           this.getposts(this.$route.params.id);
-
-
-
-        }
-}
+    mounted() {
+        this.shareurl = `https://northbangla24.com/read/post/${this.$route.params.id}`;
+        this.getunionInfo(this.$route.params.id);
+        this.getposts(this.$route.params.id);
+    },
+};
 </script>
+
 <style>
+
+
+@media print {
+    button, .d-print-none, .shareIcons {
+        display: none !important;
+    }
+
+    .details {
+        width: 100%;
+    }
+
+    .news-image img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
+
+
 .news-image iframe {
     width: 100% !important;
 }
