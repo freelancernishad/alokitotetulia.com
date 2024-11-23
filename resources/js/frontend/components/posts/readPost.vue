@@ -102,7 +102,7 @@
 
 
                                                 <div class="col-sm-4 box-news" v-for="(latestPost,index) in posts.latestPost2" :key="index">
-                                                    <a :href="'/read/post/'+latestPost.id+'/'+latestPost.title"
+                                                    <a :href="'/read/post/'+latestPost.id"
                                                         class="news-item news-item-box">
                                                         <img style=" width:100% !important;height:165px !important;" :src="$asseturl+latestPost.fiture" v-if="latestPost.fiture"  :alt="latestPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="latestPost.title" class="lazyload img-loader">
@@ -135,7 +135,7 @@
                                             <div class="regular-list scaled m-px-0">
 
 
-                                                <a v-for="(relatedPost,index) in posts.relatedPosts" :key="index"  :href="'/read/post/'+relatedPost.id+'/'+relatedPost.title"  class="news-item news-item-regular py-2" >
+                                                <a v-for="(relatedPost,index) in posts.relatedPosts" :key="index"  :href="'/read/post/'+relatedPost.id"  class="news-item news-item-regular py-2" >
                                                     <div class="image-container">
                                                         <img style=" width:100% !important;height:75px !important;" :src="$asseturl+relatedPost.fiture" v-if="relatedPost.fiture"  :alt="relatedPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="relatedPost.title" class="lazyload img-loader">
@@ -159,7 +159,7 @@
                                             <div class="regular-list scaled m-px-0">
 
 
-                                                <a v-for="(latestPost,index) in posts.latestPost" :key="index"  :href="'/read/post/'+latestPost.id+'/'+latestPost.title"  class="news-item news-item-regular py-2" >
+                                                <a v-for="(latestPost,index) in posts.latestPost" :key="index"  :href="'/read/post/'+latestPost.id"  class="news-item news-item-regular py-2" >
                                                     <div class="image-container">
                                                         <img style=" width:100% !important;height:75px !important;" :src="$asseturl+latestPost.fiture" v-if="latestPost.fiture"  :alt="latestPost.title" class="lazyload img-loader">
                                                         <img v-else src="//cdn.dhakapost.com/media/common/placeholder.jpg"  :alt="latestPost.title" class="lazyload img-loader">

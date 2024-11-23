@@ -58,7 +58,7 @@
 
     </div>
 
-    <script src="{{ asset('js/frontend.js?ver=1.0.27') }}"></script>
+    <script src="{{ asset('js/frontend.js?ver=1.0.29') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
 <script>

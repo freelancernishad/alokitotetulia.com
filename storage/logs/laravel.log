@@ -24972,3 +24972,51 @@ ewspaper\\laravel-vue-js-fresh-project\\artisan(37): Illuminate\\Foundation\\Con
 #7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #8 {main}
 "} 
+[2024-11-23 13:28:11] local.ERROR: Class "Meneses\LaravelMpdf\LaravelMpdfServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Meneses\\LaravelMpdf\\LaravelMpdfServiceProvider\" not found at D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:745)
+[stacktrace]
+#0 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(679): Illuminate\\Foundation\\Application->resolveProvider('Meneses\\\\Laravel...')
+#1 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('Meneses\\\\Laravel...')
+#2 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(659): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2024-11-23 13:28:12] local.ERROR: Class "Meneses\LaravelMpdf\LaravelMpdfServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Meneses\\LaravelMpdf\\LaravelMpdfServiceProvider\" not found at D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:745)
+[stacktrace]
+#0 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(679): Illuminate\\Foundation\\Application->resolveProvider('Meneses\\\\Laravel...')
+#1 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('Meneses\\\\Laravel...')
+#2 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(659): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2024-11-23 13:28:12] local.ERROR: Class "Meneses\LaravelMpdf\LaravelMpdfServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Meneses\\LaravelMpdf\\LaravelMpdfServiceProvider\" not found at D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:745)
+[stacktrace]
+#0 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(679): Illuminate\\Foundation\\Application->resolveProvider('Meneses\\\\Laravel...')
+#1 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('Meneses\\\\Laravel...')
+#2 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(659): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2024-11-23 13:28:13] local.ERROR: Class "Meneses\LaravelMpdf\LaravelMpdfServiceProvider" not found {"exception":"[object] (Error(code: 0): Class \"Meneses\\LaravelMpdf\\LaravelMpdfServiceProvider\" not found at D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:745)
+[stacktrace]
+#0 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(679): Illuminate\\Foundation\\Application->resolveProvider('Meneses\\\\Laravel...')
+#1 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php(75): Illuminate\\Foundation\\Application->register('Meneses\\\\Laravel...')
+#2 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(659): Illuminate\\Foundation\\ProviderRepository->load(Array)
+#3 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\RegisterProviders.php(17): Illuminate\\Foundation\\Application->registerConfiguredProviders()
+#4 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(237): Illuminate\\Foundation\\Bootstrap\\RegisterProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#5 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(310): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#6 D:\\Softweb system solution\\alokitotetulia.com\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(127): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#7 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
