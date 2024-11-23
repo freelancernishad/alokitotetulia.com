@@ -20,7 +20,7 @@ export const routes = [
     { path:  `${prefix}register`, component: register, name:'register',meta: { layout: blanklayout } },
     { path:  `${prefix}forget`, component: forget, name:'forget',meta: { layout: blanklayout } },
 
-    { path:  `${prefix}read/post/:id/:slug`, component: readPost, name:'readPost',meta: { layout: layout } },
+    { path:  `${prefix}read/post/:id/:slug?`, component: readPost, name:'readPost',meta: { layout: layout } },
 
     { path:  `${prefix}category/:cat`, component: categoryPost, name:'categoryPost',meta: { layout: layout } },
     { path:  `${prefix}category/:cat/:cat2`, component: categoryPost, name:'categoryPost2',meta: { layout: layout } },
